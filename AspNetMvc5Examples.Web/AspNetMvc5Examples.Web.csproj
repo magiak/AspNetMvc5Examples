@@ -184,11 +184,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResults\CustomContentResult.cs" />
+    <Compile Include="ActionResults\DummyViewEngineActionResult.cs" />
+    <Compile Include="ActionResults\HtmlActionResult.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
+    <Compile Include="DbContexts\AspNetMvc5ExamplesDbContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -258,6 +263,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\ViewEngineAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
