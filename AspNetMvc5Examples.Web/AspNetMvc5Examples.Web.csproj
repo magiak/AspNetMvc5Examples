@@ -189,6 +189,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\RequestLifeCycle\RequestLifeCycleAreaRegistration.cs" />
     <Compile Include="Controllers\ActionResultController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
     <Compile Include="DbContexts\AspNetMvc5ExamplesDbContext.cs" />
@@ -219,6 +220,7 @@
     <Content Include="CustomViews\Web.config" />
     <Content Include="CustomViews\_ViewStart.cshtml" />
     <Content Include="CustomViews\ActionResult\Index.cshtml" />
+    <Content Include="Areas\RequestLifeCycle\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -271,6 +273,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\RequestLifeCycle\Controllers\" />
+    <Folder Include="Areas\RequestLifeCycle\Models\" />
+    <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
