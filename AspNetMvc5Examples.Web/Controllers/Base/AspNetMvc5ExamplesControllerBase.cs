@@ -1,4 +1,4 @@
-﻿using AspNetMvc5Examples.Web.ActionResults;
+﻿using AspNetMvc5Examples.Business.ActionResults;
 using System.Web.Mvc;
 
 namespace AspNetMvc5Examples.Web.Controllers

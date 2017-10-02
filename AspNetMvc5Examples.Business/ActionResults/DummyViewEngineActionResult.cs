@@ -1,8 +1,6 @@
-﻿using System.Text;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace AspNetMvc5Examples.Web.ActionResults
+namespace AspNetMvc5Examples.Business.ActionResults
 {
     public class DummyViewEngineActionResult : ActionResult
     {

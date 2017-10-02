@@ -117,3 +117,5 @@ C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\obj\Debug\
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\obj\Debug\AspNetMvc5Examples.Web.csproj.CoreCompileInputs.cache
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\obj\Debug\AspNetMvc5Examples.Web.dll
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\obj\Debug\AspNetMvc5Examples.Web.pdb
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\AspNetMvc5Examples.Business.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\AspNetMvc5Examples.Business.pdb
