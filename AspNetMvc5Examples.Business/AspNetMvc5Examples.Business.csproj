@@ -65,11 +65,13 @@
     <Compile Include="ActionResults\CustomContentResult.cs" />
     <Compile Include="ActionResults\DummyViewEngineActionResult.cs" />
     <Compile Include="ActionResults\HtmlActionResult.cs" />
+    <Compile Include="Logging\LoggingService.cs" />
     <Compile Include="MyViewEngines\CustomViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

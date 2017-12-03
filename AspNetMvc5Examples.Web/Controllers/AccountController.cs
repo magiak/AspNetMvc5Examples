@@ -12,6 +12,8 @@ using AspNetMvc5Examples.Web.Models;
 
 namespace AspNetMvc5Examples.Web.Controllers
 {
+    using System.Threading;
+
     [Authorize]
     public class AccountController : Controller
     {
@@ -57,6 +59,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("cs-CZ");
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }

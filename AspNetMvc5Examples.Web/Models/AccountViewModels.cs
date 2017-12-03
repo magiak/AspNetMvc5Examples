@@ -3,6 +3,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AspNetMvc5Examples.Web.Models
 {
+    using Resources;
+
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
@@ -49,16 +51,16 @@ namespace AspNetMvc5Examples.Web.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(Name = "Email", ResourceType = typeof(AspNetMvc5ExamplesResource))]
         [EmailAddress]
         public string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Password", ResourceType = typeof(AspNetMvc5ExamplesResource))]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "RememberMe", ResourceType = typeof(AspNetMvc5ExamplesResource))]
         public bool RememberMe { get; set; }
     }
 

@@ -1,6 +1,5 @@
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Entities\bin\Debug\AspNetMvc5Examples.Entities.dll
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Entities\bin\Debug\AspNetMvc5Examples.Entities.pdb
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Entities\obj\Debug\AspNetMvc5Examples.Entities.csprojResolveAssemblyReference.cache
-C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Entities\obj\Debug\AspNetMvc5Examples.Entities.csproj.CoreCompileInputs.cache
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Entities\obj\Debug\AspNetMvc5Examples.Entities.dll
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Entities\obj\Debug\AspNetMvc5Examples.Entities.pdb

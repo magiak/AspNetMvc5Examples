@@ -5,10 +5,14 @@ using System.Web.Routing;
 
 namespace AspNetMvc5Examples.Web
 {
+    using ControllerFactory;
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
+            ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

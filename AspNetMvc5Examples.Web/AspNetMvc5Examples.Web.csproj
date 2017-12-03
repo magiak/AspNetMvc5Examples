@@ -189,9 +189,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\RequestLifeCycle\RequestLifeCycleAreaRegistration.cs" />
+    <Compile Include="ControllerFactory\LoggingControllerFactory.cs" />
     <Compile Include="Controllers\ActionResultController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
+    <Compile Include="Controllers\LoggingController.cs" />
     <Compile Include="DbContexts\AspNetMvc5ExamplesDbContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -221,6 +224,7 @@
     <Content Include="CustomViews\_ViewStart.cshtml" />
     <Content Include="CustomViews\ActionResult\Index.cshtml" />
     <Content Include="Areas\RequestLifeCycle\Views\web.config" />
+    <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -273,9 +277,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Controllers\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\RequestLifeCycle\Controllers\" />
     <Folder Include="Areas\RequestLifeCycle\Models\" />
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
+    <Folder Include="Views\Logging\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -294,6 +302,10 @@
     <ProjectReference Include="..\AspNetMvc5Examples.Business\AspNetMvc5Examples.Business.csproj">
       <Project>{0CE0F8DE-FAF6-4657-B567-5231C13EDE9A}</Project>
       <Name>AspNetMvc5Examples.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AspNetMvc5Examples.Resources\AspNetMvc5Examples.Resources.csproj">
+      <Project>{10457d15-1f72-4e92-b264-33ce6f223aca}</Project>
+      <Name>AspNetMvc5Examples.Resources</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,3 @@
-C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Business\obj\Debug\AspNetMvc5Examples.Business.csproj.CoreCompileInputs.cache
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Business\bin\Debug\AspNetMvc5Examples.Business.dll
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Business\bin\Debug\AspNetMvc5Examples.Business.pdb
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Business\bin\Debug\Microsoft.Web.Infrastructure.dll
