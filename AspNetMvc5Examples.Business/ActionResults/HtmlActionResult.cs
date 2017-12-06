@@ -22,7 +22,7 @@ namespace AspNetMvc5Examples.Business.ActionResults
             sb.Append("</head>");
             sb.Append("<body>");
 
-            if (Body != null)
+            if (this.Body != null)
             {
                 sb.Append(this.Body);
             }

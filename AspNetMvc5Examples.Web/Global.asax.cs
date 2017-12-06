@@ -1,10 +1,9 @@
-﻿using AspNetMvc5Examples.Business.MyViewEngines;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-
-namespace AspNetMvc5Examples.Web
+﻿namespace AspNetMvc5Examples.Web
 {
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
+    using Business.MyViewEngines;
     using ControllerFactory;
 
     public class MvcApplication : System.Web.HttpApplication

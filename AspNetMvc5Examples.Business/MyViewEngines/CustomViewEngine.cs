@@ -4,13 +4,13 @@ namespace AspNetMvc5Examples.Business.MyViewEngines
 {
     public class CustomViewEngine : RazorViewEngine
     {
-        private string[] viewLocationFormats = new[]
+        private readonly string[] viewLocationFormats =
         {
             "~/CustomViews/{1}/{0}.cshtml",
             "~/CustomViews/Shared/{0}.cshtml",
         };
 
-        private string[] partialViewLocationFormats = new[]
+        private readonly string[] partialViewLocationFormats =
         {
             "~/CustomViews/{1}/{0}.cshtml",
             "~/CustomViews/Shared/{0}.cshtml",
@@ -18,9 +18,8 @@ namespace AspNetMvc5Examples.Business.MyViewEngines
 
         public CustomViewEngine()
         {
-            ViewLocationFormats = viewLocationFormats;
-            PartialViewLocationFormats = partialViewLocationFormats;
+            this.ViewLocationFormats = this.viewLocationFormats;
+            this.PartialViewLocationFormats = this.partialViewLocationFormats;
         }
-
     }
 }

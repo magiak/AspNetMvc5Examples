@@ -65,6 +65,11 @@
     <Compile Include="ActionResults\CustomContentResult.cs" />
     <Compile Include="ActionResults\DummyViewEngineActionResult.cs" />
     <Compile Include="ActionResults\HtmlActionResult.cs" />
+    <Compile Include="FlashMessages\ActionResultExtensions.cs" />
+    <Compile Include="FlashMessages\Alert.cs" />
+    <Compile Include="FlashMessages\AlertResult.cs" />
+    <Compile Include="FlashMessages\AlertType.cs" />
+    <Compile Include="FlashMessages\TempDataExtensions.cs" />
     <Compile Include="Logging\LoggingService.cs" />
     <Compile Include="MyViewEngines\CustomViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

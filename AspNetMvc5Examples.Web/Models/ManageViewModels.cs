@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNet.Identity;
-using Microsoft.Owin.Security;
-
-namespace AspNetMvc5Examples.Web.Models
+﻿namespace AspNetMvc5Examples.Web.Models
 {
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.Owin.Security;
+
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }

@@ -6,7 +6,7 @@ namespace AspNetMvc5Examples.Business.ActionResults
     {
         public object Model { get; set; }
 
-        private string[] viewLocationFormats = new[]
+        private readonly string[] viewLocationFormats =
         {
             "~/Views/{1}/{0}.cshtml",
             "~/Views/Shared/{0}.cshtml",
@@ -17,10 +17,10 @@ namespace AspNetMvc5Examples.Business.ActionResults
             var filePath = this.FindView(context);
             var fileContent = System.IO.File.ReadAllText(filePath);
 
-            var properties = Model.GetType().GetProperties();
+            var properties = this.Model.GetType().GetProperties();
             foreach(var property in properties)
             {
-                fileContent = fileContent.Replace($"@Model.{property.Name}", property.GetValue(Model).ToString());
+                fileContent = fileContent.Replace($"@Model.{property.Name}", property.GetValue(this.Model).ToString());
             }
 
             context.HttpContext.Response.Write(fileContent); // context.HttpContext.Response.WriteFile(filePath);
@@ -31,7 +31,7 @@ namespace AspNetMvc5Examples.Business.ActionResults
             var controllerName = context.RouteData.GetRequiredString("controller");
             var actionName = context.RouteData.GetRequiredString("action");
 
-            var filePath = context.HttpContext.Server.MapPath(string.Format(viewLocationFormats[0], actionName, controllerName));
+            var filePath = context.HttpContext.Server.MapPath(string.Format(this.viewLocationFormats[0], actionName, controllerName));
             return filePath; // TODO: Nejdrive zkontroluj zda soubor existuje
         }
     }

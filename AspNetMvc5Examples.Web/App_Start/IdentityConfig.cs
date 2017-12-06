@@ -1,19 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security;
-using AspNetMvc5Examples.Web.Models;
-
-namespace AspNetMvc5Examples.Web
+﻿namespace AspNetMvc5Examples.Web
 {
+    using System;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+    using Entities.DbContexts;
+    using Entities.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin;
+    using Microsoft.Owin.Security;
+
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
@@ -53,11 +50,11 @@ namespace AspNetMvc5Examples.Web
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 6,
-                RequireNonLetterOrDigit = true,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequiredLength = 5,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Configure user lockout defaults

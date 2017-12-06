@@ -1,14 +1,14 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin;
-using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
-using Owin;
-using AspNetMvc5Examples.Web.Models;
-
-namespace AspNetMvc5Examples.Web
+﻿namespace AspNetMvc5Examples.Web
 {
+    using System;
+    using Entities.DbContexts;
+    using Entities.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
+    using Microsoft.Owin;
+    using Microsoft.Owin.Security.Cookies;
+    using Owin;
+
     public partial class Startup
     {
         // For more information on configuring authentication, please visit https://go.microsoft.com/fwlink/?LinkId=301864

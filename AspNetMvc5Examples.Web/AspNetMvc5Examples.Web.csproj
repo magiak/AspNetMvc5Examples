@@ -191,22 +191,23 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\RequestLifeCycle\RequestLifeCycleAreaRegistration.cs" />
+    <Compile Include="ControllerFactory\DummyControllerFactory.cs" />
     <Compile Include="ControllerFactory\LoggingControllerFactory.cs" />
     <Compile Include="Controllers\ActionResultController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
+    <Compile Include="Controllers\EditorAndDisplayTemplatesController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
-    <Compile Include="DbContexts\AspNetMvc5ExamplesDbContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="HtmlHelper\FlashMessagesHtmlHelperExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -274,6 +275,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ViewEngineAction.cshtml" />
     <Content Include="Views\ActionResult\Index.cshtml" />
+    <Content Include="Views\DisplayTemplates\decimal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -283,6 +285,8 @@
     <Folder Include="Areas\RequestLifeCycle\Controllers\" />
     <Folder Include="Areas\RequestLifeCycle\Models\" />
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
+    <Folder Include="Views\EditorAndDisplayTemplates\" />
+    <Folder Include="Views\EditorTemplates\" />
     <Folder Include="Views\Logging\" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +306,10 @@
     <ProjectReference Include="..\AspNetMvc5Examples.Business\AspNetMvc5Examples.Business.csproj">
       <Project>{0CE0F8DE-FAF6-4657-B567-5231C13EDE9A}</Project>
       <Name>AspNetMvc5Examples.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AspNetMvc5Examples.Entities\AspNetMvc5Examples.Entities.csproj">
+      <Project>{F18C8005-9101-4637-9E32-80F9D34588E0}</Project>
+      <Name>AspNetMvc5Examples.Entities</Name>
     </ProjectReference>
     <ProjectReference Include="..\AspNetMvc5Examples.Resources\AspNetMvc5Examples.Resources.csproj">
       <Project>{10457d15-1f72-4e92-b264-33ce6f223aca}</Project>
