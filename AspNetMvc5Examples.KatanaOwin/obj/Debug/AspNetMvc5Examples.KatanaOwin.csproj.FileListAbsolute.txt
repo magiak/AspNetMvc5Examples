@@ -1,0 +1,15 @@
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\AspNetMvc5Examples.KatanaOwin.exe.config
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\AspNetMvc5Examples.KatanaOwin.exe
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\AspNetMvc5Examples.KatanaOwin.pdb
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.Hosting.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Owin.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.xml
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.Hosting.xml
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\obj\Debug\AspNetMvc5Examples.KatanaOwin.csprojResolveAssemblyReference.cache
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\obj\Debug\AspNetMvc5Examples.KatanaOwin.exe
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\obj\Debug\AspNetMvc5Examples.KatanaOwin.pdb
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.Host.HttpListener.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.Host.HttpListener.xml
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.Diagnostics.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.KatanaOwin\bin\Debug\Microsoft.Owin.Diagnostics.xml

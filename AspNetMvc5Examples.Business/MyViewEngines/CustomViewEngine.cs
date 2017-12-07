@@ -6,6 +6,8 @@ namespace AspNetMvc5Examples.Business.MyViewEngines
     {
         private readonly string[] viewLocationFormats =
         {
+            "~/Views/{1}/{0}.cshtml",
+            "~/Views/Shared/{0}.cshtml",
             "~/CustomViews/{1}/{0}.cshtml",
             "~/CustomViews/Shared/{0}.cshtml",
         };

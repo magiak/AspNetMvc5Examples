@@ -24,6 +24,15 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Authorization Attribute<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
+                            <li>@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
+                            <li>@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

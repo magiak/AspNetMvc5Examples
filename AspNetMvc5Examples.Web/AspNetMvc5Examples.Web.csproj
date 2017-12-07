@@ -194,6 +194,7 @@
     <Compile Include="ControllerFactory\DummyControllerFactory.cs" />
     <Compile Include="ControllerFactory\LoggingControllerFactory.cs" />
     <Compile Include="Controllers\ActionResultController.cs" />
+    <Compile Include="Controllers\AuthorizationAttributeController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
     <Compile Include="Controllers\EditorAndDisplayTemplatesController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
@@ -276,6 +277,9 @@
     <Content Include="Views\Home\ViewEngineAction.cshtml" />
     <Content Include="Views\ActionResult\Index.cshtml" />
     <Content Include="Views\DisplayTemplates\decimal.cshtml" />
+    <Content Include="Views\AuthorizationAttribute\Public.cshtml" />
+    <Content Include="Views\AuthorizationAttribute\Secret.cshtml" />
+    <Content Include="Views\AuthorizationAttribute\AllowAnonymous.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +289,7 @@
     <Folder Include="Areas\RequestLifeCycle\Controllers\" />
     <Folder Include="Areas\RequestLifeCycle\Models\" />
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
+    <Folder Include="CustomViews\AuthorizationAttribute\" />
     <Folder Include="Views\EditorAndDisplayTemplates\" />
     <Folder Include="Views\EditorTemplates\" />
     <Folder Include="Views\Logging\" />
