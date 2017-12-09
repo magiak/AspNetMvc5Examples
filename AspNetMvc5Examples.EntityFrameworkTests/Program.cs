@@ -5,6 +5,7 @@
     using System.Linq;
     using Entities;
     using Entities.DbContexts;
+    using Entities.Models;
     using Resources;
 
     class Program

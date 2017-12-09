@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using AspNetMvc5Examples.Web.Models
+@using Microsoft.Ajax.Utilities
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -22,8 +24,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+                    <li>@*@Html.ActionLink("Contact", "Contact", "Home")*@</li>
                     
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Authorization Attribute<span class="caret"></span></a>
@@ -31,6 +33,24 @@
                             <li>@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
                             <li>@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
                             <li>@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Model Binding<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("To FormCollection", "BindToFormCollection", "ModelBinding", new { StringValue = "Hello", IntValue = int.MaxValue }, null)</li>
+                            <li>@Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)</li>
+                            <li>@Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)</li>
+                            <li>@Html.ActionLink("To Int", "BindToInt", "ModelBinding", new { Value = int.MaxValue }, null)</li>
+                            <li>@Html.ActionLink("To DateTime", "BindToDateTime", "ModelBinding", new { Value = DateTime.Now }, null)</li>
+                            <li>@Html.ActionLink("To ViewModel", "BindToViewModel", "ModelBinding", new { Name = "My Name",  }, null)</li>
+                            <li>@Html.ActionLink("To Child ViewModel ComplexType", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", Child = new ModelBindingChildViewModel { ChildName = "My Child Name" } }, null)</li>
+                            <li>@Html.ActionLink("To Child ViewModel ChildName", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", ChildName = "My Child Name" }, null)</li>
+                            <li>@Html.ActionLink("To Child ViewModel RouteValueDictionary", "BindToChildViewModel", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>
+                            <li>@Html.ActionLink("To ViewModel Exclude", "BindToViewModelExclude", "ModelBinding", new { Name = "My Name", }, null)</li>
+                            <li>@Html.ActionLink("To ViewModel Include", "BindToViewModelInclude", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>
+                            <li>@Html.ActionLink("Create", "Create", "ModelBinding")</li>
                         </ul>
                     </li>
                 </ul>

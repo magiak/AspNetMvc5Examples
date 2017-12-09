@@ -1,6 +1,7 @@
 ﻿namespace AspNetMvc5Examples.Entities.Configurations
 {
     using System.Data.Entity.ModelConfiguration;
+    using Models;
 
     public class OrderConfiguration : EntityTypeConfiguration<Order>
     {
