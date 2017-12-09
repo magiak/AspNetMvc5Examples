@@ -46,8 +46,6 @@ namespace AspNetMvc5Examples.Web
                     orderId = UrlParameter.Optional
                 });
 
-            // Areas // TODO
-
             routes.MapRoute(
                 name: "Movies",
                 url: "movies/released/{year}/{month}",

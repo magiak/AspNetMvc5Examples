@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using System.Linq;
     using System.Web.Mvc;
+    using Business.ModelBinding;
     using Models;
     using Newtonsoft.Json;
 
@@ -25,27 +26,27 @@
             return this.Content(value.ToLongDateString());
         }
 
-        public ActionResult BindToViewModel(ModelBindingViewModel viewModel)
+        public ActionResult BindToViewModel(ModelBinderViewModel viewModel)
         {
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
             return this.Content(json);
         }
 
-        public ActionResult BindToChildViewModel(ModelBindingViewModel viewModel)
+        public ActionResult BindToChildViewModel(ModelBinderViewModel viewModel)
         {
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
             return this.Content(json);
         }
 
         // Black list
-        public ActionResult BindToViewModelExclude([Bind(Exclude = nameof(ModelBindingViewModel.Name))]ModelBindingViewModel viewModel)
+        public ActionResult BindToViewModelExclude([Bind(Exclude = nameof(ModelBinderViewModel.Name))]ModelBinderViewModel viewModel)
         {
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
             return this.Content(json);
         }
 
         // White list
-        public ActionResult BindToViewModelInclude([Bind(Include = nameof(ModelBindingViewModel.Name))]ModelBindingViewModel viewModel)
+        public ActionResult BindToViewModelInclude([Bind(Include = nameof(ModelBinderViewModel.Name))]ModelBinderViewModel viewModel)
         {
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
             return this.Content(json);
@@ -54,11 +55,11 @@
 
         public ActionResult Create()
         {
-            return this.View(new ModelBindingViewModel());
+            return this.View(new ModelBinderViewModel());
         }
         
         [HttpPost]
-        public ActionResult Create(ModelBindingViewModel viewModel)
+        public ActionResult Create(ModelBinderViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -69,15 +70,50 @@
             return this.View(viewModel);
         }
 
-        #region Value Provider
-
-        public ActionResult ValueProvider()
+        public ActionResult CreateJson()
         {
-
-
-            Debugger.Break();
-            return new EmptyResult();
+            var viewModel = new JsonViewModel();
+            return this.View(viewModel);
         }
-        #endregion
+
+        [HttpPost]
+        public ActionResult CreateJson([ModelBinder(typeof(JsonModelBinder))] ModelBinderViewModel viewModel)
+        {
+            if (this.ModelState.IsValid)
+            {
+                Debugger.Break();
+
+                var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+                return this.Content(json);
+            }
+
+            return this.View(this.HttpContext.Request.Form[nameof(JsonViewModel.Json)]);
+        }
+
+        public ActionResult CreateDayMonthYear()
+        {
+            var viewModel = new DayMonthYearViewModel();
+            return this.View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult CreateDayMonthYear([ModelBinder(typeof(DayMonthYearModelBinder))]DateTime date)
+        {
+            if (this.ModelState.IsValid)
+            {
+                Debugger.Break();
+
+                return this.Content(date.ToShortDateString());
+            }
+
+            var viewModel = new DayMonthYearViewModel()
+            {
+                Day = date.Day,
+                Month = date.Month,
+                Year = date.Year
+            };
+
+            return this.View(viewModel);
+        }
     }
 }

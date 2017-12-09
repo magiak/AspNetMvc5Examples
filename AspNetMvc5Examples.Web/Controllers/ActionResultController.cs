@@ -2,6 +2,8 @@
 
 namespace AspNetMvc5Examples.Web.Controllers
 {
+    using Base;
+
     public class ActionResultController : AspNetMvc5ExamplesControllerBase
     {
         public ActionResult EmptyAction()
@@ -11,27 +13,32 @@ namespace AspNetMvc5Examples.Web.Controllers
 
         public ActionResult ContentAction()
         {
-            return Content("Hello from MVC application. <br /> This is awesome ContentActionResult!");
+            return this.Content("Hello from MVC application. <br /> This is awesome ContentActionResult!");
         }
 
-        public ActionResult CustomContentAction()
+        public ActionResult HttpNotFoundAction()
         {
-            return CustomContent("Hello from MVC application. <br /> This is awesome ContentActionResult!");
+            return this.HttpNotFound();
+        }
+
+        public ActionResult LineBreaksContentAction()
+        {
+            return this.LineBreaksContent("Hello from MVC application. This is awesome ContentActionResult!");
         }
 
         public ActionResult HtmlAction(string title = null, string body = null)
         {
-            return Html(title, body);
+            return this.Html(title, body);
         }
 
         public ActionResult ViewEngineAction()
         {
-            return DummyView(new { Title = "ASP.NET MVC 5" });
+            return this.DummyView(new { Title = "ASP.NET MVC 5" });
         }
 
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
     }
 }

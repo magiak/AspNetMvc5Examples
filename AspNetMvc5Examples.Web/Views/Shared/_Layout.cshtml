@@ -28,6 +28,17 @@
                     <li>@*@Html.ActionLink("Contact", "Contact", "Home")*@</li>
                     
                     <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Action Result<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Empty", "EmptyAction", "ActionResult")</li>
+                            <li>@Html.ActionLink("Content", "ContentAction", "ActionResult")</li>
+                            <li>@Html.ActionLink("Http Not Found", "HttpNotFoundAction", "ActionResult")</li>
+                            <li>@Html.ActionLink("Add line breaks", "LineBreaksContentAction", "ActionResult")</li>
+                        </ul>
+                    </li>
+                    
+
+                    <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Authorization Attribute<span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
@@ -39,18 +50,18 @@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Model Binding<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>@Html.ActionLink("To FormCollection", "BindToFormCollection", "ModelBinding", new { StringValue = "Hello", IntValue = int.MaxValue }, null)</li>
-                            <li>@Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)</li>
                             <li>@Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)</li>
                             <li>@Html.ActionLink("To Int", "BindToInt", "ModelBinding", new { Value = int.MaxValue }, null)</li>
                             <li>@Html.ActionLink("To DateTime", "BindToDateTime", "ModelBinding", new { Value = DateTime.Now }, null)</li>
                             <li>@Html.ActionLink("To ViewModel", "BindToViewModel", "ModelBinding", new { Name = "My Name",  }, null)</li>
-                            <li>@Html.ActionLink("To Child ViewModel ComplexType", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", Child = new ModelBindingChildViewModel { ChildName = "My Child Name" } }, null)</li>
+                            <li>@Html.ActionLink("To Child ViewModel ComplexType", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", Child = new ModelBinderChildViewModel { ChildName = "My Child Name" } }, null)</li>
                             <li>@Html.ActionLink("To Child ViewModel ChildName", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", ChildName = "My Child Name" }, null)</li>
                             <li>@Html.ActionLink("To Child ViewModel RouteValueDictionary", "BindToChildViewModel", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>
                             <li>@Html.ActionLink("To ViewModel Exclude", "BindToViewModelExclude", "ModelBinding", new { Name = "My Name", }, null)</li>
                             <li>@Html.ActionLink("To ViewModel Include", "BindToViewModelInclude", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>
                             <li>@Html.ActionLink("Create", "Create", "ModelBinding")</li>
+                            <li>@Html.ActionLink("String to Json", "CreateJson", "ModelBinding")</li>
+                            <li>@Html.ActionLink("Day, month and year to DateTime", "CreateDayMonthYear", "ModelBinding")</li>
                         </ul>
                     </li>
                 </ul>

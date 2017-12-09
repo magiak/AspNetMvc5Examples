@@ -1,13 +1,13 @@
-﻿using AspNetMvc5Examples.Business.ActionResults;
-using System.Web.Mvc;
-
-namespace AspNetMvc5Examples.Web.Controllers
+﻿namespace AspNetMvc5Examples.Web.Controllers.Base
 {
+    using System.Web.Mvc;
+    using Business.ActionResults;
+
     public abstract class AspNetMvc5ExamplesControllerBase : Controller
     {
-        protected internal CustomContentResult CustomContent(string content)
+        protected internal LineBreaksContentResult LineBreaksContent(string content)
         {
-            return new CustomContentResult()
+            return new LineBreaksContentResult()
             {
                 Content = content
             };

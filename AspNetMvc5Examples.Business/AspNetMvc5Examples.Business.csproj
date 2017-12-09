@@ -112,7 +112,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActionResults\CustomContentResult.cs" />
+    <Compile Include="ActionResults\LineBreaksContentResult.cs" />
     <Compile Include="ActionResults\DummyViewEngineActionResult.cs" />
     <Compile Include="ActionResults\HtmlActionResult.cs" />
     <Compile Include="FlashMessages\ActionResultExtensions.cs" />
@@ -121,7 +121,8 @@
     <Compile Include="FlashMessages\AlertType.cs" />
     <Compile Include="FlashMessages\TempDataExtensions.cs" />
     <Compile Include="Logging\LoggingService.cs" />
-    <Compile Include="ModelBinding\MyModelBinder.cs" />
+    <Compile Include="ModelBinding\DayMonthYearModelBinder.cs" />
+    <Compile Include="ModelBinding\JsonModelBinder.cs" />
     <Compile Include="MyViewEngines\CustomViewEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueProvider\MyValueProvider.cs" />
