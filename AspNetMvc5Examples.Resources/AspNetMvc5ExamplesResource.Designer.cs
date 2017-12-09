@@ -88,6 +88,24 @@ namespace AspNetMvc5Examples.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Press any key to exit..
+        /// </summary>
+        public static string Program_Main_PressAnyKeyToExit {
+            get {
+                return ResourceManager.GetString("Program_Main_PressAnyKeyToExit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Started.
+        /// </summary>
+        public static string Program_Main_Started {
+            get {
+                return ResourceManager.GetString("Program_Main_Started", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Remember me?.
         /// </summary>
         public static string RememberMe {

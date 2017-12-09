@@ -109,4 +109,10 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me?</value>
   </data>
+  <data name="Program_Main_PressAnyKeyToExit" xml:space="preserve">
+    <value>Press any key to exit.</value>
+  </data>
+  <data name="Program_Main_Started" xml:space="preserve">
+    <value>Started</value>
+  </data>
 </root>

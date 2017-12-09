@@ -2,11 +2,15 @@
 {
     using System;
     using Entities.DbContexts;
+    using Entities.IdentityManagers;
     using Entities.Models;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
+    using Microsoft.Owin.Host.SystemWeb;
+    using Microsoft.Owin.Infrastructure;
     using Microsoft.Owin.Security.Cookies;
+    using Microsoft.Owin.Security.Google;
     using Owin;
 
     public partial class Startup
@@ -34,7 +38,8 @@
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
+
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -54,14 +59,18 @@
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //// https://developers.facebook.com/apps/1718496108243352/dashboard/
+            app.UseFacebookAuthentication(
+               appId: "1718496108243352",
+               appSecret: "SECRET");
 
+            //// https://console.developers.google.com/apis/credentials?project=aspnetmvc5examples
+            // https://stackoverflow.com/questions/40269783/authenticationmanager-getexternallogininfoasync-on-google-aspnet-mvc5-returns
+            // https://stackoverflow.com/questions/20737578/asp-net-sessionid-owin-cookies-do-not-send-to-browser
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "SECRET.apps.googleusercontent.com",
+            //    ClientSecret = "SECRET"
             //});
         }
     }

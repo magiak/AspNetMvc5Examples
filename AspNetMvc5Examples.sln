@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvc5Examples.Resource
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvc5Examples.KatanaOwin", "AspNetMvc5Examples.KatanaOwin\AspNetMvc5Examples.KatanaOwin.csproj", "{B6017771-0295-4C16-8397-7F56F0FD362E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvc5Examples.EntityFrameworkTests", "AspNetMvc5Examples.EntityFrameworkTests\AspNetMvc5Examples.EntityFrameworkTests.csproj", "{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B6017771-0295-4C16-8397-7F56F0FD362E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6017771-0295-4C16-8397-7F56F0FD362E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6017771-0295-4C16-8397-7F56F0FD362E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

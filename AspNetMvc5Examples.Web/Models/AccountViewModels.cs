@@ -81,6 +81,9 @@
         [Display(Name = "Confirm password")]
         [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Nick Name")]
+        public string NickName { get; set; }
     }
 
     public class ResetPasswordViewModel

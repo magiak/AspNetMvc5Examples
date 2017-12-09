@@ -3,6 +3,7 @@
     using System;
     using Microsoft.Owin.Hosting;
     using Owin;
+    using Resources;
 
     class Program
     {
@@ -10,11 +11,11 @@
         {
             using (WebApp.Start<Startup>("http://localhost:8080"))
             {
-                Console.WriteLine("Started");
+                Console.WriteLine(AspNetMvc5ExamplesResource.Program_Main_Started);
 
                 // Now you can open http://localhost:8080/ in web browser :)
 
-                Console.WriteLine("Press any key to exit.");
+                Console.WriteLine(AspNetMvc5ExamplesResource.Program_Main_PressAnyKeyToExit);
                 Console.ReadKey();
             }
         }

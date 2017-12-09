@@ -1,5 +1,6 @@
 ﻿namespace AspNetMvc5Examples.KatanaOwin
 {
+    using System;
     using Components;
     using Owin;
 
@@ -11,7 +12,12 @@
             // 1.
             //app.Run(ctx =>
             //{
-            //    return ctx.Response.WriteAsync("Hello from web server :)");
+            //    return ctx.Response.WriteAsync("Hello, World!");
+            //});
+
+            //app.Run(async context =>
+            //{
+            //    await context.Response.WriteAsync("Hello, World, Again!"); only the first delegate will run.
             //});
 
             // 2.
@@ -26,41 +32,35 @@
             // 5.
             //app.Use<MyWelcomePageComponent>(); // Or app.UseMyWelcomePage();
 
-
             // 6.
+            //app.Use(async (context, next) =>
+            //{
+            //    Console.WriteLine("Handling request.");
+            //    await next();
+            //    Console.WriteLine("Finished handling request.");
+            //});
+
+            //app.Run(async context =>
+            //{
+            //    Console.WriteLine("Hello, World!");
+            //    await context.Response.WriteAsync("Hello, World!");
+            //});
+
+            // 7. Implementation in .NET Core
             // https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/Builder/MvcApplicationBuilderExtensions.cs
 
-            //This is copy from Startup.Auth.cs
-            // Configure the db context, user manager and signin manager to use a single instance per request
-            //app.CreatePerOwinContext(ApplicationDbContext.Create);
-            //app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
-            //app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            // 8. Startup.Auth.cs -> ConfigureAuth
 
-            // Enable the application to use a cookie to store information for the signed in user
-            // and to use a cookie to temporarily store information about a user logging in with a third party login provider
-            // Configure the sign in cookie
-            //app.UseCookieAuthentication(new CookieAuthenticationOptions
-            //{
-            //    AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-            //    LoginPath = new PathString("/Account/Login"),
-            //    Provider = new CookieAuthenticationProvider
-            //    {
-            //        // Enables the application to validate the security stamp when the user logs in.
-            //        // This is a security feature which is used when you change a password or add an external login to your account.  
-            //        OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
-            //            validateInterval: TimeSpan.FromMinutes(30),
-            //            regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
-            //    }
-            //});
-            //app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            // 9. BONUS :)
+            app.Map("/maptest", HandleMapTest); // http://localhost:8080/maptest
+        }
 
-            //// Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
-            //app.UseTwoFactorSignInCookie(DefaultAuthenticationTypes.TwoFactorCookie, TimeSpan.FromMinutes(5));
-
-            //// Enables the application to remember the second login verification factor such as phone or email.
-            //// Once you check this option, your second step of verification during the login process will be remembered on the device where you logged in from.
-            //// This is similar to the RememberMe option when you log in.
-            //app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+        private static void HandleMapTest(IAppBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("Map Test Successful");
+            });
         }
     }
 }

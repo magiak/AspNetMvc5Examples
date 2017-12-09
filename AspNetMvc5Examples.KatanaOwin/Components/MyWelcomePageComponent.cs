@@ -14,7 +14,7 @@ namespace AspNetMvc5Examples.KatanaOwin.Components
 
         private readonly string html = "<html>" +
                                        "<body>" +
-                                       "Hello from MyWelcomePageComponent </br>" +
+                                       "Hello from MyWelcomePageComponent <br />" +
                                        "<img src='http://blog.kudoybook.com/wp-content/uploads/images/Zilina_10536.jpg' >" +
                                        "</body>" +
                                        "</html>";
