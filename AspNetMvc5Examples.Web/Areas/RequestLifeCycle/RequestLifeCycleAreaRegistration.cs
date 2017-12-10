@@ -4,13 +4,7 @@ namespace AspNetMvc5Examples.Web.Areas.RequestLifeCycle
 {
     public class RequestLifeCycleAreaRegistration : AreaRegistration 
     {
-        public override string AreaName 
-        {
-            get 
-            {
-                return "RequestLifeCycle";
-            }
-        }
+        public override string AreaName => "RequestLifeCycle";
 
         public override void RegisterArea(AreaRegistrationContext context) 
         {

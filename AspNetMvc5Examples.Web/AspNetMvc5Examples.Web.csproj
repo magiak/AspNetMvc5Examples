@@ -50,6 +50,10 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="BeginCollectionItem, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -228,12 +232,17 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Models\ModelBinderArrayViewModel.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Enums\Genres.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="HtmlHelper\FlashMessagesHtmlHelperExtensions.cs" />
     <Compile Include="Models\DayMonthYearViewModel.cs" />
+    <Compile Include="Models\EditorAndDisplayTemplatesViewModel.cs" />
     <Compile Include="Models\ModelBinderChildViewModel.cs" />
     <Compile Include="Models\JsonViewModel.cs" />
     <Compile Include="Models\ModelBinderViewModel.cs" />
@@ -256,7 +265,7 @@
     </Content>
     <Content Include="CustomViews\Web.config" />
     <Content Include="CustomViews\_ViewStart.cshtml" />
-    <Content Include="CustomViews\ActionResult\Index.cshtml" />
+    <Content Include="CustomViews\ActionResult\CustomViewEngine.cshtml" />
     <Content Include="Areas\RequestLifeCycle\Views\web.config" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -321,14 +330,22 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\ViewEngineAction.cshtml" />
-    <Content Include="Views\ActionResult\Index.cshtml" />
-    <Content Include="Views\DisplayTemplates\decimal.cshtml" />
+    <Content Include="Views\ActionResult\CustomViewEngine.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\decimal.cshtml" />
     <Content Include="Views\AuthorizationAttribute\Public.cshtml" />
     <Content Include="Views\AuthorizationAttribute\Secret.cshtml" />
     <Content Include="Views\AuthorizationAttribute\AllowAnonymous.cshtml" />
     <Content Include="Views\ModelBinding\Create.cshtml" />
     <Content Include="Views\ModelBinding\CreateJson.cshtml" />
     <Content Include="Views\ModelBinding\CreateDayMonthYear.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Genres.cshtml" />
+    <Content Include="Views\EditorAndDisplayTemplates\Create.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\months.cshtml" />
+    <Content Include="Views\ModelBinding\BindToValueTypeList.cshtml" />
+    <Content Include="Views\ModelBinding\BindToReferenceTypeList.cshtml" />
+    <Content Include="Views\ModelBinding\BindToReferenceTypeNonSequentialList.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Collection.cshtml" />
+    <Content Include="Views\ModelBinding\_ModelBinderArrayViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -339,9 +356,9 @@
     <Folder Include="Areas\RequestLifeCycle\Models\" />
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
-    <Folder Include="Views\EditorAndDisplayTemplates\" />
-    <Folder Include="Views\EditorTemplates\" />
     <Folder Include="Views\Logging\" />
+    <Folder Include="Views\Movies\" />
+    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

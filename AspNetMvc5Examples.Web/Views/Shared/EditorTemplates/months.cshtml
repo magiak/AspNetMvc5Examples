@@ -1,0 +1,8 @@
+﻿@using AspNetMvc5Examples.Web.Controllers
+@model int
+
+@{
+    var months = EditorAndDisplayTemplatesController.GetMonthSelectListItems();
+}
+
+@Html.DropDownListFor(m => Model, months, new { @class = "form-control" })

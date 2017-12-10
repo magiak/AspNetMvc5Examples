@@ -24,8 +24,6 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
-                    <li>@*@Html.ActionLink("Contact", "Contact", "Home")*@</li>
                     
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Action Result<span class="caret"></span></a>
@@ -34,6 +32,14 @@
                             <li>@Html.ActionLink("Content", "ContentAction", "ActionResult")</li>
                             <li>@Html.ActionLink("Http Not Found", "HttpNotFoundAction", "ActionResult")</li>
                             <li>@Html.ActionLink("Add line breaks", "LineBreaksContentAction", "ActionResult")</li>
+                            <li>@Html.ActionLink("Custom View Engine", "CustomViewEngine", "ActionResult")</li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Editor Templates<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Create", "Create", "EditorAndDisplayTemplates")</li>
                         </ul>
                     </li>
                     
@@ -53,7 +59,12 @@
                             <li>@Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)</li>
                             <li>@Html.ActionLink("To Int", "BindToInt", "ModelBinding", new { Value = int.MaxValue }, null)</li>
                             <li>@Html.ActionLink("To DateTime", "BindToDateTime", "ModelBinding", new { Value = DateTime.Now }, null)</li>
-                            <li>@Html.ActionLink("To ViewModel", "BindToViewModel", "ModelBinding", new { Name = "My Name",  }, null)</li>
+                            <li>@Html.ActionLink("To ViewModel", "BindToViewModel", "ModelBinding", new { Name = "My Name", }, null)</li>
+                            <li>@Html.ActionLink("To Int Array", "BindToValueTypeList", "ModelBinding")</li>
+                            <li>@Html.ActionLink("To View Model Array", "BindToReferenceTypeList", "ModelBinding")</li>
+                            <li>@Html.ActionLink("To Non Sequential Array", "BindToReferenceTypeNonSequentialList", "ModelBinding")</li>
+                            
+                            
                             <li>@Html.ActionLink("To Child ViewModel ComplexType", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", Child = new ModelBinderChildViewModel { ChildName = "My Child Name" } }, null)</li>
                             <li>@Html.ActionLink("To Child ViewModel ChildName", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", ChildName = "My Child Name" }, null)</li>
                             <li>@Html.ActionLink("To Child ViewModel RouteValueDictionary", "BindToChildViewModel", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>

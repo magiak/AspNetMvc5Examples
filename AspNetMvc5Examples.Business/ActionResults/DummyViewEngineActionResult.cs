@@ -32,7 +32,7 @@ namespace AspNetMvc5Examples.Business.ActionResults
             var actionName = context.RouteData.GetRequiredString("action");
 
             var filePath = context.HttpContext.Server.MapPath(string.Format(this.viewLocationFormats[0], actionName, controllerName));
-            return filePath; // TODO: Nejdrive zkontroluj zda soubor existuje
+            return filePath; 
         }
     }
 }

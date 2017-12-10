@@ -128,3 +128,4 @@ C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\Micros
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\BeginCollectionItem.dll

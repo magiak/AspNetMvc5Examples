@@ -35,16 +35,16 @@ namespace AspNetMvc5Examples.Web
             // http://localhost/Order/Details/1/1
             // http://localhost/Order/Details?userId=1&orderId=1
             // Pouziti v pripade slozeneho klice
-            routes.MapRoute(
-                name: "Orders",
-                url: "Order/{action}/{userId}/{orderId}",
-                defaults: new
-                {
-                    controller = "Order", 
-                    action = "Index",
-                    userId = UrlParameter.Optional,
-                    orderId = UrlParameter.Optional
-                });
+            //routes.MapRoute(
+            //    name: "Orders",
+            //    url: "Order/{action}/{userId}/{orderId}",
+            //    defaults: new
+            //    {
+            //        controller = "Order", 
+            //        action = "Index",
+            //        userId = UrlParameter.Optional,
+            //        orderId = UrlParameter.Optional
+            //    });
 
             routes.MapRoute(
                 name: "Movies",
@@ -52,7 +52,7 @@ namespace AspNetMvc5Examples.Web
                 defaults: new
                 {
                     controller = "Movies",
-                    action = "Release"
+                    action = "Released"
                 },
                 constraints: new // Regular expression
                 {

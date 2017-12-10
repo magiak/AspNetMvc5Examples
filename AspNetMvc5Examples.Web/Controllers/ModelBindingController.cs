@@ -1,6 +1,7 @@
 ﻿namespace AspNetMvc5Examples.Web.Controllers
 {
     using System;
+    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Linq;
     using System.Web.Mvc;
@@ -10,7 +11,7 @@
 
     public class ModelBindingController : Controller
     {
-        #region Basic binding
+        #region Basic Binding
         public ActionResult BindToString(string value)
         {
             return this.Content(value);
@@ -53,6 +54,60 @@
         }
         #endregion
 
+        #region Array Binding
+
+        public ActionResult BindToValueTypeList()
+        {
+            var list = new List<int> { 1, 2, 3 };
+
+            return this.View(list);
+        }
+
+        [HttpPost]
+        public ActionResult BindToValueTypeList(List<int> list)
+        {
+            return this.Content(string.Join(",", list));
+        }
+
+        public ActionResult BindToReferenceTypeList()
+        {
+            var list = new List<ModelBinderArrayViewModel>
+            {
+                new ModelBinderArrayViewModel { Value = "1. value" },
+                new ModelBinderArrayViewModel { Value = "2. value" },
+                new ModelBinderArrayViewModel { Value = "3. value" },
+            };
+
+            return this.View(list);
+        }
+
+        [HttpPost]
+        public ActionResult BindToReferenceTypeList(List<ModelBinderChildViewModel> list)
+        {
+            return this.Content(string.Join(",", list.Select(x => x.ChildName)));
+        }
+
+        public ActionResult BindToReferenceTypeNonSequentialList()
+        {
+            var list = new List<ModelBinderArrayViewModel>
+            {
+                new ModelBinderArrayViewModel { Index = "1index", Value = "1. value" },
+                new ModelBinderArrayViewModel { Index = "2index", Value = "2. value" },
+                new ModelBinderArrayViewModel { Index = "3index", Value = "3. value" },
+            };
+
+            return this.View(list);
+        }
+
+        [HttpPost]
+        public ActionResult BindToReferenceTypeNonSequentialList(List<ModelBinderArrayViewModel> list)
+        {
+            return this.Content(string.Join(",", list.Select(x => x.Value)));
+        }
+
+        #endregion
+
+        #region View Model Binding
         public ActionResult Create()
         {
             return this.View(new ModelBinderViewModel());
@@ -70,6 +125,9 @@
             return this.View(viewModel);
         }
 
+        #endregion
+
+        #region Custom Model Binding
         public ActionResult CreateJson()
         {
             var viewModel = new JsonViewModel();
@@ -115,5 +173,6 @@
 
             return this.View(viewModel);
         }
+        #endregion
     }
 }

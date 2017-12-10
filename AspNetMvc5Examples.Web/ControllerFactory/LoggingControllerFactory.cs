@@ -29,7 +29,6 @@ namespace AspNetMvc5Examples.Web.ControllerFactory
 
         public void ReleaseController(IController controller)
         {
-            
         }
     }
 }

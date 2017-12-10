@@ -36,7 +36,7 @@ namespace AspNetMvc5Examples.Web.Controllers
             return this.DummyView(new { Title = "ASP.NET MVC 5" });
         }
 
-        public ActionResult Index()
+        public ActionResult CustomViewEngine()
         {
             return this.View();
         }
