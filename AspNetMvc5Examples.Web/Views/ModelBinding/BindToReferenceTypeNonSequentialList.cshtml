@@ -32,3 +32,25 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+
+@section Scripts
+{
+    <script type="text/javascript">
+        @*$('#addrow').on('click', function () {
+            $.get(@Url.Action(""))
+                .done(function (partialView) {
+                    $('#new-Employee').append(partialView);
+                })
+                .fail(function() {
+                    
+                });
+        });*@
+        $(function() {
+            $(".delete-row").on("click", function () {
+                $(this).parents(".form-group").remove();
+                return false;
+            });
+        });
+    </script>
+}
