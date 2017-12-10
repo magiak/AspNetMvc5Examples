@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Examples";
+}
+
+<h2>Examples</h2>
+
+<div>
+    @if (this.User.Identity.Name == "lukaskmochitfacebook@gmail.com")
+    {
+        @: Hi, Lukáš Kmoch <br/>
+        <text>Hi, again from text</text>
+    }
+    else
+    {
+        @: Hi, someone
+    }
+
+    @{
+        int i = 5;
+        int u = 5;
+        int result = i + u;
+    }
+
+    5 + 5 = @result <br/>
+
+    <!--
+    <div>
+        Hi
+    </div>
+    -->
+
+    @*<div>
+        Hi
+    </div>*@
+
+    @{
+        string text = "Hi, ";
+    }
+
+    @* @textlukas Compilation Error *@
+    @text<text>Lukas</text><br/>
+    @(text)Petr<br/>
+
+    @{
+        Func<dynamic, object> b = @<strong>@item</strong>;
+    }
+
+    Hi, @b("Lukas") <br/>
+
+    @{
+        string htmlClass = "editor-for"; // null;
+    }
+
+    <input type="text" class="@htmlClass"/> <br/>
+
+    <input type="text" class="@htmlClass row"/>
+
+    lukas@gmail.com - lukas@a
+    @@
+
+</div>
