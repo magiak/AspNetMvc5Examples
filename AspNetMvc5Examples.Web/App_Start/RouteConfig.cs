@@ -60,6 +60,8 @@ namespace AspNetMvc5Examples.Web
                     month = "\\d{2}" // /movies/release/2017/4 returns 404 NOT FOUND
                 }
             );
+
+            routes.MapMvcAttributeRoutes();
         }
     }
 }

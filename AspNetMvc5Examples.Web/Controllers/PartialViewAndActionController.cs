@@ -10,6 +10,7 @@
             return this.View();
         }
 
+        [ChildActionOnly]
         public PartialViewResult _Action()
         {
             string viewModel = "Action";
