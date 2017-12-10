@@ -10,19 +10,19 @@ namespace AspNetMvc5Examples.Web.Controllers
     {
         public ActionResult ViewBagAction()
         {
-            this.ViewBag.MyObject = "Hello";
+            this.ViewBag.MyObject = "Hello, from view bag";
             return this.View();
         }
 
         public ActionResult ViewDataAction()
         {
-            this.ViewData["MyObject"] = "Hello";
+            this.ViewData["MyObject"] = "Hello, from view data";
             return this.View();
         }
 
         public ActionResult TempDataAction()
         {
-            this.TempData["MyObject"] = "Hello";
+            this.TempData["MyObject"] = "Hello, from temp data"; // try with viewdata
             return this.RedirectToAction("TempDataAction2");
         }
 

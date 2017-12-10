@@ -232,6 +232,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PartialViewAndActionController.cs" />
     <Compile Include="Controllers\RazorSyntaxController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Models\ModelBinderArrayViewModel.cs" />
@@ -351,6 +352,10 @@
     <Content Include="Views\ViewBagViewDataAndTempData\ViewBagAction.cshtml" />
     <Content Include="Views\ViewBagViewDataAndTempData\ViewDataAction.cshtml" />
     <Content Include="Views\RazorSyntax\Examples.cshtml" />
+    <Content Include="Views\PartialViewAndAction\Index.cshtml" />
+    <Content Include="Views\PartialViewAndAction\_PartialView1.cshtml" />
+    <Content Include="Views\PartialViewAndAction\_PartialView2.cshtml" />
+    <Content Include="Views\PartialViewAndAction\_Action.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
