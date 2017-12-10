@@ -232,6 +232,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Models\ModelBinderArrayViewModel.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -346,6 +347,8 @@
     <Content Include="Views\ModelBinding\BindToReferenceTypeNonSequentialList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Collection.cshtml" />
     <Content Include="Views\ModelBinding\_ModelBinderArrayViewModel.cshtml" />
+    <Content Include="Views\ViewBagViewDataAndTempData\ViewBagAction.cshtml" />
+    <Content Include="Views\ViewBagViewDataAndTempData\ViewDataAction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -105,6 +105,13 @@
             return this.Content(string.Join(",", list.Select(x => x.Value)));
         }
 
+        public PartialViewResult _ModelBinderArrayViewModel()
+        {
+            var viewModel = new ModelBinderArrayViewModel();
+
+            return this.PartialView(viewModel);
+        }
+
         #endregion
 
         #region View Model Binding

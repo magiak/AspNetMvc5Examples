@@ -13,14 +13,16 @@
     <div class="form-horizontal">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @foreach (var viewModel in Model)
-        {
-            using(Html.BeginCollectionItem("list"))
+        <div id="rows">
+            @foreach (var viewModel in Model)
             {
-                Html.RenderPartial("_ModelBinderArrayViewModel", viewModel);     
+                Html.RenderPartial("_ModelBinderArrayViewModel", viewModel);    
             }
-        }
-
+        </div>
+        <div>
+            <input type="button" id="add-row" value="Add" class="btn btn-primary" />
+        </div>
+        
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -37,17 +39,20 @@
 @section Scripts
 {
     <script type="text/javascript">
-        @*$('#addrow').on('click', function () {
-            $.get(@Url.Action(""))
-                .done(function (partialView) {
-                    $('#new-Employee').append(partialView);
-                })
-                .fail(function() {
+        
+        $(function () {
+            $('#add-row').on('click', function () {
+                $.get("@Url.Action("_ModelBinderArrayViewModel", "ModelBinding")", function (partialView) {
+                        $('#rows').append(partialView);
+                    })
+                    .done(function () {
+                    })
+                    .fail(function() {
                     
-                });
-        });*@
-        $(function() {
-            $(".delete-row").on("click", function () {
+                    });
+            });
+
+            $("body").on("click", ".delete-row", function () {
                 $(this).parents(".form-group").remove();
                 return false;
             });
