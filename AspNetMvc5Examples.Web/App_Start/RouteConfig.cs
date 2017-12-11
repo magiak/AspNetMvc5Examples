@@ -46,20 +46,20 @@ namespace AspNetMvc5Examples.Web
             //        orderId = UrlParameter.Optional
             //    });
 
-            routes.MapRoute(
-                name: "Movies",
-                url: "movies/released/{year}/{month}",
-                defaults: new
-                {
-                    controller = "Movies",
-                    action = "Released"
-                },
-                constraints: new // Regular expression
-                {
-                    year = @"\d{4}", // year = @"2016 | 2017", 
-                    month = "\\d{2}" // /movies/release/2017/4 returns 404 NOT FOUND
-                }
-            );
+            //routes.MapRoute(
+            //    name: "Movies",
+            //    url: "movies/released/{year}/{month}",
+            //    defaults: new
+            //    {
+            //        controller = "Movies",
+            //        action = "Released"
+            //    },
+            //    constraints: new // Regular expression
+            //    {
+            //        year = @"\d{4}", // year = @"2016 | 2017", 
+            //        month = "\\d{2}" // /movies/release/2017/4 returns 404 NOT FOUND
+            //    }
+            //);
 
             //routes.MapMvcAttributeRoutes();
         }

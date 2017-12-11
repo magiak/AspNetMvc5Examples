@@ -235,6 +235,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PartialViewAndActionController.cs" />
     <Compile Include="Controllers\RazorSyntaxController.cs" />
+    <Compile Include="Controllers\RemoteValidationController.cs" />
+    <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Models\ModelBinderArrayViewModel.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
@@ -251,10 +253,12 @@
     <Compile Include="Models\JsonViewModel.cs" />
     <Compile Include="Models\ModelBinderViewModel.cs" />
     <Compile Include="Models\SearchViewModel.cs" />
+    <Compile Include="Models\ValidationViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Validations\GreaterThanAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -282,6 +286,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\aspnetmvcexamples.jquery.validate.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.2.1.js" />
@@ -336,7 +341,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\ViewEngineAction.cshtml" />
+    <Content Include="Views\ActionResult\ViewEngineAction.cshtml" />
     <Content Include="Views\ActionResult\CustomViewEngine.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\decimal.cshtml" />
     <Content Include="Views\AuthorizationAttribute\Public.cshtml" />
@@ -362,6 +367,9 @@
     <Content Include="Views\PartialViewAndAction\_Action.cshtml" />
     <Content Include="Views\Ajax\Index.cshtml" />
     <Content Include="Views\Ajax\_AjaxPartial.cshtml" />
+    <Content Include="Views\ActionResult\ViewBagAction.cshtml" />
+    <Content Include="Views\ActionResult\ViewDataAction.cshtml" />
+    <Content Include="Views\Validation\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -375,6 +383,7 @@
     <Folder Include="Views\Logging\" />
     <Folder Include="Views\Movies\" />
     <Folder Include="Views\Order\" />
+    <Folder Include="Views\RemoteValidation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

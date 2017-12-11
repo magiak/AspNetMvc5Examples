@@ -26,11 +26,11 @@
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            ViewEngines.Engines.Clear();
-            ViewEngines.Engines.Add(new RazorViewEngine());
+            //ViewEngines.Engines.Clear();
+            //ViewEngines.Engines.Add(new RazorViewEngine());
 
             //ViewEngines.Engines.Add(new CustomViewEngine()); // Hi, from Views folder
-            //ViewEngines.Engines.Insert(0, new CustomViewEngine()); // Hi, from CustomViews folder
+            ViewEngines.Engines.Insert(0, new CustomViewEngine()); // Hi, from CustomViews folder
         }
     }
 }

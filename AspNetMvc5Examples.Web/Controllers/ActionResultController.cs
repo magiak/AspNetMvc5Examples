@@ -40,5 +40,30 @@ namespace AspNetMvc5Examples.Web.Controllers
         {
             return this.View();
         }
+
+        public ActionResult ViewBagAction()
+        {
+            this.ViewBag.MyKey = "Hi";
+            //this.ViewBag["mykey2"] = "Hi 2";
+            return this.View();
+        }
+
+        public ActionResult ViewDataAction()
+        {
+            this.ViewData["mykey"] = "Hi";
+            return this.View();
+        }
+
+        public ActionResult MyRedirectAction()
+        {
+            this.TempData["mykey"] = "Hi";
+            return this.RedirectToAction("MyRedirectAction2");
+        }
+
+        public ActionResult MyRedirectAction2()
+        {
+            var result = this.TempData["mykey"].ToString();
+            return this.Content(result);
+        }
     }
 }
