@@ -84,6 +84,16 @@
                             <li>@Html.ActionLink("Day, month and year to DateTime", "CreateDayMonthYear", "ModelBinding")</li>
                         </ul>
                     </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Exceptions<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("ExceptionAction", "ExceptionAction", "HandleErrors")</li>
+                            <li>@Html.ActionLink("BadRequestAction", "BadRequestAction", "HandleErrors")</li>
+                            <li>@Html.ActionLink("UnauthorizedAction", "UnauthorizedAction", "HandleErrors")</li>
+                            <li>@Html.ActionLink("InternalServerErrorAction", "InternalServerErrorAction", "HandleErrors")</li>
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

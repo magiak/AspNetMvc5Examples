@@ -242,6 +242,7 @@
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\EditorAndDisplayTemplatesController.cs" />
+    <Compile Include="Controllers\HandleErrorsController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -354,6 +355,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="InternalServerError.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -430,11 +432,6 @@
     <Folder Include="Areas\RequestLifeCycle\Models\" />
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
-    <Folder Include="Views\Default\" />
-    <Folder Include="Views\Logging\" />
-    <Folder Include="Views\Movies\" />
-    <Folder Include="Views\Order\" />
-    <Folder Include="Views\RemoteValidation\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
