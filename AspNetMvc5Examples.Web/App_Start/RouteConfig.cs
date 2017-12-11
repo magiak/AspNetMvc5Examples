@@ -61,7 +61,7 @@ namespace AspNetMvc5Examples.Web
                 }
             );
 
-            routes.MapMvcAttributeRoutes();
+            //routes.MapMvcAttributeRoutes();
         }
     }
 }
