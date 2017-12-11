@@ -129,6 +129,9 @@ C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\BeginCollectionItem.dll
-C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\AspNetMvc5Examples.Business.dll.config
-C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\AspNetMvc5Examples.Entities.dll.config
-C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\obj\Debug\AspNetMvc5Examples.Web.csproj.CoreCompileInputs.cache
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Net.Http.Formatting.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Web.Http.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Web.Http.WebHost.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Net.Http.Formatting.xml
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Web.Http.xml
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Web\bin\System.Web.Http.WebHost.xml
