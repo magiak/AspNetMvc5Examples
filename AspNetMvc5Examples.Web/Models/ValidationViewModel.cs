@@ -27,7 +27,7 @@
         [Remote("ValidateRemoteAttribute", "RemoteValidation")]
         public string RemoteAttribute { get; set; }
 
-        [GreaterThan(nameof(OtherProperty), "Property has to be greater than OtherProperty")]
+        [GreaterThan(nameof(OtherProperty), "Property r to be greater than OtherProperty")]
         public int Property { get; set; }
 
         public int OtherProperty { get; set; }

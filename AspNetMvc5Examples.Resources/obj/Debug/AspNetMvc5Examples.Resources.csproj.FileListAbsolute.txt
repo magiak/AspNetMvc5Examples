@@ -1,0 +1,13 @@
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\bin\Debug\AspNetMvc5Examples.Resources.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\bin\Debug\AspNetMvc5Examples.Resources.pdb
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\bin\Debug\cs-CZ\AspNetMvc5Examples.Resources.resources.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\bin\Debug\sk-SK\AspNetMvc5Examples.Resources.resources.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.csprojResolveAssemblyReference.cache
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.AspNetMvc5ExamplesResource.resources
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.AspNetMvc5ExamplesResource.cs-CZ.resources
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.AspNetMvc5ExamplesResource.sk-SK.resources
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.csproj.GenerateResource.Cache
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\cs-CZ\AspNetMvc5Examples.Resources.resources.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\sk-SK\AspNetMvc5Examples.Resources.resources.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.dll
+C:\Users\lukas\Source\Repos\AspNetMvc5Examples\AspNetMvc5Examples.Resources\obj\Debug\AspNetMvc5Examples.Resources.pdb

@@ -100,7 +100,7 @@
         }
 
         [HttpPost]
-        public ActionResult BindToReferenceTypeNonSequentialList(List<ModelBinderArrayViewModel> list)
+        public ActionResult BindToReferenceTypeNonSequentialList(IEnumerable<ModelBinderArrayViewModel> list)
         {
             return this.Content(string.Join(",", list.Select(x => x.Value)));
         }
@@ -142,7 +142,7 @@
         }
 
         [HttpPost]
-        public ActionResult CreateJson([ModelBinder(typeof(JsonModelBinder))] ModelBinderViewModel viewModel)
+        public ActionResult CreateJson( ModelBinderViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
