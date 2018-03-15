@@ -52,8 +52,8 @@
         <!-- end #sidebar -->
         <!-- begin #content -->
         @*<div id="content" class="content">
-            @RenderBody()
-        </div>*@
+                @RenderBody()
+            </div>*@
 
         <div id="content" class="content">
             <!-- begin panel -->
@@ -98,6 +98,18 @@
     <script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
     <script src="../assets/js/demo/dashboard-v2.min.js"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
+
+
+    <script src="../assets/plugins/highlight/highlight.common.js"></script>
+    <script src="../assets/js/demo/render.highlight.js"></script>
+    <!-- ================== END PAGE LEVEL JS ================== -->
+    <script>
+        $(document).ready(function () {
+            //App.init();
+            
+            Highlight.init();
+        });
+    </script>
 
     <script>
         $(document).ready(function () {

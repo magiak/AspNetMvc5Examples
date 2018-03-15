@@ -30,6 +30,13 @@
             <li class="nav-header">Navigation</li>
             <li>
                 <a href="@Url.Action("Index", "Home")">
+                    <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Dashboard", "Home")">
                     <i class="fa fa-th-large"></i>
                     <span>Dashboard</span>
                 </a>
@@ -94,18 +101,14 @@
                 </a>
             </li>
 
-            @* Authorization Attribute  *@
-            <li class="has-sub">
-                <a href="javascript:;">
-                    <b class="caret"></b>
-                    <i class="fa fa-key"></i>
-                    <span>Authorization Attribute</span>
+            <li class="nav-header">2. Day</li>
+
+            @* Validation *@
+            <li>
+                <a href="@Url.Action("Create", "Validation")">
+                    <i class="fa fa-list-ol"></i>
+                    <span>Validation</span>
                 </a>
-                <ul class="sub-menu">
-                    <li>@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
-                    <li>@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
-                    <li>@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
-                </ul>
             </li>
 
             @* Model Binding *@
@@ -136,6 +139,30 @@
                 </ul>
             </li>
 
+            <li class="nav-header">3. Day</li>
+
+            @* Ninject *@
+            <li>
+                <a href="@Url.Action("Index", "Ninject")">
+                    <i class="fa fa-list-ol"></i>
+                    <span>Ninject</span>
+                </a>
+            </li>
+
+            @* Authorization Attribute  *@
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-key"></i>
+                    <span>Authorization</span>
+                </a>
+                <ul class="sub-menu">
+                    <li>@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
+                    <li>@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
+                    <li>@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
+                </ul>
+            </li>
+
             @* Exceptions *@
             <li class="has-sub">
                 <a href="javascript:;">
@@ -150,10 +177,6 @@
                     <li>@Html.ActionLink("InternalServerErrorAction", "InternalServerErrorAction", "HandleErrors")</li>
                 </ul>
             </li>
-
-            <li class="nav-header">2. Day</li>
-
-            <li class="nav-header">3. Day</li>
 
             <!-- begin sidebar minify button -->
             <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
