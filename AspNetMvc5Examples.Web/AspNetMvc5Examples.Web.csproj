@@ -258,7 +258,7 @@
     <Compile Include="Controllers\AuthorizationAttributeController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
-    <Compile Include="Controllers\EditorAndDisplayTemplatesController.cs" />
+    <Compile Include="Controllers\HtmlHelpersController.cs" />
     <Compile Include="Controllers\HandleErrorsController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -5783,8 +5783,8 @@
     <Content Include="Views\ModelBinding\CreateJson.cshtml" />
     <Content Include="Views\ModelBinding\CreateDayMonthYear.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Genres.cshtml" />
-    <Content Include="Views\EditorAndDisplayTemplates\Create.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\months.cshtml" />
+    <Content Include="Views\HtmlHelpers\EditorAndDisplayTemplates.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Months.cshtml" />
     <Content Include="Views\ModelBinding\BindToValueTypeList.cshtml" />
     <Content Include="Views\ModelBinding\BindToReferenceTypeList.cshtml" />
     <Content Include="Views\ModelBinding\BindToReferenceTypeNonSequentialList.cshtml" />

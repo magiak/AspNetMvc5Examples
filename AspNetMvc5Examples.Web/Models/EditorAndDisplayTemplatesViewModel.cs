@@ -15,7 +15,7 @@
 
         public List<SelectListItem> MonthItems { get; set; }
 
-        [UIHint("months")]
+        [UIHint("Months")]
         public int Month2 { get; set; }
     }
 }

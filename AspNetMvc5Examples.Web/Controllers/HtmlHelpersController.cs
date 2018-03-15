@@ -7,10 +7,10 @@
     using AspNetMvcExamples.Business.FlashMessages;
     using Models;
 
-    public class EditorAndDisplayTemplatesController : Controller
+    public class HtmlHelpersController : Controller
     {
         // GET: EditorAndDisplayTemplates
-        public ActionResult Create()
+        public ActionResult EditorAndDisplayTemplates()
         {
             var viewModel = new EditorAndDisplayTemplatesViewModel();
             this.InitializeViewModel(viewModel);
@@ -18,7 +18,7 @@
         }
 
         [HttpPost]
-        public ActionResult Create(EditorAndDisplayTemplatesViewModel viewModel)
+        public ActionResult EditorAndDisplayTemplates(EditorAndDisplayTemplatesViewModel viewModel)
         {
             if (!this.ModelState.IsValid)
             {

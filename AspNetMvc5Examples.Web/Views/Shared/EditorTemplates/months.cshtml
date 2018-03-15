@@ -2,7 +2,7 @@
 @model int
 
 @{
-    var months = EditorAndDisplayTemplatesController.GetMonthSelectListItems();
+    var months = HtmlHelpersController.GetMonthSelectListItems();
 }
 
 @Html.DropDownListFor(m => Model, months, new { @class = "form-control" })

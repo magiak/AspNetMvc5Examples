@@ -5,17 +5,15 @@
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
-    using Business.ModelBinding;
     using Business.MyViewEngines;
     using Business.ValueProvider;
     using ControllerFactory;
-    using Models;
 
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
-            ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
+            //ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
 
             ValueProviderFactories.Factories.Insert(0, new MyValueProviderFactory());
 
