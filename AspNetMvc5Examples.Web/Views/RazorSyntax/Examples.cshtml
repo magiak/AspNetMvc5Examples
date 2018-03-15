@@ -1,62 +1,198 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Examples";
+    string code = string.Empty;
 }
 
 <h2>Examples</h2>
 
 <div>
-    @if (this.User.Identity.Name == "lukaskmochitfacebook@gmail.com")
-    {
-        @: Hi, Lukáš Kmoch <br/>
-        <text>Hi, again from text</text>
-    }
-    else
-    {
-        @: Hi, someone
-    }
-
-    @{
-        int i = 5;
-        int u = 5;
-        int result = i + u;
-    }
-
-    5 + 5 = @result <br/>
-
-    <!--
+    <h4>C#</h4>
     <div>
-        Hi
+        @{
+            code = @"@if (Request.IsAuthenticated)
+{
+    <span>Log off</span>
+}
+else
+{
+    <span>Log in</span>
+}
+<br />";
+        }
+
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
+
+        @if (Request.IsAuthenticated)
+        {
+            <span>Log off</span>
+        }
+        else
+        {
+            <span>Log in</span>
+        }
     </div>
-    -->
+    <br />
 
-    @*<div>
-        Hi
-    </div>*@
+    <h4>@@: and &lt;text&gt;&lt;/text&gt;</h4>
+    <div>
+        @{
+            code = @"@if (Request.IsAuthenticated)
+{
+    @: Hi, @User.Identity.Name <br />
+    <text>Hi, @User.Identity.Name from text</text>
+}
+else
+{
+    @: Hi, someone
+}";
+        }
 
-    @{
-        string text = "Hi, ";
-    }
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
 
-    @* @textlukas Compilation Error *@
-    @text<text>Lukas</text><br/>
-    @(text)Petr<br/>
+        @if (Request.IsAuthenticated)
+        {
+            @: Hi, @User.Identity.Name <br />
+            <text>Hi, @User.Identity.Name from text</text>
+        }
+        else
+        {
+            @: Hi, someone
+        }
+    </div>
+    <br />
 
-    @{
-        Func<dynamic, object> b = @<strong>@item</strong>;
-    }
+    <h4>Calculate and show</h4>
+    <div>
+        @{
+            code = @"@{
+    int i = 2;
+    int u = 3;
+    int result = i + u;
+}
 
-    Hi, @b("Lukas") <br/>
+2 + 3 = @result <br />
+2 + 3 = @(2 + 3) <br />
+";
+        }
 
-    @{
-        string htmlClass = "editor-for"; // null;
-    }
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
 
-    <input type="text" class="@htmlClass"/> <br/>
+        @{
+            int i = 5;
+            int u = 5;
+            int result = i + u;
+        }
 
-    <input type="text" class="@htmlClass row"/>
+        5 + 5 = @result <br />
+        5 + 5 = @(5 + 5) <br />
+    </div>
+    <br />
 
-    lukas@gmail.com - lukas@a
-    @@
+    <h4>Comments</h4>
+    <div>
+        @{
+            code = @"<!--
+<div>
+    Hi
+</div>
+-->
+@*
+<div>
+    Hi
+</div>
+*@";
+        }
 
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
+
+        <!--
+        <div>
+            Hi
+        </div>
+        -->
+        @*
+            <div>
+                Hi
+            </div>
+        *@
+    </div>
+
+    <h4>Mixing code and text</h4>
+    <div>
+        @{
+            code = @"@{
+    string hi = ""Hi, "";
+}
+
+@* @hilukas => Throws Compilation Error *@
+@hi<text>Lukas</text><br />
+@(hi)Petr<br />";
+        }
+
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
+
+        @{
+            string hi = "Hi, ";
+        }
+
+        @* @hilukas => Throws Compilation Error *@
+        @hi<text>Lukas</text><br />
+        @(hi)Petr<br />
+    </div>
+    <br />
+
+    <h4>Delegate</h4>
+    <div>
+        @{
+            code = @"@{
+    Func<dynamic, object> b = @<strong>@item</strong>;
+}
+
+Hi, @b(""Lukas"") <br />";
+        }
+
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
+
+        @{
+            Func<dynamic, object> b = @<strong>@item</strong>;
+        }
+
+        Hi, @b("Lukas") <br />
+    </div>
+    <br />
+
+    <h4>HTML Class</h4>
+    <div>
+        @{
+            code = @"@{
+    string htmlClass = ""editor-for""; // null;
+}
+
+<input type=""text"" class=""@htmlClass"" /> <br />
+<input type=""text"" class=""@htmlClass myclass"" />  <br />";
+        }
+
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
+
+        @{
+            string htmlClass = "editor-for"; // null;
+        }
+
+        <input type="text" class="@htmlClass" /> <br />
+        <input type="text" class="@htmlClass myclass" />  <br />
+    </div>
+    <br />
+
+    <h4>Escaping @@</h4>
+    <div>
+        @{
+            code = @"lukas.kmoch@gmail.com - lukas@a
+@@";
+        }
+
+        <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
+
+        lukas.kmoch@gmail.com - lukas@a
+        @@
+    </div>
 </div>
