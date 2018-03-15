@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNet.Identity
+
+<div id="header" class="header navbar-default">
+    <!-- begin navbar-header -->
+    <div class="navbar-header">
+        <a href="@Url.Action("Index", "Home")" class="navbar-brand">@*<span class="navbar-logo"></span>*@ <b>ASP.NET</b> MVC 5</a>
+        <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- end navbar-header -->
+    <!-- begin header-nav -->
+    <ul class="navbar-nav navbar-right">
+        <li>
+            <form class="navbar-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter keyword" />
+                    <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </li>
+        @*@Html.Partial("ColorAdmin/Notifications")*@
+        <li class="dropdown navbar-user">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                @*<img src="../content/Profilovka.PNG" alt="" />*@
+                @if (Request.IsAuthenticated)
+                {
+                    <span class="d-none d-md-inline">@User.Identity.GetUserName()</span> <b class="caret"></b>
+                }
+                else
+                {
+                    <span>Register & Log in</span>
+                }
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                @*<a href="javascript:;" class="dropdown-item">Edit Profile</a>
+                <a href="javascript:;" class="dropdown-item"><span class="badge badge-danger pull-right">2</span> Inbox</a>
+                <a href="javascript:;" class="dropdown-item">Calendar</a>
+                <a href="javascript:;" class="dropdown-item">Setting</a>*@
+                @*<div class="dropdown-divider"></div>*@
+
+                @if (Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item">Log off</a>
+                    }
+                }
+                else
+                {
+                    @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "dropdown-item" })
+                    @Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class= "dropdown-item" })
+                }
+            </div>
+        </li>
+    </ul>
+    <!-- end header navigation right -->
+</div>
