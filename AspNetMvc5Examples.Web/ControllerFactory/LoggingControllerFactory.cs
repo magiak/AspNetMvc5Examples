@@ -8,7 +8,7 @@ namespace AspNetMvc5Examples.Web.ControllerFactory
     using Business.Logging;
     using Controllers;
 
-    class LoggingControllerFactory : IControllerFactory
+    public class LoggingControllerFactory : IControllerFactory
     {
         public IController CreateController(RequestContext requestContext, string controllerName)
         {
