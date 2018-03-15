@@ -120,6 +120,7 @@
     <Compile Include="FlashMessages\AlertResult.cs" />
     <Compile Include="FlashMessages\AlertType.cs" />
     <Compile Include="FlashMessages\TempDataExtensions.cs" />
+    <Compile Include="Logging\DatabaseLoggingService.cs" />
     <Compile Include="Logging\LoggingService.cs" />
     <Compile Include="ModelBinding\DayMonthYearModelBinder.cs" />
     <Compile Include="ModelBinding\JsonModelBinder.cs" />

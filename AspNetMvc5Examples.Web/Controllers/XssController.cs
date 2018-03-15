@@ -23,7 +23,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateInput(true)]
+        [ValidateInput(false)]
         [ValidateAntiForgeryToken]
         public ActionResult Create(XssViewModel viewModel)
         {
