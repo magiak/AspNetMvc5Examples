@@ -1,7 +1,8 @@
-﻿using System.Web.Mvc;
-
-namespace AspNetMvc5Examples.Web.Controllers
+﻿namespace AspNetMvc5Examples.Web.Controllers
 {
+    using System.Web.Mvc;
+    using AspNetMvc5Examples.Business.Extensions;
+    using AspNetMvc5Examples.Entities.Models;
     using Base;
 
     public class ActionResultController : AspNetMvc5ExamplesControllerBase
@@ -28,7 +29,21 @@ namespace AspNetMvc5Examples.Web.Controllers
 
         public ActionResult HtmlAction(string title = null, string body = null)
         {
-            return this.Html(title, body);
+            return this.Html(title, body); // AspNetMvc5ExamplesControllerBase
+        }
+
+        public ActionResult XmlAction()
+        {
+            XmlModel obj = new XmlModel
+            {
+                Name = "Hello",
+                Child = new XmlChildModel
+                {
+                    ChildName = "World"
+                }
+            };
+
+            return this.Xml(obj); // Extension
         }
 
         public ActionResult ViewEngineAction()

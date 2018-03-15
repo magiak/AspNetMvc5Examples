@@ -115,6 +115,8 @@
     <Compile Include="ActionResults\LineBreaksContentResult.cs" />
     <Compile Include="ActionResults\DummyViewEngineActionResult.cs" />
     <Compile Include="ActionResults\HtmlActionResult.cs" />
+    <Compile Include="ActionResults\XmlResult.cs" />
+    <Compile Include="Extensions\ActionResultExtensions.cs" />
     <Compile Include="FlashMessages\ActionResultExtensions.cs" />
     <Compile Include="FlashMessages\Alert.cs" />
     <Compile Include="FlashMessages\AlertResult.cs" />
