@@ -33,7 +33,7 @@ else
     </div>
     <br />
 
-    <h4>@@: and &lt;text&gt;&lt;/text&gt;</h4>
+    <h4>@("@: and <text></text>")</h4>
     <div>
         @{
             code = @"@if (Request.IsAuthenticated)
@@ -78,13 +78,13 @@ else
         <div class="hljs-wrapper"><pre><code class="html">@code</code></pre></div>
 
         @{
-            int i = 5;
-            int u = 5;
+            int i = 2;
+            int u = 3;
             int result = i + u;
         }
 
-        5 + 5 = @result <br />
-        5 + 5 = @(5 + 5) <br />
+        2 + 3 = @result <br />
+        2 + 3 = @(2 + 3) <br />
     </div>
     <br />
 
