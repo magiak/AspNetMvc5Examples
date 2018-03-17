@@ -26,7 +26,7 @@
 
         public static ActionResult WithErrorAlert(this ActionResult result, string message)
         {
-            return new AlertResult(result, AlertType.Error, message);
+            return new AlertResult(result, AlertType.Danger, message);
         }
     }
 }
