@@ -1,4 +1,11 @@
-﻿<div id="sidebar" class="sidebar">
+﻿@{
+    var currentController = this.ViewContext.RouteData.Values["Controller"].ToString();
+    var currentAction = this.ViewContext.RouteData.Values["Action"].ToString();
+
+    Func<string, string, string> isActive = (action, controller) => ((string.IsNullOrEmpty(action) || action == currentAction) && controller == currentController) ? "active" : string.Empty;
+}
+
+<div id="sidebar" class="sidebar">
     <!-- begin sidebar scrollbar -->
     <div data-scrollbar="true" data-height="100%">
         <!-- begin sidebar user -->
@@ -28,14 +35,14 @@
         <!-- begin sidebar nav -->
         <ul class="nav">
             <li class="nav-header">Navigation</li>
-            <li>
+            <li class="@isActive("Index", "Home")">
                 <a href="@Url.Action("Index", "Home")">
                     <i class="fa fa-home"></i>
                     <span>Home</span>
                 </a>
             </li>
 
-            <li>
+            <li class="@isActive("Dashboard", "Home")">
                 <a href="@Url.Action("Dashboard", "Home")">
                     <i class="fa fa-th-large"></i>
                     <span>Dashboard</span>
@@ -45,7 +52,7 @@
             <li class="nav-header">1. Day</li>
 
             @* Action Results *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "ActionResult")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-table"></i>
@@ -63,7 +70,7 @@
             </li>
 
             @* Razor Syntax*@
-            <li>
+            <li class="@isActive("Examples", "RazorSyntax")">
                 <a href="@Url.Action("Examples", "RazorSyntax")">
                     <i class="fa fa-eye"></i>
                     <span>Razor View Syntax</span>
@@ -71,7 +78,7 @@
             </li>
 
             @* Partial Views And Actions*@
-            <li>
+            <li class="@isActive("Index", "PartialViewAndAction")">
                 <a href="@Url.Action("Index", "PartialViewAndAction")">
                     <i class="fa fa-cubes"></i>
                     <span>Partial Views And Actions</span>
@@ -80,84 +87,73 @@
 
 
             @* ViewBag ViewData *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "ViewBagViewDataAndTempData")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-suitcase"></i>
                     <span>ViewBag ViewData</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>@Html.ActionLink("ViewBag", "ViewBagAction", "ViewBagViewDataAndTempData")</li>
-                    <li>@Html.ActionLink("ViewData", "ViewDataAction", "ViewBagViewDataAndTempData")</li>
-                    <li>@Html.ActionLink("TempData", "TempDataAction", "ViewBagViewDataAndTempData")</li>
+                    <li class="@isActive("ViewBagAction", "ViewBagViewDataAndTempData")">@Html.ActionLink("ViewBag", "ViewBagAction", "ViewBagViewDataAndTempData")</li>
+                    <li class="@isActive("ViewDataAction", "ViewBagViewDataAndTempData")">@Html.ActionLink("ViewData", "ViewDataAction", "ViewBagViewDataAndTempData")</li>
+                    <li class="@isActive("TempDataAction", "ViewBagViewDataAndTempData")">@Html.ActionLink("TempData", "TempDataAction", "ViewBagViewDataAndTempData")</li>
                 </ul>
             </li>
 
             @* HTML Helpers *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "HtmlHelpers")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-list-ol"></i>
                     <span>HTML Helpers</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>@Html.ActionLink("Templates", "EditorAndDisplayTemplates", "HtmlHelpers")</li>
-                    <li>@Html.ActionLink("Modal", "Modal", "HtmlHelpers")</li>
-                    <li>@Html.ActionLink("Flash Messages", "FlashMessages", "HtmlHelpers")</li>
-                    <li>@Html.ActionLink("Inline Helper", "InlineHelper", "HtmlHelpers")</li>
+                    <li class="@isActive("EditorAndDisplayTemplates", "HtmlHelpers")">@Html.ActionLink("Templates", "EditorAndDisplayTemplates", "HtmlHelpers")</li>
+                    <li class="@isActive("Modal", "HtmlHelpers")">@Html.ActionLink("Modal", "Modal", "HtmlHelpers")</li>
+                    <li class="@isActive("FlashMessages", "HtmlHelpers")">@Html.ActionLink("Flash Messages", "FlashMessages", "HtmlHelpers")</li>
+                    <li class="@isActive("InlineHelper", "HtmlHelpers")">@Html.ActionLink("Inline Helper", "InlineHelper", "HtmlHelpers")</li>
                 </ul>
             </li>
 
             <li class="nav-header">2. Day</li>
 
             @* Validation *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "Validation")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-check-circle"></i>
                     <span>Validation</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>@Html.ActionLink("Data Annotations", "DataAnnotations", "Validation")</li>
-                    <li>@Html.ActionLink("Code Validation", "CodeValidation", "Validation")</li>
-                    <li>@Html.ActionLink("Remote Validation", "RemoteValidation", "Validation")</li>
-                    <li>@Html.ActionLink("Validation Attribute", "CustomValidationAttribute", "Validation")</li>
+                    <li class="@isActive("DataAnnotations", "Validation")">@Html.ActionLink("Data Annotations", "DataAnnotations", "Validation")</li>
+                    <li class="@isActive("CodeValidation", "Validation")">@Html.ActionLink("Code Validation", "CodeValidation", "Validation")</li>
+                    <li class="@isActive("RemoteValidation", "Validation")">@Html.ActionLink("Remote Validation", "RemoteValidation", "Validation")</li>
+                    <li class="@isActive("CustomValidationAttribute", "Validation")">@Html.ActionLink("Validation Attribute", "CustomValidationAttribute", "Validation")</li>
                 </ul>
             </li>
 
-
             @* Model Binding *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "ModelBinding")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-map"></i>
                     <span>Model Binding</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>@Html.ActionLink("To String", "BindToString", "ModelBinding", new { Value = "Hello" }, null)</li>
-                    <li>@Html.ActionLink("To Int", "BindToInt", "ModelBinding", new { Value = int.MaxValue }, null)</li>
-                    <li>@Html.ActionLink("To DateTime", "BindToDateTime", "ModelBinding", new { Value = DateTime.Now }, null)</li>
-                    <li>@Html.ActionLink("To ViewModel", "BindToViewModel", "ModelBinding", new { Name = "My Name", }, null)</li>
-                    <li>@Html.ActionLink("To Int Array", "BindToValueTypeList", "ModelBinding")</li>
-                    <li>@Html.ActionLink("To View Model Array", "BindToReferenceTypeList", "ModelBinding")</li>
-                    <li>@Html.ActionLink("To Non Sequential Array", "BindToReferenceTypeNonSequentialList", "ModelBinding")</li>
-
-
-                    <li>@Html.ActionLink("To Child ViewModel ComplexType", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", Child = new ModelBinderChildViewModel { ChildName = "My Child Name" } }, null)</li>
-                    <li>@Html.ActionLink("To Child ViewModel ChildName", "BindToChildViewModel", "ModelBinding", new { Name = "My Name", ChildName = "My Child Name" }, null)</li>
-                    <li>@Html.ActionLink("To Child ViewModel RouteValueDictionary", "BindToChildViewModel", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>
-                    <li>@Html.ActionLink("To ViewModel Exclude", "BindToViewModelExclude", "ModelBinding", new { Name = "My Name", }, null)</li>
-                    <li>@Html.ActionLink("To ViewModel Include", "BindToViewModelInclude", "ModelBinding", new RouteValueDictionary { { "Name", "My Name" }, { "Child.ChildName", "My Child Name" } }, null)</li>
-                    <li>@Html.ActionLink("Create", "Create", "ModelBinding")</li>
-                    <li>@Html.ActionLink("String to Json", "CreateJson", "ModelBinding")</li>
-                    <li>@Html.ActionLink("Day, month and year to DateTime", "CreateDayMonthYear", "ModelBinding")</li>
+                    <li class="@isActive("BasicMapping", "ModelBinding")">@Html.ActionLink("Basic Mapping", "BasicMapping", "ModelBinding", new { Value = "Hello" }, null)</li>
+                    <li class="@isActive("BindToValueTypeList", "ModelBinding")">@Html.ActionLink("To Int Array", "BindToValueTypeList", "ModelBinding")</li>
+                    <li class="@isActive("BindToReferenceTypeList", "ModelBinding")">@Html.ActionLink("To View Model Array", "BindToReferenceTypeList", "ModelBinding")</li>
+                    <li class="@isActive("BindToReferenceTypeNonSequentialList", "ModelBinding")">@Html.ActionLink("To Non Sequential Array", "BindToReferenceTypeNonSequentialList", "ModelBinding")</li>
+                    <li class="@isActive("BindToChild", "ModelBinding")">@Html.ActionLink("Bind To Child", "BindToChild", "ModelBinding")</li>
+                    <li class="@isActive("JsonModelBinder", "ModelBinding")">@Html.ActionLink("Json Model Binder", "JsonModelBinder", "ModelBinding")</li>
+                    <li class="@isActive("CreateDayMonthYear", "ModelBinding")">@Html.ActionLink("Create Day Month Year", "CreateDayMonthYear", "ModelBinding")</li>
                 </ul>
             </li>
 
             <li class="nav-header">3. Day</li>
 
             @* Ninject *@
-            <li>
+            <li class="has-sub @isActive("Index", "Ninject")">
                 <a href="@Url.Action("Index", "Ninject")">
                     <i class="fa fa-puzzle-piece"></i>
                     <span>Ninject</span>
@@ -165,31 +161,31 @@
             </li>
 
             @* Authorization Attribute  *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "AuthorizationAttribute")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-key"></i>
                     <span>Authorization</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
-                    <li>@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
-                    <li>@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
+                    <li class="@isActive("Public", "AuthorizationAttribute")">@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
+                    <li class="@isActive("Secret", "AuthorizationAttribute")">@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
+                    <li class="@isActive("AllowAnonymous", "AuthorizationAttribute")">@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
                 </ul>
             </li>
 
             @* Exceptions *@
-            <li class="has-sub">
+            <li class="has-sub @isActive(null, "HandleErrors")">
                 <a href="javascript:;">
                     <b class="caret"></b>
                     <i class="fa fa-bug"></i>
                     <span>Exceptions</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>@Html.ActionLink("ExceptionAction", "ExceptionAction", "HandleErrors")</li>
-                    <li>@Html.ActionLink("BadRequestAction", "BadRequestAction", "HandleErrors")</li>
-                    <li>@Html.ActionLink("UnauthorizedAction", "UnauthorizedAction", "HandleErrors")</li>
-                    <li>@Html.ActionLink("InternalServerErrorAction", "InternalServerErrorAction", "HandleErrors")</li>
+                    <li class="@isActive("ExceptionAction", "HandleErrors")">@Html.ActionLink("ExceptionAction", "ExceptionAction", "HandleErrors")</li>
+                    <li class="@isActive("BadRequestAction", "HandleErrors")">@Html.ActionLink("BadRequestAction", "BadRequestAction", "HandleErrors")</li>
+                    <li class="@isActive("UnauthorizedAction", "HandleErrors")">@Html.ActionLink("UnauthorizedAction", "UnauthorizedAction", "HandleErrors")</li>
+                    <li class="@isActive("InternalServerErrorAction", "HandleErrors")">@Html.ActionLink("InternalServerErrorAction", "InternalServerErrorAction", "HandleErrors")</li>
                 </ul>
             </li>
 

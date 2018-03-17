@@ -105,6 +105,13 @@
     <script src="../assets/plugins/highlight/highlight.common.js"></script>
     <script src="../assets/js/demo/render.highlight.js"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
+
+    @{
+        var currentController = this.ViewContext.RouteData.Values["Controller"].ToString();
+        var currentAction = this.ViewContext.RouteData.Values["Action"].ToString();
+    }
+
+
     <script>
         $(document).ready(function () {
             App.init();

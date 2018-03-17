@@ -1,31 +1,29 @@
-﻿@model List<AspNetMvc5Examples.Web.Models.ModelBinderArrayViewModel>
+﻿@model List<ModelBinderArrayViewModel>
 
 @{
     ViewBag.Title = "BindToValueTypeList";
 }
 
-<h2>BindToValueTypeList</h2>
+<h2>Bind To Reference Type NonSequential List</h2>
+<hr />
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div id="rows">
             @foreach (var viewModel in Model)
             {
-                Html.RenderPartial("_ModelBinderArrayViewModel", viewModel);    
+                Html.RenderPartial("_ModelBinderArrayViewModel", viewModel);
             }
         </div>
-        <div>
-            <input type="button" id="add-row" value="Add" class="btn btn-primary" />
-        </div>
-        
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="button" id="add-row" value="Add" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </div>
     </div>
@@ -39,7 +37,7 @@
 @section Scripts
 {
     <script type="text/javascript">
-        
+
         $(function () {
             $('#add-row').on('click', function () {
                 $.get("@Url.Action("_ModelBinderArrayViewModel", "ModelBinding")", function (partialView) {
@@ -48,13 +46,12 @@
                     .done(function () {
                     })
                     .fail(function() {
-                    
+
                     });
             });
 
-            $("body").on("click", ".delete-row", function () {
+            $(".delete").click(function () {
                 $(this).parents(".form-group").remove();
-                return false;
             });
         });
     </script>
