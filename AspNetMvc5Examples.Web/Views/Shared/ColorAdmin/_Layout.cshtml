@@ -10,17 +10,19 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
 
+    @Styles.Render("~/Content/css")
+
     <!-- ================== BEGIN BASE CSS STYLE ================== -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <link href="../assets/plugins/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
     <link href="../assets/plugins/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css" rel="stylesheet" />
     <link href="../assets/plugins/animate/animate.min.css" rel="stylesheet" />
-    
+
     @* DEFAULT *@
     @*<link href="../assets/css/default/style.min.css" rel="stylesheet" />
-    <link href="../assets/css/default/style-responsive.min.css" rel="stylesheet" />
-    <link href="../assets/css/default/theme/default.css" rel="stylesheet" id="theme" />*@
+        <link href="../assets/css/default/style-responsive.min.css" rel="stylesheet" />
+        <link href="../assets/css/default/theme/default.css" rel="stylesheet" id="theme" />*@
 
     @* AWESOME TRANSPARENT*@
     <link href="../assets/css/transparent/style.min.css" rel="stylesheet" />
@@ -30,7 +32,7 @@
     <!-- ================== END BASE CSS STYLE ================== -->
     <!-- ================== BEGIN PAGE LEVEL CSS STYLE ================== -->
     <link href="../assets/plugins/jquery-jvectormap/jquery-jvectormap.css" rel="stylesheet" />
-    <link href="../assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />
+    @*<link href="../assets/plugins/bootstrap-calendar/css/bootstrap_calendar.css" rel="stylesheet" />*@
     <link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
     <link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
     <!-- ================== END PAGE LEVEL CSS STYLE ================== -->
@@ -94,7 +96,7 @@
     <script src="../assets/plugins/nvd3/build/nv.d3.js"></script>
     <script src="../assets/plugins/jquery-jvectormap/jquery-jvectormap.min.js"></script>
     <script src="../assets/plugins/jquery-jvectormap/jquery-jvectormap-world-merc-en.js"></script>
-    <script src="../assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>
+    @*<script src="../assets/plugins/bootstrap-calendar/js/bootstrap_calendar.min.js"></script>*@
     <script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
     <script src="../assets/js/demo/dashboard-v2.min.js"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
@@ -105,16 +107,9 @@
     <!-- ================== END PAGE LEVEL JS ================== -->
     <script>
         $(document).ready(function () {
-            //App.init();
-            
-            Highlight.init();
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
             App.init();
             DashboardV2.init();
+            Highlight.init();
         });
     </script>
     @RenderSection("scripts", required: false)

@@ -304,8 +304,8 @@ var DashboardV2 = function () {
             handleVisitorsAreaChart();
             handleVisitorsDonutChart();
             handleVisitorsVectorMap();
-            handleScheduleCalendar();
-            //handleDashboardGritterNotification();
+            // handleScheduleCalendar();
+            // handleDashboardGritterNotification();
         }
     };
 }();
