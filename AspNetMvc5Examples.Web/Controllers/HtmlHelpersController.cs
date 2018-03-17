@@ -17,6 +17,24 @@
             return this.View(viewModel);
         }
 
+        public ActionResult Modal()
+        {
+            return this.View();
+        }
+
+        public ActionResult FlashMessages()
+        {
+            this.TempData.AddAlert(AlertType.Success, "My awesome bootstrap alert from custom HTML Helper");
+            this.TempData.AddAlert(AlertType.Danger, "Something went terribly wrong here");
+
+            return this.View();
+        }
+
+        public ActionResult InlineHelper()
+        {
+            return this.View();
+        }
+
         [HttpPost]
         public ActionResult EditorAndDisplayTemplates(EditorAndDisplayTemplatesViewModel viewModel)
         {

@@ -8,7 +8,6 @@
     {
         public static MvcHtmlString FlashMessages(this HtmlHelper htmlHelper, bool dismissible = false)
         {
-
             var stringBuilder = new StringBuilder();
             var alerts = htmlHelper.ViewContext.TempData.GetAllAlerts();
             foreach (Alert alert in alerts)
