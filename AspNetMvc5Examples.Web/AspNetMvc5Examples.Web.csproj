@@ -271,6 +271,7 @@
     <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Controllers\XssController.cs" />
+    <Compile Include="HtmlHelper\HighlightsJsExtension.cs" />
     <Compile Include="HtmlHelper\ModalHtmlHelperExtensions.cs" />
     <Compile Include="Models\ModelBinderArrayViewModel.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
@@ -5783,8 +5784,7 @@
     <Content Include="Views\AuthorizationAttribute\Public.cshtml" />
     <Content Include="Views\AuthorizationAttribute\Secret.cshtml" />
     <Content Include="Views\AuthorizationAttribute\AllowAnonymous.cshtml" />
-    <Content Include="Views\ModelBinding\Create.cshtml" />
-    <Content Include="Views\ModelBinding\CreateJson.cshtml" />
+    <Content Include="Views\ModelBinding\JsonModelBinder.cshtml" />
     <Content Include="Views\ModelBinding\CreateDayMonthYear.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Genres.cshtml" />
     <Content Include="Views\HtmlHelpers\EditorAndDisplayTemplates.cshtml" />
@@ -5823,6 +5823,8 @@
     <Content Include="Views\Validation\CodeValidation.cshtml" />
     <Content Include="Views\Validation\RemoteValidation.cshtml" />
     <Content Include="Views\Validation\CustomValidationAttribute.cshtml" />
+    <Content Include="Views\ModelBinding\BasicMapping.cshtml" />
+    <Content Include="Views\ModelBinding\BindToChild.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

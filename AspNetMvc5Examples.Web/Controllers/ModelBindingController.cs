@@ -11,45 +11,59 @@
 
     public class ModelBindingController : Controller
     {
+        public ActionResult BasicMapping()
+        {
+            return View();
+        }
+
         #region Basic Binding
         public ActionResult BindToString(string value)
         {
+            Debugger.Break();
             return this.Content(value);
         }
 
         public ActionResult BindToInt(int value)
         {
+            Debugger.Break();
             return this.Content(value.ToString());
         }
 
         public ActionResult BindToDateTime(DateTime value)
         {
+            Debugger.Break();
             return this.Content(value.ToLongDateString());
         }
 
         public ActionResult BindToViewModel(ModelBinderViewModel viewModel)
         {
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+            Debugger.Break();
             return this.Content(json);
         }
 
         public ActionResult BindToChildViewModel(ModelBinderViewModel viewModel)
         {
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+            Debugger.Break();
             return this.Content(json);
         }
 
         // Black list
         public ActionResult BindToViewModelExclude([Bind(Exclude = nameof(ModelBinderViewModel.Name))]ModelBinderViewModel viewModel)
         {
+            var data = this.HttpContext.Request.Form;
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+            Debugger.Break();
             return this.Content(json);
         }
 
         // White list
         public ActionResult BindToViewModelInclude([Bind(Include = nameof(ModelBinderViewModel.Name))]ModelBinderViewModel viewModel)
         {
+            var data = this.HttpContext.Request.Form;
             var json = JsonConvert.SerializeObject(viewModel, Formatting.Indented);
+            Debugger.Break();
             return this.Content(json);
         }
         #endregion
@@ -66,6 +80,11 @@
         [HttpPost]
         public ActionResult BindToValueTypeList(List<int> list)
         {
+            if(list == null)
+            {
+                return new EmptyResult();
+            }
+
             return this.Content(string.Join(",", list));
         }
 
@@ -111,17 +130,17 @@
 
             return this.PartialView(viewModel);
         }
-
         #endregion
 
         #region View Model Binding
-        public ActionResult Create()
+        // This action prepares data for JsonModelBinder
+        public ActionResult BindToChild()
         {
             return this.View(new ModelBinderViewModel());
         }
-        
+
         [HttpPost]
-        public ActionResult Create(ModelBinderViewModel viewModel)
+        public ActionResult BindToChild(ModelBinderViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
@@ -135,14 +154,14 @@
         #endregion
 
         #region Custom Model Binding
-        public ActionResult CreateJson()
+        public ActionResult JsonModelBinder()
         {
             var viewModel = new JsonViewModel();
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult CreateJson( ModelBinderViewModel viewModel)
+        public ActionResult JsonModelBinder([ModelBinder(typeof(JsonModelBinder))] ModelBinderViewModel viewModel)
         {
             if (this.ModelState.IsValid)
             {
