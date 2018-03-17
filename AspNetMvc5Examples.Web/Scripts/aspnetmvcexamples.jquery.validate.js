@@ -15,6 +15,7 @@
 
     // Add customgreaterthan jquery validation
     $.validator.addMethod("greaterthan", function (value, element, params) {
+        // console.log(params); // => #OtherProperty
         return parseInt(value) > parseInt($(params).val());
     });
 

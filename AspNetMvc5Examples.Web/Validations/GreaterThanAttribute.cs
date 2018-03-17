@@ -44,7 +44,7 @@
                 ValidationType = "greaterthan" // This is the name the jQuery adapter will use
             };
 
-            //"otherpropertyname" is the name of the jQuery parameter for the adapter, must be LOWERCASE!
+            // "otherpropertyname" is the name of the jQuery parameter for the adapter, must be LOWERCASE!
             greaterThanRule.ValidationParameters.Add("otherpropertyname", this.otherPropertyName);
 
             yield return greaterThanRule;

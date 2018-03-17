@@ -7,13 +7,12 @@
         // GET: RemoteValidation
         public JsonResult ValidateRemoteAttribute(string remoteAttribute)
         {
-            if (remoteAttribute.StartsWith("a"))
+            if (remoteAttribute.ToLower().StartsWith("h"))
             {
                 return this.Json(true, JsonRequestBehavior.AllowGet);
             }
 
-
-            return this.Json("Remote attribute has to starts with A", JsonRequestBehavior.AllowGet);
+            return this.Json("Value has to starts with character 'H'", JsonRequestBehavior.AllowGet);
         }
     }
 }

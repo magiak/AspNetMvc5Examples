@@ -1,10 +1,8 @@
 ﻿namespace AspNetMvc5Examples.Web.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
-    using Validations;
 
-    public class ValidationViewModel
+    public class DataAnnotationsValidationViewModel
     {
         [Required]
         public string Required { get; set; }
@@ -21,15 +19,9 @@
         [Range(1, 12)]
         public int Range { get; set; }
 
+        // https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
+        // \D => Matches any character other than a decimal digit.
         [RegularExpression("\\D")]
         public string RegularExpression { get; set; }
-
-        [Remote("ValidateRemoteAttribute", "RemoteValidation")]
-        public string RemoteAttribute { get; set; }
-
-        [GreaterThan(nameof(OtherProperty), "Property r to be greater than OtherProperty")]
-        public int Property { get; set; }
-
-        public int OtherProperty { get; set; }
     }
 }

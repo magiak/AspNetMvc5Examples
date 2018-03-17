@@ -94,22 +94,37 @@
             </li>
 
             @* HTML Helpers *@
-            <li>
-                <a href="@Url.Action("EditorAndDisplayTemplates", "HtmlHelpers")">
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
                     <i class="fa fa-list-ol"></i>
                     <span>HTML Helpers</span>
                 </a>
+                <ul class="sub-menu">
+                    <li>@Html.ActionLink("Templates", "EditorAndDisplayTemplates", "HtmlHelpers")</li>
+                    <li>@Html.ActionLink("Modal", "Modal", "HtmlHelpers")</li>
+                    <li>@Html.ActionLink("Flash Messages", "FlashMessages", "HtmlHelpers")</li>
+                    <li>@Html.ActionLink("Inline Helper", "InlineHelper", "HtmlHelpers")</li>
+                </ul>
             </li>
 
             <li class="nav-header">2. Day</li>
 
             @* Validation *@
-            <li>
-                <a href="@Url.Action("Create", "Validation")">
-                    <i class="fa fa-list-ol"></i>
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-check-circle"></i>
                     <span>Validation</span>
                 </a>
+                <ul class="sub-menu">
+                    <li>@Html.ActionLink("Data Annotations", "DataAnnotations", "Validation")</li>
+                    <li>@Html.ActionLink("Code Validation", "CodeValidation", "Validation")</li>
+                    <li>@Html.ActionLink("Remote Validation", "RemoteValidation", "Validation")</li>
+                    <li>@Html.ActionLink("Validation Attribute", "CustomValidationAttribute", "Validation")</li>
+                </ul>
             </li>
+
 
             @* Model Binding *@
             <li class="has-sub">
@@ -144,7 +159,7 @@
             @* Ninject *@
             <li>
                 <a href="@Url.Action("Index", "Ninject")">
-                    <i class="fa fa-list-ol"></i>
+                    <i class="fa fa-puzzle-piece"></i>
                     <span>Ninject</span>
                 </a>
             </li>
