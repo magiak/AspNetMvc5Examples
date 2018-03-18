@@ -10,8 +10,8 @@
         [AuthorizationFilter]
         [ActionFilter]
         [ResultFilter]
-        // [CustomActionFilter] // ActionFilterAttribute = easy way to implement ActionFilter and ResultFilter
         [ExceptionFilter]
+        //// [CustomActionFilter] // ActionFilterAttribute = easy way to implement ActionFilter and ResultFilter
         public ActionResult Index()
         {
             Debugger.Break(); // 3.
