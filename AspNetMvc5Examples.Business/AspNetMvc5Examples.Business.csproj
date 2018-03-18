@@ -112,6 +112,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Filters\CustomActionFilterAttribute.cs" />
+    <Compile Include="Filters\ExceptionFilter.cs" />
+    <Compile Include="Filters\ResultFilter.cs" />
+    <Compile Include="Filters\ActionFilter.cs" />
+    <Compile Include="Filters\AuthorizationFilter.cs" />
     <Compile Include="ActionResults\LineBreaksContentResult.cs" />
     <Compile Include="ActionResults\DummyViewEngineActionResult.cs" />
     <Compile Include="ActionResults\HtmlActionResult.cs" />

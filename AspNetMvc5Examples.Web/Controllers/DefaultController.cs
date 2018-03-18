@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace AspNetMvc5Examples.Web.Controllers
+﻿namespace AspNetMvc5Examples.Web.Controllers
 {
+    using System.Web.Mvc;
+
     public class DefaultController : Controller
     {
         // GET: Default
