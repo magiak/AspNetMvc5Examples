@@ -3,15 +3,15 @@
     using System;
     using System.Diagnostics;
     using System.Web.Mvc;
-    using AspNetMvc5Examples.Business.Filters;
+    using Business.Filters;
 
     public class FilterController : Controller
     {
         [AuthorizationFilter]
-        [ActionFilter]
+        [CustomActionFilter]
         [ResultFilter]
         [ExceptionFilter]
-        // [CustomActionFilter] // ActionFilterAttribute = easy way to implement ActionFilter and ResultFilter
+        // [BaseCustomActionFilter] // ActionFilterAttribute = easy way to implement CustomActionFilter and ResultFilter
         public ActionResult Index()
         {
             Debugger.Break(); // 3.

@@ -3,7 +3,7 @@
     using System.Diagnostics;
     using System.Web.Mvc;
 
-    public class CustomActionFilterAttribute : ActionFilterAttribute
+    public class BaseCustomActionFilterAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
