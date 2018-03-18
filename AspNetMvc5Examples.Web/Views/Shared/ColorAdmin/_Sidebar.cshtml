@@ -174,6 +174,19 @@
                 </ul>
             </li>
 
+            @* Filters *@
+            <li class="has-sub @isActive(null, "Filter")">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-filter"></i>
+                    <span>Filters</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("Index", "Filter")">@Html.ActionLink("All Filters", "Index", "Filter")</li>
+                    <li class="@isActive("OutputCache", "Filter")">@Html.ActionLink("Output Cache", "OutputCache", "Filter")</li>
+                </ul>
+            </li>
+
             @* Exceptions *@
             <li class="has-sub @isActive(null, "HandleErrors")">
                 <a href="javascript:;">

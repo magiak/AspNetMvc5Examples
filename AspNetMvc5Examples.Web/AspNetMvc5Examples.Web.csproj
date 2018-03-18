@@ -258,6 +258,7 @@
     <Compile Include="Controllers\AuthorizationAttributeController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HtmlHelpersController.cs" />
     <Compile Include="Controllers\HandleErrorsController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
@@ -5836,6 +5837,8 @@
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
+    <Folder Include="Views\Filter\" />
+    <Folder Include="Views\OutputCache\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
