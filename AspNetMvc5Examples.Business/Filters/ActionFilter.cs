@@ -8,11 +8,13 @@
         public void OnActionExecuting(ActionExecutingContext filterContext)
         {
             Debugger.Break(); // 2.
+            Debug.WriteLine("ActionFilter.OnActionExecuting");
         }
 
         public void OnActionExecuted(ActionExecutedContext filterContext)
         {
             Debugger.Break(); // 4.
+            Debug.WriteLine("ActionFilter.OnActionExecuted");
         }
     }
 }

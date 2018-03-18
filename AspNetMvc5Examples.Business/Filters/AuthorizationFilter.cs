@@ -8,6 +8,7 @@
         public void OnAuthorization(AuthorizationContext filterContext)
         {
             Debugger.Break(); // 1.
+            Debug.WriteLine("AuthorizationFilter.OnAuthorization");
         }
     }
 }
