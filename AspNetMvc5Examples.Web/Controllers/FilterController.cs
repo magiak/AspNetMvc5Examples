@@ -11,10 +11,11 @@
         [ActionFilter]
         [ResultFilter]
         [ExceptionFilter]
-        //// [CustomActionFilter] // ActionFilterAttribute = easy way to implement ActionFilter and ResultFilter
+        // [CustomActionFilter] // ActionFilterAttribute = easy way to implement ActionFilter and ResultFilter
         public ActionResult Index()
         {
             Debugger.Break(); // 3.
+            // throw new Exception("This will be catched by ExceptionFilter");
             return this.Content("Hello from FilterController.");
         }
 
