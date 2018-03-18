@@ -9,7 +9,7 @@
             // filters.Add(new HandleErrorAttribute());
 
             // filters.Add(new AuthorizationFilter());
-            // filters.Add(new ActionFilter());
+            // filters.Add(new CustomActionFilter());
             // filters.Add(new ResultFilter());
             // filters.Add(new ExceptionFilter());
         }
