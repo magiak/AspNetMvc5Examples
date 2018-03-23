@@ -77,6 +77,14 @@
                 </a>
             </li>
 
+            @* Razor Syntax*@
+            <li class="@isActive("Index", "JavaScriptSection")">
+                <a href="@Url.Action("Index", "JavaScriptSection")">
+                    <i class="fa fa-sign-in-alt"></i>
+                    <span>Razor View Sections</span>
+                </a>
+            </li>
+
             @* Partial Views And Actions*@
             <li class="@isActive("Index", "PartialViewAndAction")">
                 <a href="@Url.Action("Index", "PartialViewAndAction")">
@@ -84,7 +92,6 @@
                     <span>Partial Views And Actions</span>
                 </a>
             </li>
-
 
             @* ViewBag ViewData *@
             <li class="has-sub @isActive(null, "ViewBagViewDataAndTempData")">
@@ -199,6 +206,20 @@
                     <li class="@isActive("BadRequestAction", "HandleErrors")">@Html.ActionLink("BadRequestAction", "BadRequestAction", "HandleErrors")</li>
                     <li class="@isActive("UnauthorizedAction", "HandleErrors")">@Html.ActionLink("UnauthorizedAction", "UnauthorizedAction", "HandleErrors")</li>
                     <li class="@isActive("InternalServerErrorAction", "HandleErrors")">@Html.ActionLink("InternalServerErrorAction", "InternalServerErrorAction", "HandleErrors")</li>
+                </ul>
+            </li>
+
+            <li class="nav-header">Bonus</li>
+
+            @* Bonus *@
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-smile"></i>
+                    <span>AutoMapper</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("AutoMapperTest", "Movies")">@Html.ActionLink("AutoMapper", "AutoMapperTest", "Movies")</li>
                 </ul>
             </li>
 
