@@ -37,12 +37,16 @@
 
             Mapper.Initialize(cfg => cfg.AddProfile(new MyProfile()));
 
-            MvcApplication.InitializeCultureInfo();
         }
 
         protected void Application_Error()
         {
             this.HandleExeption();
+        }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
+            InitializeCultureInfo();
         }
 
         private void HandleExeption()
