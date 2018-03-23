@@ -50,6 +50,9 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="BeginCollectionItem, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
       <Private>True</Private>
@@ -162,6 +165,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -261,6 +265,8 @@
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HtmlHelpersController.cs" />
     <Compile Include="Controllers\HandleErrorsController.cs" />
+    <Compile Include="Controllers\JavaScriptSectionController.cs" />
+    <Compile Include="Controllers\LocalizationController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -5826,6 +5832,8 @@
     <Content Include="Views\Validation\CustomValidationAttribute.cshtml" />
     <Content Include="Views\ModelBinding\BasicMapping.cshtml" />
     <Content Include="Views\ModelBinding\BindToChild.cshtml" />
+    <Content Include="Views\JavaScriptSection\Index.cshtml" />
+    <Content Include="Views\Localization\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

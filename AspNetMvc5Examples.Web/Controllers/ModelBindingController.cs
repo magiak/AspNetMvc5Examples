@@ -101,9 +101,9 @@
         }
 
         [HttpPost]
-        public ActionResult BindToReferenceTypeList(List<ModelBinderChildViewModel> list)
+        public ActionResult BindToReferenceTypeList(List<ModelBinderArrayViewModel> list)
         {
-            return this.Content(string.Join(",", list.Select(x => x.ChildName)));
+            return this.Content(string.Join(",", list.Select(x => x.Value)));
         }
 
         public ActionResult BindToReferenceTypeNonSequentialList()

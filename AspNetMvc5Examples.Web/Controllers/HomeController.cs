@@ -1,5 +1,6 @@
 ﻿namespace AspNetMvc5Examples.Web.Controllers
 {
+    using System.Globalization;
     using System.Web.Mvc;
 
     public class HomeController : Controller
@@ -27,6 +28,5 @@
         {
             return View();
         }
-
     }
 }
