@@ -1,11 +1,14 @@
 ﻿namespace AspNetMvc5Examples.Web
 {
     using System;
+    using System.Globalization;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
+    using AspNetMvc5Examples.Business.AutoMapperProfiles;
     using AspNetMvc5Examples.Business.ModelBinding;
+    using AutoMapper;
     using Business.MyViewEngines;
     using Business.ValueProvider;
     using ControllerFactory;
@@ -31,6 +34,10 @@
 
             //ViewEngines.Engines.Add(new CustomViewEngine()); // Hi, from Views folder
             ViewEngines.Engines.Insert(0, new CustomViewEngine()); // Hi, from CustomViews folder
+
+            Mapper.Initialize(cfg => cfg.AddProfile(new MyProfile()));
+
+            MvcApplication.InitializeCultureInfo();
         }
 
         protected void Application_Error()
@@ -56,6 +63,31 @@
             else
             {
                 Console.WriteLine($"Exception occured: {exception.Message}");
+            }
+        }
+
+        private static void InitializeCultureInfo()
+        {
+            if (HttpContext.Current?.Session == null)
+            {
+                return;
+            }
+
+
+            if (HttpContext.Current.Session["Lang"] == null)
+            {
+                return;
+            }
+
+            CultureInfo cultureInfo;
+            var culture = HttpContext.Current.Session["Lang"];
+            if (culture != null)
+            {
+                cultureInfo = (CultureInfo)culture;
+
+
+                CultureInfo.CurrentCulture = cultureInfo;
+                CultureInfo.CurrentUICulture = cultureInfo;
             }
         }
     }
