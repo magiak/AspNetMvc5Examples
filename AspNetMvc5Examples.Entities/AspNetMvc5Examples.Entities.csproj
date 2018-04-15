@@ -94,6 +94,7 @@
     <Compile Include="Configurations\ApplicationUserConfiguration.cs" />
     <Compile Include="Configurations\OrderConfiguration.cs" />
     <Compile Include="DbContexts\ApplicationDbContext.cs" />
+    <Compile Include="Enums\Genre.cs" />
     <Compile Include="IdentityManagers\ApplicationUserManager.cs" />
     <Compile Include="IdentityManagers\IdentityMessageService\EmailService.cs" />
     <Compile Include="IdentityManagers\IdentityMessageService\SmsService.cs" />
@@ -109,6 +110,10 @@
     <Compile Include="Migrations\201712072331422_AddNickNameToApplicationUser.cs" />
     <Compile Include="Migrations\201712072331422_AddNickNameToApplicationUser.Designer.cs">
       <DependentUpon>201712072331422_AddNickNameToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804110918454_AddMovieTable.cs" />
+    <Compile Include="Migrations\201804110918454_AddMovieTable.Designer.cs">
+      <DependentUpon>201804110918454_AddMovieTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -139,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712072331422_AddNickNameToApplicationUser.resx">
       <DependentUpon>201712072331422_AddNickNameToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804110918454_AddMovieTable.resx">
+      <DependentUpon>201804110918454_AddMovieTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

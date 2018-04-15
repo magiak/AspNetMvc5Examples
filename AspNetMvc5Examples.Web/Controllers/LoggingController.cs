@@ -9,7 +9,7 @@ namespace AspNetMvc5Examples.Web.Controllers
     using System.Web.Routing;
     using Business.Logging;
 
-    public class LoggingController : IController
+    public class LoggingController : Controller
     {
         private readonly ILoggingService loggingService;
 
@@ -18,10 +18,10 @@ namespace AspNetMvc5Examples.Web.Controllers
             this.loggingService = loggingService;
         }
 
-        public void Execute(RequestContext requestContext)
+        protected override void Execute(RequestContext requestContext)
         {
             this.loggingService.Log("");
-            HttpContext.Current.Response.Write("Hello from logging controller");
+            requestContext.HttpContext.Response.Write("Hello from logging controller");
         }
     }
 }

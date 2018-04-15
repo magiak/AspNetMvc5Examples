@@ -49,6 +49,13 @@
                 </a>
             </li>
 
+            <li class="@isActive(null, "Movies")">
+                <a href="@Url.Action("Index", "Movies")">
+                    <i class="fa fa-film"></i>
+                    <span>Movies</span>
+                </a>
+            </li>
+
             <li class="nav-header">1. Day</li>
 
             @* Action Results *@
@@ -70,11 +77,16 @@
             </li>
 
             @* Razor Syntax*@
-            <li class="@isActive("Examples", "RazorSyntax")">
-                <a href="@Url.Action("Examples", "RazorSyntax")">
+            <li class="has-sub @isActive(null, "RazorSyntax")">
+                <a href="javascript:;">
+                    <b class="caret"></b>
                     <i class="fa fa-eye"></i>
                     <span>Razor View Syntax</span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("Examples", "RazorSyntax")">@Html.ActionLink("Examples", "Examples", "RazorSyntax")</li>
+                    <li class="@isActive("Lab", "RazorSyntax")">@Html.ActionLink("Lab", "Lab", "RazorSyntax")</li>
+                </ul>
             </li>
 
             @* Razor Syntax*@
@@ -132,6 +144,12 @@
                     <span>Validation</span>
                 </a>
                 <ul class="sub-menu">
+                    <li>
+
+                        @Html.ActionLink("Users", "Index", "User", new { area = "administration" }, null)
+
+                    </li>
+
                     <li class="@isActive("DataAnnotations", "Validation")">@Html.ActionLink("Data Annotations", "DataAnnotations", "Validation")</li>
                     <li class="@isActive("CodeValidation", "Validation")">@Html.ActionLink("Code Validation", "CodeValidation", "Validation")</li>
                     <li class="@isActive("RemoteValidation", "Validation")">@Html.ActionLink("Remote Validation", "RemoteValidation", "Validation")</li>
@@ -147,8 +165,10 @@
                     <span>Model Binding</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="@isActive("BasicMapping", "ModelBinding")">@Html.ActionLink("Basic Mapping", "BasicMapping", "ModelBinding", new { Value = "Hello" }, null)</li>
-                    <li class="@isActive("BindToValueTypeList", "ModelBinding")">@Html.ActionLink("To Int Array", "BindToValueTypeList", "ModelBinding")</li>
+                    <li class="@isActive("BasicMappingAnchor", "ModelBinding")">@Html.ActionLink("Basic Mapping Anchor", "BasicMappingAnchor", "ModelBinding")</li>
+                    <li class="@isActive("BasicMappingForm", "ModelBinding")">@Html.ActionLink("Basic Mapping Form", "BasicMappingForm", "ModelBinding")</li>
+                    <li class="@isActive("BindToValueTypeListInput", "ModelBinding")">@Html.ActionLink("To Int Array Input", "BindToValueTypeListInput", "ModelBinding")</li>
+                    <li class="@isActive("BindToValueTypeListHtmlHelper", "ModelBinding")">@Html.ActionLink("To Int Array Html Helper", "BindToValueTypeListHtmlHelper", "ModelBinding")</li>
                     <li class="@isActive("BindToReferenceTypeList", "ModelBinding")">@Html.ActionLink("To View Model Array", "BindToReferenceTypeList", "ModelBinding")</li>
                     <li class="@isActive("BindToReferenceTypeNonSequentialList", "ModelBinding")">@Html.ActionLink("To Non Sequential Array", "BindToReferenceTypeNonSequentialList", "ModelBinding")</li>
                     <li class="@isActive("BindToChild", "ModelBinding")">@Html.ActionLink("Bind To Child", "BindToChild", "ModelBinding")</li>

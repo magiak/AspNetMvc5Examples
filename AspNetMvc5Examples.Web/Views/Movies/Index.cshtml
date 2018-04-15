@@ -1,0 +1,41 @@
+﻿@model AspNetMvc5Examples.Entities.ViewModels.MovieViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div>
+    @Html.ActionLink("Create", "Create", null, new { @class = "btn btn-primary" })
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>ReleasedDate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Title</td>
+                <td>@Model.Genre</td>
+                <td>@Model.ReleasedDate</td>
+                <td>
+                    @{ var item = Model; }
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Released 2017/05</h3>
+    @Html.ActionLink("Movies release", "Released", "Movies", new { year = 2017, month = 5 }, null)
+
+    <h3>Delete</h3>
+    @Html.ActionLink("Bulk Delete", "Delete", "Movies", null, null)
+
+</div>
+

@@ -11,9 +11,20 @@
 
     public class ModelBindingController : Controller
     {
-        public ActionResult BasicMapping()
+        public ActionResult BasicMappingAnchor()
         {
             return View();
+        }
+
+        public ActionResult BasicMappingForm()
+        {
+            return View(new ModelBinderViewModel());
+        }
+
+        [HttpPost]
+        public ActionResult BasicMappingForm(ModelBinderViewModel model)
+        {
+            return this.Json(model);
         }
 
         #region Basic Binding
@@ -70,7 +81,12 @@
 
         #region Array Binding
 
-        public ActionResult BindToValueTypeList()
+        public ActionResult BindToValueTypeListInput()
+        {
+            return View();
+        }
+
+        public ActionResult BindToValueTypeListHtmlHelper()
         {
             var list = new List<int> { 1, 2, 3 };
 

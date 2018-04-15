@@ -10,6 +10,21 @@ namespace AspNetMvc5Examples.Web
             // Ignoruje pokus o pristup k HTTP handleru
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            // @Html.ActionLink("Movies released", "Released", "Movies", new { year=2017, month=5 }, null)
+            // WITH: /Movies/Released/2017/5
+            // WITHOUT: /Movies/Released?year=2017&month=5
+            //routes.MapRoute(
+            //    name: "Movies",
+            //    url: "movies/released/{year}/{month}",
+            //    defaults: new
+            //    {
+            //        controller = "Movies",
+            //        action = "Released"
+            //    }
+            //);
+
             // http://localhost/
             // http://localhost/home
             // http://localhost/HoMe/index // Case insensitive
@@ -45,23 +60,6 @@ namespace AspNetMvc5Examples.Web
             //        userId = UrlParameter.Optional,
             //        orderId = UrlParameter.Optional
             //    });
-
-            //routes.MapRoute(
-            //    name: "Movies",
-            //    url: "movies/released/{year}/{month}",
-            //    defaults: new
-            //    {
-            //        controller = "Movies",
-            //        action = "Released"
-            //    },
-            //    constraints: new // Regular expression
-            //    {
-            //        year = @"\d{4}", // year = @"2016 | 2017", 
-            //        month = "\\d{2}" // /movies/release/2017/4 returns 404 NOT FOUND
-            //    }
-            //);
-
-            //routes.MapMvcAttributeRoutes();
         }
     }
 }

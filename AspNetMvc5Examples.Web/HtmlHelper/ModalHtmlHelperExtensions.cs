@@ -6,17 +6,23 @@
     {
         public static MvcHtmlString ModalButton(this HtmlHelper htmlHelper, string id, string text)
         {
-            var result = $@"<button type=""button"" class=""btn btn-primary"" data-toggle=""modal"" data-target=""#{id}"">
+            var result = 
+$@"<button type=""button"" class=""btn btn-primary"" data-toggle=""modal"" data-target=""#{id}"">
   {text}
 </button>";
 
             return MvcHtmlString.Create(result);
         }
-
-
-        public static MvcHtmlString Modal(this HtmlHelper htmlHelper, string id, string title, string body, string primary = "Submit", string secondary = "Close")
+        
+        public static MvcHtmlString Modal(this HtmlHelper htmlHelper,
+            string id,
+            string title,
+            string body,
+            string primary = "Submit",
+            string secondary = "Close")
         {
-            var result = $@"<div class=""modal"" tabindex=""-1"" role=""dialog"" id=""{id}"">
+            var result = 
+$@"<div class=""modal"" tabindex=""-1"" role=""dialog"" id=""{id}"">
   <div class=""modal-dialog"" role=""document"">
     <div class=""modal-content"">
       <div class=""modal-header"">

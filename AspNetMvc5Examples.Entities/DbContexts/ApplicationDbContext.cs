@@ -22,6 +22,8 @@
 
         public virtual DbSet<Order> Orders { get; set; }
 
+        public virtual DbSet<Movie> Movies { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.AddFromAssembly(

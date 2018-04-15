@@ -13,5 +13,11 @@ namespace AspNetMvc5Examples.Web.Controllers
         {
             return this.View();
         }
+
+        // GET: Lab
+        public ActionResult Lab()
+        {
+            return this.View();
+        }
     }
 }

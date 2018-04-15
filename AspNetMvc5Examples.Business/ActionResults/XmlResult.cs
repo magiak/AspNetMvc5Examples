@@ -13,8 +13,9 @@ namespace AspNetMvc5Examples.Business.ActionResults
 
         public override void ExecuteResult(ControllerContext context)
         {
+            var objectType = this.objectToSerialize.GetType();
+            var xs = new System.Xml.Serialization.XmlSerializer(objectType);
             context.HttpContext.Response.Clear();
-            var xs = new System.Xml.Serialization.XmlSerializer(this.objectToSerialize.GetType());
             context.HttpContext.Response.ContentType = "text/xml";
             xs.Serialize(context.HttpContext.Response.Output, this.objectToSerialize);
         }
