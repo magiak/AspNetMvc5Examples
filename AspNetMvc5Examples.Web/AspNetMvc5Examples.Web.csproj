@@ -262,6 +262,7 @@
     <Compile Include="Controllers\AjaxController.cs" />
     <Compile Include="Controllers\AuthorizationAttributeController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
+    <Compile Include="Controllers\CookieAndSessionController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HtmlHelpersController.cs" />
@@ -5853,6 +5854,7 @@
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
+    <Folder Include="Views\CookieAndSession\" />
     <Folder Include="Views\Filter\" />
     <Folder Include="Views\MoviesApi\" />
     <Folder Include="Views\OutputCache\" />
