@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace AspNetMvc5Examples.Web.Controllers
@@ -13,7 +10,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         // cookie = per user on the client
         public ActionResult SaveCookie()
         {
-            this.HttpContext.Response.Cookies[Key].Value = "Hello from cookie";
+            this.HttpContext.Response.Cookies[Key].Value = "Hello from Cookie";
             this.HttpContext.Response.Cookies[Key].Expires = DateTime.Now.AddMinutes(5);
             return this.Content("Cookie Saved");
         }
@@ -26,7 +23,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         // Session = per user on the server
         public ActionResult SaveSession()
         {
-            this.HttpContext.Session[Key] = "Hello from session";
+            this.HttpContext.Session[Key] = "Hello from Session";
             return this.Content("Session Saved");
         }
 
@@ -35,6 +32,28 @@ namespace AspNetMvc5Examples.Web.Controllers
             return this.Content(this.HttpContext.Session[Key].ToString());
         }
 
-        // TODO application and cache
+        // Cache is shared between users and can be expired
+        public ActionResult SaveCache()
+        {
+            this.HttpContext.Cache[Key] = "Hello from Cache";
+            return this.Content("Cache Saved");
+        }
+
+        public ActionResult GetCache()
+        {
+            return this.Content(this.HttpContext.Cache[Key].ToString());
+        }
+
+        // Application is shared between users and can NOT be expired 
+        public ActionResult SaveApplication()
+        {
+            this.HttpContext.Application[Key] = "Hello from Application";
+            return this.Content("Application Saved");
+        }
+
+        public ActionResult GetApplication()
+        {
+            return this.Content(this.HttpContext.Application[Key].ToString());
+        }
     }
 }
