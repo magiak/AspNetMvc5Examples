@@ -254,6 +254,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\UserController.cs" />
     <Compile Include="Areas\RequestLifeCycle\RequestLifeCycleAreaRegistration.cs" />
     <Compile Include="ControllerFactory\DummyControllerFactory.cs" />
     <Compile Include="ControllerFactory\LoggingControllerFactory.cs" />
@@ -284,7 +285,6 @@
     <Compile Include="Controllers\ModelBindingController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Enums\Genres.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5796,7 +5796,7 @@
     <Content Include="Views\Shared\EditorTemplates\Genres.cshtml" />
     <Content Include="Views\HtmlHelpers\EditorAndDisplayTemplates.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Months.cshtml" />
-    <Content Include="Views\ModelBinding\BindToValueTypeList.cshtml" />
+    <Content Include="Views\ModelBinding\BindToValueTypeListHtmlHelper.cshtml" />
     <Content Include="Views\ModelBinding\BindToReferenceTypeList.cshtml" />
     <Content Include="Views\ModelBinding\BindToReferenceTypeNonSequentialList.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Collection.cshtml" />
@@ -5830,23 +5830,33 @@
     <Content Include="Views\Validation\CodeValidation.cshtml" />
     <Content Include="Views\Validation\RemoteValidation.cshtml" />
     <Content Include="Views\Validation\CustomValidationAttribute.cshtml" />
-    <Content Include="Views\ModelBinding\BasicMapping.cshtml" />
+    <Content Include="Views\ModelBinding\BindToValueTypeListInput.cshtml" />
     <Content Include="Views\ModelBinding\BindToChild.cshtml" />
     <Content Include="Views\JavaScriptSection\Index.cshtml" />
     <Content Include="Views\Localization\Index.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\RazorSyntax\Lab.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\ModelBinding\BasicMappingAnchor.cshtml" />
+    <Content Include="Views\ModelBinding\BasicMappingForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Administration\Views\User\" />
     <Folder Include="Areas\RequestLifeCycle\Controllers\" />
     <Folder Include="Areas\RequestLifeCycle\Models\" />
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
     <Folder Include="Views\Filter\" />
+    <Folder Include="Views\MoviesApi\" />
     <Folder Include="Views\OutputCache\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

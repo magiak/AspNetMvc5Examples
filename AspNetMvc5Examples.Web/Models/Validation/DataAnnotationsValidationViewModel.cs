@@ -19,7 +19,6 @@
         [Range(1, 12)]
         public int Range { get; set; }
 
-        // https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference
         // \D => Matches any character other than a decimal digit.
         [RegularExpression("\\D")]
         public string RegularExpression { get; set; }
