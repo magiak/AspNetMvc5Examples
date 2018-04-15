@@ -246,11 +246,27 @@
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
-                    <i class="fa fa-smile"></i>
+                    <i class="fa fa-globe"></i>
                     <span>Localization</span>
                 </a>
                 <ul class="sub-menu">
                     <li class="@isActive("Index", "Localization")">@Html.ActionLink("Localization", "Index", "Localization")</li>
+                </ul>
+            </li>
+
+            @* Exceptions *@
+            <li class="has-sub @isActive(null, "CookieAndSession")">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-archive"></i>
+                    <span>Cookie and Session</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("SaveCookie", "CookieAndSession")">@Html.ActionLink("Save Cookie", "SaveCookie", "CookieAndSession")</li>
+                    <li class="@isActive("GetCookie", "CookieAndSession")">@Html.ActionLink("Get Cookie", "GetCookie", "CookieAndSession")</li>
+                    <li class="@isActive("SaveSession", "CookieAndSession")">@Html.ActionLink("Save Session", "SaveSession", "CookieAndSession")</li>
+                    <li class="@isActive("GetSession", "CookieAndSession")">@Html.ActionLink("Get Session", "GetSession", "CookieAndSession")</li>
+
                 </ul>
             </li>
 
