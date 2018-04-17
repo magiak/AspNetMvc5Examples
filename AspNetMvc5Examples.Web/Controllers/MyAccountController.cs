@@ -5,6 +5,7 @@ using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace AspNetMvc5Examples.Web.Controllers
 {
@@ -36,7 +37,7 @@ namespace AspNetMvc5Examples.Web.Controllers
                 this.context.MyAspNetUsers.Add(user); // TODO save only password hash
                 this.context.SaveChanges();
 
-                this.AddAuthenticationCookie(user);
+                this.SetAuthCookie(user);
                 return this.RedirectToAction("Index", "Home");
             }
 
@@ -66,15 +67,18 @@ namespace AspNetMvc5Examples.Web.Controllers
 
             if (this.ModelState.IsValid)
             {
-                this.AddAuthenticationCookie(user);
+                this.SetAuthCookie(user);
                 return this.RedirectToAction("Index", "Home");
             }
 
             return View(user);
         }
 
-        private void AddAuthenticationCookie(MyAspNetUser user)
+        private void SetAuthCookie(MyAspNetUser user)
         {
+            // Real implementation is FormsAuthentication.SetAuthCookie();
+            // GetAuthCookie: https://github.com/Microsoft/referencesource/blob/master/System.Web/Security/FormsAuthentication.cs
+
             HttpCookie cookie = new HttpCookie(MyOwinMiddleware.AuthenticationKey);
             cookie.Value = $"{user.UserName}:{user.Password}";
             cookie.Expires = DateTime.Now.AddDays(1);
