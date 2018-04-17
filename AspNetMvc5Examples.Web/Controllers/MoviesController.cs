@@ -35,7 +35,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         
         public ActionResult AutoMapperTest()
         {
-            var movies = this.moviesDatabase.Select(x => Mapper.Map<Movie, MovieViewModel>(x));
+            var movies = this.context.Movies.Select(x => Mapper.Map<Movie, MovieViewModel>(x));
             return this.Json(movies, JsonRequestBehavior.AllowGet);
         }
 
@@ -50,9 +50,9 @@ namespace AspNetMvc5Examples.Web.Controllers
             return this.Content($"Year={year} Month={month}");
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            return this.View(this.viewModel);
+            return this.View(this.context.Movies.FirstOrDefault(x => x.Id == id));
         }
 
         public ActionResult Create()
@@ -89,6 +89,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         public ActionResult Delete(string[] array)
         {
             return this.Json(array, JsonRequestBehavior.AllowGet);
+            //return this.View("Index");
         }
 
         [HttpGet]
@@ -103,6 +104,13 @@ namespace AspNetMvc5Examples.Web.Controllers
         public ActionResult GetAll()
         {
             return this.Json(this.moviesDatabase, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        [Route("api/movies/{*ids}")]
+        public ActionResult Get(int[] ids)
+        {
+            return this.Json(this.moviesDatabase.FirstOrDefault(x => ids.Any(y => y == x.Id)), JsonRequestBehavior.AllowGet);
         }
 
         // Test binding

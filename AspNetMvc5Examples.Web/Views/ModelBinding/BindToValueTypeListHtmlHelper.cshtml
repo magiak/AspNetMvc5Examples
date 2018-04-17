@@ -9,7 +9,7 @@
 
 @Html.CodeSection(@"@Html.EditorFor(model => model[i], new { htmlAttributes = new { @class = ""form-control"" } })")
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("BindToValueTypeList", "ModelBinding"))
 {
     @Html.AntiForgeryToken()
 

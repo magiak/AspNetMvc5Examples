@@ -1,6 +1,7 @@
 ﻿namespace AspNetMvc5Examples.Web.HtmlHelper
 {
     using System.Web.Mvc;
+    using System.Web.Mvc.Html;
 
     public static class ModalHtmlHelperExtensions
     {
@@ -43,6 +44,16 @@ $@"<div class=""modal"" tabindex=""-1"" role=""dialog"" id=""{id}"">
 </div>";
 
             return MvcHtmlString.Create(result);
+        }
+
+        public static MvcHtmlString ModalPartial(this HtmlHelper htmlHelper,
+            string id,
+            string title,
+            string body,
+            string primary = "Submit",
+            string secondary = "Close")
+        {
+            return htmlHelper.Partial("_ModalTemplate", id);
         }
     }
 }
