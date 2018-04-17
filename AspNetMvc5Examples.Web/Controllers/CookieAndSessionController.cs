@@ -1,17 +1,21 @@
 ﻿using System;
+using System.Web;
 using System.Web.Mvc;
 
 namespace AspNetMvc5Examples.Web.Controllers
 {
     public class CookieAndSessionController : Controller
     {
-        private const string Key = "my-cookie";
+        private const string Key = "my-key";
 
         // cookie = per user on the client
         public ActionResult SaveCookie()
         {
-            this.HttpContext.Response.Cookies[Key].Value = "Hello from Cookie";
-            this.HttpContext.Response.Cookies[Key].Expires = DateTime.Now.AddMinutes(5);
+            HttpCookie cookie = new HttpCookie(Key);
+            cookie.Value = "Hello from Cookie";
+            cookie.Expires = DateTime.Now.AddMinutes(5);
+
+            this.HttpContext.Response.Cookies.Add(cookie);
             return this.Content("Cookie Saved");
         }
 
