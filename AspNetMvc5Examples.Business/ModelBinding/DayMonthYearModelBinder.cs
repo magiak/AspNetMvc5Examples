@@ -9,9 +9,10 @@
         {
             try
             {
-                var yearResult = bindingContext.ValueProvider.GetValue("Year");
-                var monthResult = bindingContext.ValueProvider.GetValue("Month");
-                var dayResult = bindingContext.ValueProvider.GetValue("Day");
+                var modelName = bindingContext.ModelName;
+                var yearResult = bindingContext.ValueProvider.GetValue($"{modelName}.Year");
+                var monthResult = bindingContext.ValueProvider.GetValue($"{modelName}.Month");
+                var dayResult = bindingContext.ValueProvider.GetValue($"{modelName}.Day");
 
                 int year = int.Parse(yearResult.AttemptedValue);
                 int month = int.Parse(monthResult.AttemptedValue);
