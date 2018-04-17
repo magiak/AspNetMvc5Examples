@@ -115,9 +115,14 @@
     <Compile Include="Migrations\201804110918454_AddMovieTable.Designer.cs">
       <DependentUpon>201804110918454_AddMovieTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804172008223_AddTableMyAspNetUsers.cs" />
+    <Compile Include="Migrations\201804172008223_AddTableMyAspNetUsers.Designer.cs">
+      <DependentUpon>201804172008223_AddTableMyAspNetUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MyAspNetUser.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\XmlModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804110918454_AddMovieTable.resx">
       <DependentUpon>201804110918454_AddMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804172008223_AddTableMyAspNetUsers.resx">
+      <DependentUpon>201804172008223_AddTableMyAspNetUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
