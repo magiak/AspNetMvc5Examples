@@ -273,6 +273,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MyAccountController.cs" />
     <Compile Include="Controllers\NinjectController.cs" />
     <Compile Include="Controllers\PartialViewAndActionController.cs" />
     <Compile Include="Controllers\RazorSyntaxController.cs" />
@@ -5843,6 +5844,9 @@
     <Content Include="Views\Movies\Delete.cshtml" />
     <Content Include="Views\ModelBinding\BasicMappingAnchor.cshtml" />
     <Content Include="Views\ModelBinding\BasicMappingForm.cshtml" />
+    <Content Include="Views\Shared\_ModalTemplate.cshtml" />
+    <Content Include="Views\MyAccount\Register.cshtml" />
+    <Content Include="Views\MyAccount\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

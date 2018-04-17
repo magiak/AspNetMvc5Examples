@@ -25,5 +25,16 @@
         {
             return this.Content(DateTime.Now.ToString());
         }
+
+        [MyActionFilter]
+        public ActionResult Test()
+        {
+            return this.Content("Hello wordl");
+        }
+
+        public ActionResult Test2()
+        {
+            return this.Content("Hello wordl 2");
+        }
     }
 }

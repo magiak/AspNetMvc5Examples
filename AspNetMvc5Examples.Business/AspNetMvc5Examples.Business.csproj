@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperProfiles\MyProfile.cs" />
+    <Compile Include="Filters\MyActionFilterAttribute.cs" />
     <Compile Include="Filters\BaseCustomActionFilterAttribute.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Filters\ResultFilter.cs" />
@@ -134,6 +135,8 @@
     <Compile Include="FlashMessages\TempDataExtensions.cs" />
     <Compile Include="Logging\DatabaseLoggingService.cs" />
     <Compile Include="Logging\LoggingService.cs" />
+    <Compile Include="Middleware\MyMiddleware.cs" />
+    <Compile Include="Middleware\MyOwinMiddleware.cs" />
     <Compile Include="ModelBinding\DayMonthYearModelBinder.cs" />
     <Compile Include="ModelBinding\JsonModelBinder.cs" />
     <Compile Include="MyViewEngines\CustomViewEngine.cs" />

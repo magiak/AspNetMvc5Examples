@@ -24,6 +24,8 @@
 
         public virtual DbSet<Movie> Movies { get; set; }
 
+        public virtual DbSet<MyAspNetUser> MyAspNetUsers { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.AddFromAssembly(
