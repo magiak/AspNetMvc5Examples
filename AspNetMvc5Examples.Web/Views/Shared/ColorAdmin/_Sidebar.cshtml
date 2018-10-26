@@ -73,6 +73,11 @@
                     <li>@Html.ActionLink("Xml Action", "XmlAction", "ActionResult")</li>
                     <li>@Html.ActionLink("View Engine Action", "ViewEngineAction", "ActionResult")</li>
                     <li>@Html.ActionLink("Custom View Engine", "CustomViewEngine", "ActionResult")</li>
+                    <li>@Html.ActionLink("File", "FileAction", "ActionResult")</li>
+                    <li>@Html.ActionLink("Released movies in 2017/01", "Released", "Movies", new { year = 2017, month = 12 }, null)</li>
+
+
+                    Released(int year, int month)
                 </ul>
             </li>
 
@@ -174,6 +179,7 @@
                     <li class="@isActive("BindToChild", "ModelBinding")">@Html.ActionLink("Bind To Child", "BindToChild", "ModelBinding")</li>
                     <li class="@isActive("JsonModelBinder", "ModelBinding")">@Html.ActionLink("Json Model Binder", "JsonModelBinder", "ModelBinding")</li>
                     <li class="@isActive("CreateDayMonthYear", "ModelBinding")">@Html.ActionLink("Create Day Month Year", "CreateDayMonthYear", "ModelBinding")</li>
+                    <li class="@isActive("SessionValueProvider", "ModelBinding")">@Html.ActionLink("Session Value Provider", "SessionValueProvider", "ModelBinding")</li>
                 </ul>
             </li>
 
@@ -270,6 +276,18 @@
                     <li class="@isActive("GetCache", "CookieAndSession")">@Html.ActionLink("Get Cache", "GetCache", "CookieAndSession")</li>
                     <li class="@isActive("SaveApplication", "CookieAndSession")">@Html.ActionLink("Save Application", "SaveApplication", "CookieAndSession")</li>
                     <li class="@isActive("GetApplication", "CookieAndSession")">@Html.ActionLink("Get Application", "GetApplication", "CookieAndSession")</li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-globe"></i>
+                    <span>Async / Task</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("WrongAsync", "Async")">@Html.ActionLink("WrongAsync", "WrongAsync", "Async")</li>
+                    <li class="@isActive("Async", "Async")">@Html.ActionLink("Async", "Async", "Async")</li>
                 </ul>
             </li>
 

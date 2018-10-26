@@ -9,7 +9,8 @@ namespace AspNetMvc5Examples.Business.AutoMapperProfiles
         public MyProfile()
         {
             // Movies
-            this.CreateMap<Movie, MovieViewModel>().ReverseMap();
+            this.CreateMap<Movie, MovieViewModel>()
+                .ReverseMap();
         }
     }
 }

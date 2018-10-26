@@ -13,8 +13,9 @@
     using Business.ValueProvider;
     using ControllerFactory;
 
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : System.Web.HttpApplication // NinjectHttpApplication
     {
+        // Nastaveni ninjectu je zakomentovano na radku 99
         protected void Application_Start()
         {
             //ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
@@ -41,7 +42,7 @@
 
         protected void Application_Error()
         {
-            this.HandleExeption();
+            this.HandleException();
         }
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
@@ -49,7 +50,7 @@
             InitializeCultureInfo();
         }
 
-        private void HandleExeption()
+        private void HandleException()
         {
             var exception = this.Server.GetLastError();
             HttpException httpException = exception as HttpException;
@@ -94,5 +95,26 @@
                 CultureInfo.CurrentUICulture = cultureInfo;
             }
         }
+
+        //protected override void OnApplicationStarted()
+        //{
+        //    base.OnApplicationStarted();
+
+        //    AreaRegistration.RegisterAllAreas();
+        //    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+        //    RouteConfig.RegisterRoutes(RouteTable.Routes);
+        //    BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+        //    AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile(new MovieProfile()));
+        //}
+
+        //protected override IKernel CreateKernel()
+        //{
+            //    var kernel = new StandardKernel();
+            //    kernel.Load(Assembly.GetExecutingAssembly());
+            //    //kernel.Load(new DefaultNinjectModule());
+            //    // kernel.Load(new INinjectModule[] { new DefaultNinjectModule() });
+            //    return kernel;
+        //}
     }
 }

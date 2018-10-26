@@ -23,6 +23,14 @@ namespace AspNetMvc5Examples.Web.Controllers
             new Movie(){ Id = 2, Title = "Pelisky" }
         };
 
+        private List<MovieViewModel> movies = new List<MovieViewModel>()
+        {
+            new MovieViewModel{ Id = 1, Title = "Homer", ReleasedDate = new DateTime(2017, 1, 1), },
+            new MovieViewModel{ Id = 2, Title = "Pelisky", ReleasedDate = new DateTime(2017, 2, 1) },
+            new MovieViewModel{ Id = 3, Title = "Pelisky", ReleasedDate = new DateTime(2017, 2, 1) },
+            new MovieViewModel{ Id = 4, Title = "Pelisky 2", ReleasedDate = new DateTime(2018, 1, 1) }
+        };
+
         private MovieViewModel viewModel = new MovieViewModel
         {
             Id = 1,
@@ -35,20 +43,24 @@ namespace AspNetMvc5Examples.Web.Controllers
         
         public ActionResult AutoMapperTest()
         {
-            var movies = this.context.Movies.Select(x => Mapper.Map<Movie, MovieViewModel>(x));
+            var movies = this.context.Movies;
             return this.Json(movies, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Index()
         {
-            return this.View(this.viewModel);
+            return this.View(this.movies);
         }
 
         // GET: Movies
+        //[Route("movies/released/{year:regex(\\d{4})}/{month:range(1,12)}")]
         public ActionResult Released(int year, int month)
         {
-            return this.Content($"Year={year} Month={month}");
+            var count = this.movies.Where(m => m.ReleasedDate.Year == year && m.ReleasedDate.Month == month).Count();
+            return this.Content($"Year={year} Month={month} => count {count}");
         }
+
+        [OutputCache(Duration = 10)]
 
         public ActionResult Details(int id)
         {
@@ -66,10 +78,12 @@ namespace AspNetMvc5Examples.Web.Controllers
         {
             if (this.ModelState.IsValid)
             {
-                var movie = new Movie()
-                {
-                    Title = viewModel.Title
-                };
+                //var movie = new Movie()
+                //{
+                //    Title = viewModel.Title
+                //};
+
+                var movie = Mapper.Map<Movie>(viewModel);
 
                 this.context.Set<Movie>().Add(movie);
                 this.context.SaveChanges();
@@ -89,7 +103,6 @@ namespace AspNetMvc5Examples.Web.Controllers
         public ActionResult Delete(string[] array)
         {
             return this.Json(array, JsonRequestBehavior.AllowGet);
-            //return this.View("Index");
         }
 
         [HttpGet]
@@ -123,5 +136,11 @@ namespace AspNetMvc5Examples.Web.Controllers
 
         //    return this.Content($"Id={id}");
         //}
+
+
+        public ActionResult Edit(int id)
+        {
+            return this.Content(id.ToString());
+        }
     }
 }

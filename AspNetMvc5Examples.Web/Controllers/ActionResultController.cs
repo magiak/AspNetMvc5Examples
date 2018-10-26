@@ -80,5 +80,10 @@
             var result = this.TempData["mykey"].ToString();
             return this.Content(result);
         }
+
+        public ActionResult FileAction()
+        {
+            return File(Server.MapPath("~/Content/site.css"), "text/css");
+        }
     }
 }

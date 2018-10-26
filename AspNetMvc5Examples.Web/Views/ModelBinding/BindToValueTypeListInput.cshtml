@@ -35,7 +35,7 @@
 <input type=""submit"" value=""Submit"" class=""btn btn-primary"" />
 }")
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("BindToValueTypeList", "ModelBinding"))
 {
     <input type="text" value="1,2,3" name="array" />
 
@@ -56,7 +56,7 @@
 <input type=""submit"" value=""Submit"" class=""btn btn-primary"" />
 }")
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("BindToValueTypeList", "ModelBinding"))
 {
     <input type="text" value="1" name="array" />
     <input type="text" value="2" name="array" />
@@ -78,10 +78,10 @@
     <input type=""submit"" value=""Submit"" class=""btn btn-primary"" />
 }")
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("BindToValueTypeList", "ModelBinding"))
 {
     <input type="text" value="1" name="array[0]" />
-    <input type="text" value="2" name="array[1]" />
+    @*<input type="text" value="2" name="array[1]" />*@
     <input type="text" value="3" name="array[2]" />
 
     <input type="submit" value="Submit" class="btn btn-primary" />

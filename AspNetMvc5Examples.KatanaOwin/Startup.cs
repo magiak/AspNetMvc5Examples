@@ -12,12 +12,15 @@
             // 1.
             //app.Run(ctx =>
             //{
-            //    return ctx.Response.WriteAsync("Hello, World!");
+            //    return ctx.Response
+            //        .WriteAsync("Hello, World!");
             //});
 
             //app.Run(async context =>
             //{
-            //    await context.Response.WriteAsync("Hello, World, Again!"); only the first delegate will run.
+            //    await context.Response
+            //        .WriteAsync("Hello, World, Again!");
+            ////    only the first delegate will run.
             //});
 
             // 2.
@@ -35,14 +38,16 @@
             // 6.
             //app.Use(async (context, next) =>
             //{
-            //    Console.WriteLine("Handling request.");
+            //    await context.Response.WriteAsync("Handling request.");
+            //    //Console.WriteLine("Handling request.");
             //    await next();
-            //    Console.WriteLine("Finished handling request.");
+            //    await context.Response.WriteAsync("Finished handling request.");
+            //    //Console.WriteLine("Finished handling request.");
             //});
 
             //app.Run(async context =>
             //{
-            //    Console.WriteLine("Hello, World!");
+            //    //Console.WriteLine("Hello, World!");
             //    await context.Response.WriteAsync("Hello, World!");
             //});
 
@@ -52,7 +57,7 @@
             // 8. Startup.Auth.cs -> ConfigureAuth
 
             // 9. BONUS :)
-            app.Map("/maptest", HandleMapTest); // http://localhost:8080/maptest
+            //app.Map("/maptest", HandleMapTest); // http://localhost:8080/maptest
         }
 
         private static void HandleMapTest(IAppBuilder app)
