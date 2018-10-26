@@ -74,6 +74,12 @@ namespace AspNetMvc5Examples.Web.Controllers
             return View(user);
         }
 
+        public ActionResult Logout()
+        {
+            this.SignOut();
+            return RedirectToAction("Index");
+        }
+
         private void SetAuthCookie(MyAspNetUser user)
         {
             // Real implementation is FormsAuthentication.SetAuthCookie();
@@ -84,6 +90,12 @@ namespace AspNetMvc5Examples.Web.Controllers
             cookie.Expires = DateTime.Now.AddDays(1);
 
             this.HttpContext.Response.Cookies.Add(cookie);
+        }
+
+        private void SignOut()
+        {
+            // FormsAuthentication.SignOut();
+            this.HttpContext.Response.Cookies.Remove(MyOwinMiddleware.AuthenticationKey);
         }
     }
 }

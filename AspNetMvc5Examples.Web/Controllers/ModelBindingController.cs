@@ -100,14 +100,14 @@
         }
 
         [HttpPost]
-        public ActionResult BindToValueTypeList(List<int> list)
+        public ActionResult BindToValueTypeList(List<int> array)
         {
-            if(list == null)
+            if(array == null)
             {
                 return new EmptyResult();
             }
 
-            return this.Content(string.Join(",", list));
+            return this.Content(string.Join(",", array));
         }
 
         public ActionResult BindToReferenceTypeList()
@@ -252,6 +252,21 @@
         public ActionResult HashSet(HashSet<int> values)
         {
             return this.Json(values, JsonRequestBehavior.AllowGet);
+        }
+        #endregion
+
+        #region Value providers
+        public ActionResult SessionValueProvider()
+        {
+            this.HttpContext.Session["myValue"] = "Hello world";
+
+            return this.View();
+        }
+
+        [HttpPost]
+        public ActionResult SessionValueProvider(string myValue)
+        {
+            return this.Content((string)this.HttpContext.Session["myValue"]);
         }
         #endregion
     }

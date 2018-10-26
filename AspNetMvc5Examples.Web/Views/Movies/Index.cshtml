@@ -1,4 +1,4 @@
-﻿@model AspNetMvc5Examples.Entities.ViewModels.MovieViewModel
+﻿@model List<AspNetMvc5Examples.Entities.ViewModels.MovieViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -18,16 +18,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>@Model.Id</td>
-                <td>@Model.Title</td>
-                <td>@Model.Genre</td>
-                <td>@Model.ReleasedDate</td>
-                <td>
-                    @{ var item = Model; }
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                </td>
-            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Genre</td>    
+                    <td>@item.ReleasedDate</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 
@@ -36,6 +38,20 @@
 
     <h3>Delete</h3>
     @Html.ActionLink("Bulk Delete", "Delete", "Movies", null, null)
-
 </div>
 
+@section scripts {
+    @Scripts.Render("~/bundles/datatable")
+
+    <script>
+
+        $(document).ready(function () {
+            //$("table").css("background-color", "red")
+
+            $("table").DataTable();
+        });
+
+
+    </script>
+
+}

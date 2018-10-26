@@ -88,5 +88,12 @@
 
             return this.View(viewModel);
         }
+
+        // LAB 9 - TODO
+        public ActionResult Create()
+        {
+            var viewModel = new DataAnnotationsValidationViewModel();
+            return this.View(viewModel);
+        }
     }
 }
