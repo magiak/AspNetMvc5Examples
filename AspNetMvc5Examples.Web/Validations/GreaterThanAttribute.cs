@@ -15,7 +15,7 @@
         {
             this.otherPropertyName = otherPropertyName;
         }
-
+        
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             ValidationResult validationResult = ValidationResult.Success;

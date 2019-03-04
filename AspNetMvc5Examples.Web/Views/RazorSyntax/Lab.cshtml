@@ -35,3 +35,7 @@ Title: @(model.Title)
 {
     @array[i].Id@:,
 }
+
+    
+LINQ <br />
+@string.Join(",", array.Select(x => x.Id))

@@ -154,6 +154,9 @@
       <HintPath>..\packages\Ninject.MVC5.3.2.0.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Rotativa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Rotativa.1.7.4-rc\lib\net45\Rotativa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -263,6 +266,7 @@
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AuthorizationAttributeController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
+    <Compile Include="Controllers\ButtonAndGridExamplesController.cs" />
     <Compile Include="Controllers\CookieAndSessionController.cs" />
     <Compile Include="Controllers\FilterController.cs" />
     <Compile Include="Controllers\HtmlHelpersController.cs" />
@@ -278,9 +282,11 @@
     <Compile Include="Controllers\PartialViewAndActionController.cs" />
     <Compile Include="Controllers\RazorSyntaxController.cs" />
     <Compile Include="Controllers\RemoteValidationController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Controllers\XssController.cs" />
+    <Compile Include="CustomTicketDataFormat\CustomSecureDataFormat.cs" />
     <Compile Include="Filters\MyExceptionFilter.cs" />
     <Compile Include="HtmlHelper\HighlightsJsExtension.cs" />
     <Compile Include="HtmlHelper\ModalHtmlHelperExtensions.cs" />
@@ -5886,6 +5892,10 @@
     <Content Include="assets\plugins\superbox\css\font\superboxicons.eot" />
     <Content Include="assets\plugins\superbox\css\font\superboxicons.ttf" />
     <Content Include="assets\plugins\superbox\css\font\superboxicons.woff" />
+    <Content Include="Rotativa\help-wkhtmltoimage.txt" />
+    <Content Include="Rotativa\help-wkhtmltopdf.txt" />
+    <Content Include="Rotativa\wkhtmltoimage.exe" />
+    <Content Include="Rotativa\wkhtmltopdf.exe" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.js" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap.min.js" />
     <Content Include="Scripts\DataTables\extensions\AutoFill\js\autoFill.bootstrap4.js" />
@@ -5962,6 +5972,7 @@
     <Content Include="Content\DataTables\extensions\RowReorder\css\semanticui.scss" />
     <Content Include="Content\DataTables\extensions\Buttons\css\mixins.scss" />
     <Content Include="Content\DataTables\extensions\Buttons\css\common.scss" />
+    <Content Include="App_Browsers\qt.browser" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\aspnetmvcexamples.jquery.validate.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -6097,6 +6108,11 @@
     <Content Include="Views\MyAccount\Register.cshtml" />
     <Content Include="Views\MyAccount\Login.cshtml" />
     <Content Include="Views\ModelBinding\SessionValueProvider.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\datetime.cshtml" />
+    <Content Include="Views\ActionResult\ViewPdfAction.cshtml" />
+    <Content Include="Views\ButtonAndGridExamples\Index.cshtml" />
+    <Content Include="Views\ActionResult\PDF.cshtml" />
+    <Content Include="Views\ButtonAndGridExamples\GridView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6113,6 +6129,7 @@
     <Folder Include="Views\Filter\" />
     <Folder Include="Views\MoviesApi\" />
     <Folder Include="Views\OutputCache\" />
+    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -63,7 +63,8 @@ namespace AspNetMvc5Examples.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ApplicationDbContext>().ToSelf().InRequestScope();
-            kernel.Bind<Business.Logging.ILoggingService>().To<Business.Logging.DatabaseLoggingService>();
+            kernel.Bind<Business.Logging.ILoggingService>()
+                .To<Business.Logging.DatabaseLoggingService>();
         }        
     }
 }

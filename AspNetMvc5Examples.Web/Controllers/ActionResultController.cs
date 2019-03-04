@@ -3,7 +3,9 @@
     using System.Web.Mvc;
     using AspNetMvc5Examples.Business.Extensions;
     using AspNetMvc5Examples.Entities.Models;
+    using AspNetMvc5Examples.Entities.ViewModels;
     using Base;
+    using Rotativa;
 
     public class ActionResultController : AspNetMvc5ExamplesControllerBase
     {
@@ -21,6 +23,17 @@
         {
             return this.HttpNotFound();
         }
+
+        public ActionResult JsonAction()
+        {
+            var viewModel = new MovieViewModel
+            {
+                Title = "Pelisky"
+            };
+
+            return this.Json(viewModel, JsonRequestBehavior.AllowGet);
+        }
+
 
         public ActionResult LineBreaksContentAction()
         {
@@ -84,6 +97,21 @@
         public ActionResult FileAction()
         {
             return File(Server.MapPath("~/Content/site.css"), "text/css");
+        }
+
+        public ActionResult ActionAsPdfAction()
+        {
+            return new ActionAsPdf("PDF") { FileName = "Test.pdf" };
+        }
+
+        public ActionResult PDF()
+        {
+            return this.View();
+        }
+
+        public ActionResult ViewPdfAction()
+        {
+            return new ViewAsPdf("ViewPdfAction");
         }
     }
 }

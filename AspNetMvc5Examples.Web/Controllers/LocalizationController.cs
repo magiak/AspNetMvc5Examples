@@ -9,7 +9,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         public ActionResult Index()
         {
             var localizedValueFromServer = Resources.AspNetMvc5ExamplesResource.Name;
-            return View(model: localizedValueFromServer);
+            return this.View(model: localizedValueFromServer);
         }
 
         //[HttpPost]

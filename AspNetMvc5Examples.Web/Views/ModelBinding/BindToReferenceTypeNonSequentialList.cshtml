@@ -22,8 +22,8 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="button" id="add-row" value="Add" class="btn btn-default" />
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="button" id="add-row" value="Add Row" class="btn btn-default" />
+                <input type="submit" value="Submit" class="btn btn-primary" />
             </div>
         </div>
     </div>
@@ -39,18 +39,17 @@
     <script type="text/javascript">
 
         $(function () {
-            $('#add-row').on('click', function () {
-                $.get("@Url.Action("_ModelBinderArrayViewModel", "ModelBinding")", function (partialView) {
+            $('body').on('click', '#add-row', function () {
+                $.get("@Url.Action("_ModelBinderArrayViewModel", "ModelBinding")")
+                    .done(function (partialView) {
                         $('#rows').append(partialView);
-                    })
-                    .done(function () {
                     })
                     .fail(function() {
 
                     });
             });
 
-            $(".delete").click(function () {
+            $("body").on('click', '.delete', function () {
                 $(this).parents(".form-group").remove();
             });
         });

@@ -17,6 +17,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         public ActionResult ViewDataAction()
         {
             this.ViewData["MyObject"] = "Hello, from view data";
+            //this.ViewBag.MyObject = "Hello, from view bag"; override value set to ViewData!
             return this.View();
         }
 

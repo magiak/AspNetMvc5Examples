@@ -10,5 +10,6 @@ namespace AspNetMvc5Examples.Entities.ViewModels
         public string Title { get; set; }
         public Genre Genre { get; set; }
         public DateTime ReleasedDate { get; set; }
+        public decimal Price { get; set; }
     }
 }

@@ -8,10 +8,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin;
-    using Microsoft.Owin.Host.SystemWeb;
-    using Microsoft.Owin.Infrastructure;
     using Microsoft.Owin.Security.Cookies;
-    using Microsoft.Owin.Security.Google;
     using Owin;
 
     public partial class Startup
@@ -30,10 +27,25 @@
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
             // Configure the sign in cookie
+            // 1. CookieAuthenticationExtensions
+            // https://github.com/aspnet/AspNetKatana/blob/dev/src/Microsoft.Owin.Security.Cookies/CookieAuthenticationExtensions.cs
+            // app.Use(typeof(CookieAuthenticationMiddleware), app, options);
+            // 2. CookieAuthenticationMiddleware
+            // https://github.com/aspnet/AspNetKatana/blob/dev/src/Microsoft.Owin.Security.Cookies/CookieAuthenticationMiddleware.cs
+            // : AuthenticationMiddleware
+            // implements AuthenticationMiddleware.CreateHandler()
+            // return new CookieAuthenticationHandler(_logger);
+            // 3. CookieAuthenticationHandler
+            // https://github.com/aspnet/AspNetKatana/blob/dev/src/Microsoft.Owin.Security.Cookies/CookieAuthenticationHandler.cs
+            // creates new AuthenticationTicket
+            // AuthenticationTicket is serialized, protected and encoded as Base64
+            // 
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login"),
+                // CookieName = "my-authentication-cookie", // Use your own cookie name
+                // TicketDataFormat = new CustomSecureDataFormat(), // Use your own TicketDataFormat
                 Provider = new CookieAuthenticationProvider
                 {
                     // Enables the application to validate the security stamp when the user logs in.

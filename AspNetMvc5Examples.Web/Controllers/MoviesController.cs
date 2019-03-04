@@ -56,7 +56,9 @@ namespace AspNetMvc5Examples.Web.Controllers
         //[Route("movies/released/{year:regex(\\d{4})}/{month:range(1,12)}")]
         public ActionResult Released(int year, int month)
         {
-            var count = this.movies.Where(m => m.ReleasedDate.Year == year && m.ReleasedDate.Month == month).Count();
+            var count = this.movies
+                .Where(m => m.ReleasedDate.Year == year)
+                .Where(m => m.ReleasedDate.Month == month).Count();
             return this.Content($"Year={year} Month={month} => count {count}");
         }
 
@@ -100,8 +102,29 @@ namespace AspNetMvc5Examples.Web.Controllers
         }
 
         [HttpPost]
+        public ActionResult DeleteOne(int id)
+        {
+            var entity = this.context.Movies
+                .SingleOrDefault(x => x.Id == id);
+
+            // OR
+            // var entity = new Movie { Id = id };
+
+            this.context.Movies.Remove(entity);
+            this.context.SaveChanges();
+
+            return this.RedirectToAction("Index");
+        }
+
+        [HttpPost]
         public ActionResult Delete(string[] array)
         {
+            var entities = this.context.Movies
+                .Where(x => array.Contains(x.Title));
+            
+            this.context.Movies.RemoveRange(entities);
+            this.context.SaveChanges();
+
             return this.Json(array, JsonRequestBehavior.AllowGet);
         }
 
