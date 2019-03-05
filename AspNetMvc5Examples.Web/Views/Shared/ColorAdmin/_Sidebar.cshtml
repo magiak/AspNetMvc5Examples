@@ -76,13 +76,10 @@
                     <li>@Html.ActionLink("Custom View Engine", "CustomViewEngine", "ActionResult")</li>
                     <li>@Html.ActionLink("File", "FileAction", "ActionResult")</li>
                     <li>@Html.ActionLink("Released movies in 2017/01", "Released", "Movies", new { year = 2017, month = 12 }, null)</li>
-
-
-                    Released(int year, int month)
                 </ul>
             </li>
 
-            @* Razor Syntax*@
+            @* Razor Syntax *@
             <li class="has-sub @isActive(null, "RazorSyntax")">
                 <a href="javascript:;">
                     <b class="caret"></b>
@@ -95,13 +92,27 @@
                 </ul>
             </li>
 
-            @* Razor Syntax*@
+            @* JavaScript section *@
             <li class="@isActive("Index", "JavaScriptSection")">
                 <a href="@Url.Action("Index", "JavaScriptSection")">
                     <i class="fa fa-sign-in-alt"></i>
                     <span>Razor View Sections</span>
                 </a>
             </li>
+
+            @* jQuery *@
+            <li class="has-sub @isActive(null, "jQuery")">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-eye"></i>
+                    <span>jQuery</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("Index", "jQuery")">@Html.ActionLink("jQuery", "Index", "jQuery")</li>
+                    <li class="@isActive("Get", "jQuery")">@Html.ActionLink("Get JSON", "Get", "jQuery")</li>
+                </ul>
+            </li>
+
 
             @* Partial Views And Actions*@
             <li class="@isActive("Index", "PartialViewAndAction")">
@@ -137,6 +148,8 @@
                     <li class="@isActive("Modal", "HtmlHelpers")">@Html.ActionLink("Modal", "Modal", "HtmlHelpers")</li>
                     <li class="@isActive("FlashMessages", "HtmlHelpers")">@Html.ActionLink("Flash Messages", "FlashMessages", "HtmlHelpers")</li>
                     <li class="@isActive("InlineHelper", "HtmlHelpers")">@Html.ActionLink("Inline Helper", "InlineHelper", "HtmlHelpers")</li>
+                    <li class="@isActive("Index", "Ajax")">@Html.ActionLink("AJAX Helper", "Index", "Ajax")</li>
+
                 </ul>
             </li>
 

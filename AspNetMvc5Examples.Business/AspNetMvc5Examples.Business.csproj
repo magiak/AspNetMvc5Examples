@@ -116,6 +116,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionResults\JsonNetResult.cs" />
     <Compile Include="AutoMapperProfiles\MyProfile.cs" />
     <Compile Include="Filters\MyActionFilterAttribute.cs" />
     <Compile Include="Filters\BaseCustomActionFilterAttribute.cs" />

@@ -272,11 +272,13 @@
     <Compile Include="Controllers\HtmlHelpersController.cs" />
     <Compile Include="Controllers\HandleErrorsController.cs" />
     <Compile Include="Controllers\JavaScriptSectionController.cs" />
+    <Compile Include="Controllers\JQueryController.cs" />
     <Compile Include="Controllers\LocalizationController.cs" />
     <Compile Include="Controllers\LoggingController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesApiController.cs" />
     <Compile Include="Controllers\MyAccountController.cs" />
     <Compile Include="Controllers\NinjectController.cs" />
     <Compile Include="Controllers\PartialViewAndActionController.cs" />
@@ -287,6 +289,7 @@
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Controllers\XssController.cs" />
     <Compile Include="CustomTicketDataFormat\CustomSecureDataFormat.cs" />
+    <Compile Include="Filters\JsonNetFilterAttribute.cs" />
     <Compile Include="Filters\MyExceptionFilter.cs" />
     <Compile Include="HtmlHelper\HighlightsJsExtension.cs" />
     <Compile Include="HtmlHelper\ModalHtmlHelperExtensions.cs" />
@@ -6083,7 +6086,6 @@
     <Content Include="Views\Shared\ColorAdmin\_Header.cshtml" />
     <Content Include="Views\Home\Dashboard.cshtml" />
     <Content Include="Views\Shared\ColorAdmin\_Theme.cshtml" />
-    <Content Include="Views\Shared\_Topbar.cshtml" />
     <Content Include="Views\Shared\ColorAdmin\_Notifications.cshtml" />
     <Content Include="Views\HtmlHelpers\Modal.cshtml" />
     <Content Include="Views\HtmlHelpers\FlashMessages.cshtml" />
@@ -6113,6 +6115,7 @@
     <Content Include="Views\ButtonAndGridExamples\Index.cshtml" />
     <Content Include="Views\ActionResult\PDF.cshtml" />
     <Content Include="Views\ButtonAndGridExamples\GridView.cshtml" />
+    <Content Include="Views\JQuery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6124,12 +6127,6 @@
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
-    <Folder Include="Views\Async\" />
-    <Folder Include="Views\CookieAndSession\" />
-    <Folder Include="Views\Filter\" />
-    <Folder Include="Views\MoviesApi\" />
-    <Folder Include="Views\OutputCache\" />
-    <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

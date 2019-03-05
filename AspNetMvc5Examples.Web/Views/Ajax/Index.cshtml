@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Get movies by title</h2>
 
 @using (Ajax.BeginForm("_AjaxPartial", "Ajax", new AjaxOptions
 {
@@ -13,7 +13,7 @@
     LoadingElementId = "loader" 
 }))
 {
-    @Html.EditorFor(x => x.Name)
+    @Html.EditorFor(x => x.Title)
     <input type="submit" value="Search" />
 }
 

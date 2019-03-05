@@ -2,7 +2,9 @@
 {
     using System;
     using System.Globalization;
+    using System.Net.Http.Headers;
     using System.Web;
+    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
@@ -12,6 +14,8 @@
     using Business.MyViewEngines;
     using Business.ValueProvider;
     using ControllerFactory;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Converters;
 
     public class MvcApplication : System.Web.HttpApplication // NinjectHttpApplication
     {
@@ -37,6 +41,21 @@
             ViewEngines.Engines.Insert(0, new CustomViewEngine()); // Hi, from CustomViews folder
 
             Mapper.Initialize(cfg => cfg.AddProfile(new MyProfile()));
+
+            //GlobalConfiguration.Configuration.Formatters
+            //    .JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+
+            //JsonSerializerSettings serializerSettings = new JsonSerializerSettings();
+            //serializerSettings.Converters.Add(new IsoDateTimeConverter());
+            //GlobalConfiguration.Configuration.Formatters[0] = new JsonNetFormatter(serializerSettings);
+
+            //GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings =
+            //    new JsonSerializerSettings
+            //    {
+            //        DateFormatHandling = DateFormatHandling.IsoDateFormat,
+            //        DateTimeZoneHandling = DateTimeZoneHandling.Unspecified,
+            //        Culture = CultureInfo.GetCultureInfo("cs-CZ")
+            //    };
 
         }
 

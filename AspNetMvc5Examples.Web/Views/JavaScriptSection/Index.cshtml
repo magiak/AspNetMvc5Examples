@@ -24,11 +24,15 @@
 </div>
 
 <script>
-    $("#javascript-section").css("color", "red"); // ReferenceError: $ is not defined
+    $(function () {
+        $("#javascript-section").css("color", "red"); // ReferenceError: $ is not defined
+    });
 </script>
 
 @section Scripts {
     <script>
-        $("#javascript-section").css("color", "green");
+        $(function () {
+            $("#javascript-section").css("color", "green");
+        });
     </script>    
 }

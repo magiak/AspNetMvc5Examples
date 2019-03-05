@@ -19,7 +19,7 @@ namespace AspNetMvc5Examples.Web.Controllers
             var model2 = await this.Get2Async();
 
             sw.Stop();
-            return Content(this.PrintResult(sw, model1, model2));
+            return this.Content(this.PrintResult(sw, model1, model2));
         }
 
         public async Task<ActionResult> Async()
@@ -39,7 +39,7 @@ namespace AspNetMvc5Examples.Web.Controllers
             //var model2 = models[1];
 
             sw.Stop();
-            return Content(this.PrintResult(sw, model1, model2));
+            return this.Content(this.PrintResult(sw, model1, model2));
         }
         
         private string PrintResult(
