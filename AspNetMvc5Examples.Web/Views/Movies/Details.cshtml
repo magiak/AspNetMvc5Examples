@@ -1,5 +1,5 @@
-﻿
-@model AspNetMvc5Examples.Entities.ViewModels.MovieViewModel
+﻿@*@model AspNetMvc5Examples.Entities.Models.Movie*@
+@model MovieViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -10,3 +10,5 @@
 @Model.Title
 @Model.Genre
 @Model.ReleasedDate
+
+@*@Html.DisplayFor(x => x.ReleasedDate, "shortdatetime")*@

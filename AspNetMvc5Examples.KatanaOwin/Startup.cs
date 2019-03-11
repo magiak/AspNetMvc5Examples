@@ -57,6 +57,9 @@
             // 8. Startup.Auth.cs -> ConfigureAuth
 
             // 9. BONUS :)
+            // Map extensions are used as a convention for branching the pipeline.
+            // Map * branches the request pipeline based on matches of the given request path.
+            // If the request path starts with the given path, the branch is executed.
             //app.Map("/maptest", HandleMapTest); // http://localhost:8080/maptest
         }
 

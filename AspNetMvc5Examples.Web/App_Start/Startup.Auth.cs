@@ -39,7 +39,7 @@
             // https://github.com/aspnet/AspNetKatana/blob/dev/src/Microsoft.Owin.Security.Cookies/CookieAuthenticationHandler.cs
             // creates new AuthenticationTicket
             // AuthenticationTicket is serialized, protected and encoded as Base64
-            // 
+
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,

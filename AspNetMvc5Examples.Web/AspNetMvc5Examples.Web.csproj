@@ -138,6 +138,9 @@
       <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Mvc.Grid.Core, Version=6.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.6.0.3\lib\net45\Mvc.Grid.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -284,15 +287,17 @@
     <Compile Include="Controllers\PartialViewAndActionController.cs" />
     <Compile Include="Controllers\RazorSyntaxController.cs" />
     <Compile Include="Controllers\RemoteValidationController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Controllers\XssController.cs" />
     <Compile Include="CustomTicketDataFormat\CustomSecureDataFormat.cs" />
     <Compile Include="Filters\JsonNetFilterAttribute.cs" />
     <Compile Include="Filters\MyExceptionFilter.cs" />
-    <Compile Include="HtmlHelper\HighlightsJsExtension.cs" />
-    <Compile Include="HtmlHelper\ModalHtmlHelperExtensions.cs" />
+    <Compile Include="HtmlHelpers\HighlightsJsExtension.cs" />
+    <Compile Include="HtmlHelpers\ModalHtmlHelperExtensions.cs" />
+    <Compile Include="MetadataProviders\LocalizableModelValidator.cs" />
+    <Compile Include="MetadataProviders\LocalizableModelValidatorProvider.cs" />
+    <Compile Include="MetadataProviders\MetadataProvider.cs" />
     <Compile Include="Models\ModelBinderArrayViewModel.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
@@ -300,7 +305,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HtmlHelper\FlashMessagesHtmlHelperExtensions.cs" />
+    <Compile Include="HtmlHelpers\FlashMessagesHtmlHelperExtensions.cs" />
     <Compile Include="Models\DayMonthYearViewModel.cs" />
     <Compile Include="Models\EditorAndDisplayTemplatesViewModel.cs" />
     <Compile Include="Models\ModelBinderChildViewModel.cs" />
@@ -312,6 +317,7 @@
     <Compile Include="Models\Validation\RemoteValidationViewModel.cs" />
     <Compile Include="Models\Validation\DataAnnotationsValidationViewModel.cs" />
     <Compile Include="Models\XssViewModel.cs" />
+    <Compile Include="NinjectModules\DefaultNinjectModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -5268,6 +5274,7 @@
     <Content Include="Content\DataTables\media\images\sort_both.png" />
     <Content Include="Content\DataTables\media\images\sort_desc.png" />
     <Content Include="Content\DataTables\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\MvcGrid\mvc-grid.css" />
     <Content Include="Content\Profilovka.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -5976,6 +5983,7 @@
     <Content Include="Content\DataTables\extensions\Buttons\css\mixins.scss" />
     <Content Include="Content\DataTables\extensions\Buttons\css\common.scss" />
     <Content Include="App_Browsers\qt.browser" />
+    <Content Include="Content\MvcGrid\Fonts\GridGlyphs.woff" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\aspnetmvcexamples.jquery.validate.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -6009,6 +6017,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MvcGrid\mvc-grid.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
@@ -6116,6 +6125,10 @@
     <Content Include="Views\ActionResult\PDF.cshtml" />
     <Content Include="Views\ButtonAndGridExamples\GridView.cshtml" />
     <Content Include="Views\JQuery\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\shortdatetime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\shortdatetime2.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Pager.cshtml" />
+    <Content Include="Views\Shared\MvcGrid\_Grid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6127,6 +6140,7 @@
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
+    <Folder Include="Views\DefaultScaf\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

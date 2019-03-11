@@ -16,7 +16,7 @@ namespace AspNetMvc5Examples.Web.Controllers
     [RoutePrefix("/api/movies")]
     public class MoviesApiController : ApiController
     {
-        private ApplicationDbContext context = new ApplicationDbContext();
+        private readonly ApplicationDbContext context;
 
         public MoviesApiController(ApplicationDbContext context)
         {

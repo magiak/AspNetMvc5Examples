@@ -13,9 +13,4 @@ namespace AspNetMvc5Examples.Business.Logging
             Console.WriteLine(message);
         }
     }
-
-    public interface ILoggingService
-    {
-        void Log(string message);
-    }
 }

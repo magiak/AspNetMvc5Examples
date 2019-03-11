@@ -2,20 +2,14 @@
 {
     using System;
     using System.Globalization;
-    using System.Net.Http.Headers;
     using System.Web;
-    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
     using AspNetMvc5Examples.Business.AutoMapperProfiles;
-    using AspNetMvc5Examples.Business.ModelBinding;
     using AutoMapper;
     using Business.MyViewEngines;
     using Business.ValueProvider;
-    using ControllerFactory;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Converters;
 
     public class MvcApplication : System.Web.HttpApplication // NinjectHttpApplication
     {
@@ -57,8 +51,20 @@
             //        Culture = CultureInfo.GetCultureInfo("cs-CZ")
             //    };
 
-        }
+            // TODO
+            //var a = ModelMetadataProviders.Current; CachedDataAnnotationsModelMetadataProvider
 
+            //ModelMetadataProviders.Current = new MetadataProvider();
+
+            //var provider = ModelValidatorProviders.Providers.FirstOrDefault(p => p.GetType() == typeof(DataAnnotationsModelValidatorProvider));
+            //if (provider != null)
+            //{
+            //    ModelValidatorProviders.Providers.Remove(provider);
+            //}
+
+            //ModelValidatorProviders.Providers.Add(new LocalizableModelValidatorProvider());
+        }
+        
         protected void Application_Error()
         {
             this.HandleException();
@@ -67,6 +73,7 @@
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
             InitializeCultureInfo();
+            SetFormats();
         }
 
         private void HandleException()
@@ -108,11 +115,43 @@
             if (culture != null)
             {
                 cultureInfo = (CultureInfo)culture;
-
-
+                
                 CultureInfo.CurrentCulture = cultureInfo;
                 CultureInfo.CurrentUICulture = cultureInfo;
             }
+        }
+
+        private static void SetFormats()
+        {
+            var cultureInfo = CultureInfo.CurrentCulture;
+
+            const int english = 1033;
+            const int czech = 1029;
+            const int slovak = 1051;
+
+            switch (cultureInfo.LCID)
+            {
+                case english:
+                    cultureInfo.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
+                    cultureInfo.NumberFormat = new NumberFormatInfo { NumberDecimalSeparator = "." };
+                    break;
+                case czech:
+                    cultureInfo.DateTimeFormat.ShortDatePattern = "d.M.yyyy";
+                    cultureInfo.NumberFormat = new NumberFormatInfo { NumberDecimalSeparator = "," };
+                    break;
+                case slovak:
+                    cultureInfo.DateTimeFormat.ShortDatePattern = "d. M. yyyy";
+                    cultureInfo.NumberFormat = new NumberFormatInfo { NumberDecimalSeparator = "," };
+                    break;
+            }
+
+            // is the .NET representation of the default user locale of the system.
+            // This controls default number and date formatting and the like.
+            CultureInfo.CurrentCulture = cultureInfo;
+
+            // refers to the default user interface language, a setting introduced in Windows 2000.
+            // This is primarily regarding the UI localization/translation part of your app.
+            CultureInfo.CurrentUICulture = cultureInfo;
         }
 
         //protected override void OnApplicationStarted()
@@ -129,11 +168,11 @@
 
         //protected override IKernel CreateKernel()
         //{
-            //    var kernel = new StandardKernel();
-            //    kernel.Load(Assembly.GetExecutingAssembly());
-            //    //kernel.Load(new DefaultNinjectModule());
-            //    // kernel.Load(new INinjectModule[] { new DefaultNinjectModule() });
-            //    return kernel;
+        //    var kernel = new StandardKernel();
+        //    kernel.Load(Assembly.GetExecutingAssembly());
+        //    kernel.Load(new DefaultNinjectModule());
+        //    kernel.Load(new INinjectModule[] { new DefaultNinjectModule() });
+        //    return kernel;
         //}
     }
 }

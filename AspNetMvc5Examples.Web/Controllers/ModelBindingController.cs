@@ -224,31 +224,26 @@
         #endregion
 
         #region Array, List, IEnumerable, HashSet, ...
-        // OK
         public ActionResult Array(int[] values)
         {
             return this.Json(values, JsonRequestBehavior.AllowGet);
         }
 
-        // OK
         public ActionResult List(List<int> values)
         {
             return this.Json(values, JsonRequestBehavior.AllowGet);
         }
 
-        // OK
         public ActionResult IEnumerable(IEnumerable<int> values)
         {
             return this.Json(values, JsonRequestBehavior.AllowGet);
         }
 
-        // OK
         public ActionResult ICollection(ICollection<int> values)
         {
             return this.Json(values, JsonRequestBehavior.AllowGet);
         }
 
-        // OK
         public ActionResult HashSet(HashSet<int> values)
         {
             return this.Json(values, JsonRequestBehavior.AllowGet);
