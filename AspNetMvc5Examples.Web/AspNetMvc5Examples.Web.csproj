@@ -295,9 +295,11 @@
     <Compile Include="Filters\MyExceptionFilter.cs" />
     <Compile Include="HtmlHelpers\HighlightsJsExtension.cs" />
     <Compile Include="HtmlHelpers\ModalHtmlHelperExtensions.cs" />
-    <Compile Include="MetadataProviders\LocalizableModelValidator.cs" />
-    <Compile Include="MetadataProviders\LocalizableModelValidatorProvider.cs" />
-    <Compile Include="MetadataProviders\MetadataProvider.cs" />
+    <Compile Include="MetadataProviders\Localizable\LocalizableDataAnnotationsModelMetadataProvider.cs" />
+    <Compile Include="MetadataProviders\Localizable\LocalizableModelValidator.cs" />
+    <Compile Include="MetadataProviders\Localizable\LocalizableModelValidatorProvider.cs" />
+    <Compile Include="MetadataProviders\OriginalClientDataTypeModelValidatorProvider.cs" />
+    <Compile Include="MetadataProviders\OriginalDataErrorInfoModelValidatorProvider.cs" />
     <Compile Include="Models\ModelBinderArrayViewModel.cs" />
     <Compile Include="Controllers\ModelBindingController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />

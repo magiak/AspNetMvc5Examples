@@ -1,5 +1,6 @@
 ﻿namespace AspNetMvc5Examples.Web.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
     using AspNetMvc5Examples.Web.Models;
     using AspNetMvcExamples.Business.FlashMessages;
@@ -20,6 +21,8 @@
         [HttpPost]
         public ActionResult DataAnnotations(DataAnnotationsValidationViewModel viewModel)
         {
+            var providers = ModelValidatorProviders.Providers.ToList();
+
             if (this.ModelState.IsValid)
             {
                 return this.RedirectToAction("Index", "Validation")

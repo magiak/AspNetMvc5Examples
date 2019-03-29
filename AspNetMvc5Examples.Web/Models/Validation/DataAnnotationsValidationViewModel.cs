@@ -7,6 +7,7 @@
         [Required]
         public string Required { get; set; }
 
+        [Display(Name = "String Length" )]
         [StringLength(10, MinimumLength = 5)]
         public string StringLength { get; set; }
 

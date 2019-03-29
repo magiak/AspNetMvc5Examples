@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AspNetMvc5Examples.Web.MetadataProviders
 {
-    public class MetadataProvider : AssociatedMetadataProvider
+    public class LocalizableDataAnnotationsModelMetadataProvider : DataAnnotationsModelMetadataProvider
     {
         protected override ModelMetadata CreateMetadata(IEnumerable<Attribute> attributes,
             Type containerType, Func<object> modelAccessor, Type modelType, string propertyName)

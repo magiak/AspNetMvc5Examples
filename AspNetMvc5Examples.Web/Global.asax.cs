@@ -2,7 +2,9 @@
 {
     using System;
     using System.Globalization;
+    using System.Linq;
     using System.Web;
+    using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
@@ -28,14 +30,36 @@
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            SetViewEngines();
+
+            Mapper.Initialize(cfg => cfg.AddProfile(new MyProfile()));
+
+            SetFormatters();
+            SetMetadataProviders();
+        }
+        
+        protected void Application_Error()
+        {
+            this.HandleException();
+        }
+
+        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        {
+            InitializeCultureInfo();
+            SetFormats();
+        }
+
+        private void SetViewEngines()
+        {
             //ViewEngines.Engines.Clear();
             //ViewEngines.Engines.Add(new RazorViewEngine());
 
             //ViewEngines.Engines.Add(new CustomViewEngine()); // Hi, from Views folder
             ViewEngines.Engines.Insert(0, new CustomViewEngine()); // Hi, from CustomViews folder
+        }
 
-            Mapper.Initialize(cfg => cfg.AddProfile(new MyProfile()));
-
+        private void SetFormatters()
+        {
             //GlobalConfiguration.Configuration.Formatters
             //    .JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
 
@@ -50,11 +74,53 @@
             //        DateTimeZoneHandling = DateTimeZoneHandling.Unspecified,
             //        Culture = CultureInfo.GetCultureInfo("cs-CZ")
             //    };
+        }
+
+        private void SetMetadataProviders()
+        {
+            // TODO [MetadataType]
+            // ViewData.ModelMetadata.AdditionalValues atd
+
+            // Model metadata providers
+            // CachedDataAnnotationsModelMetadataProvider
+            //ModelMetadataProviders.Current = new LocalizableDataAnnotationsModelMetadataProvider();
+
+            //// Model validator providers
+            //var providers = ModelValidatorProviders.Providers.ToList();
+
+            //var dataErrorProvider = ModelValidatorProviders.Providers
+            //    .FirstOrDefault(p => p.GetType() == typeof(DataErrorInfoModelValidatorProvider));
+            //if (dataErrorProvider != null)
+            //{
+            //    ModelValidatorProviders.Providers.Remove(dataErrorProvider);
+            //}
+            //ModelValidatorProviders.Providers.Add(new CustomDataErrorInfoModelValidatorProvider());
+
+            //// Model validator providers
+            //var clientDataProvider = ModelValidatorProviders.Providers
+            //    .FirstOrDefault(p => p.GetType() == typeof(ClientDataTypeModelValidatorProvider));
+            //if (clientDataProvider != null)
+            //{
+            //    ModelValidatorProviders.Providers.Remove(clientDataProvider);
+            //}
+            //ModelValidatorProviders.Providers.Add(new CustomClientDataTypeModelValidatorProvider());
+
+            // OLD //////////////////////////////////////////////////////////////////////////////////////////////////
+            //DataAnnotationsModelValidatorProvider
 
             // TODO
-            //var a = ModelMetadataProviders.Current; CachedDataAnnotationsModelMetadataProvider
+            //var a = ModelMetadataProviders.Current;
+            // CachedDataAnnotationsModelMetadataProvider
+            // https://github.com/aspnet/AspNetWebStack/blob/master/src/System.Web.Mvc/CachedDataAnnotationsModelMetadataProvider.cs
 
             //ModelMetadataProviders.Current = new MetadataProvider();
+            //ModelMetadataProviders.Current = new LocalizableDataAnnotationsModelMetadataProvider( );
+
+            //var providers = ModelValidatorProviders.Providers.ToList();
+            // DataAnnotationsModelValidatorProvider
+            // DataErrorInfoModelValidatorProvider, ClientDataTypeModelValidatorProvider
+            // https://github.com/aspnet/AspNetWebStack/blob/master/src/System.Web.Mvc/DataErrorInfoModelValidatorProvider.cs
+
 
             //var provider = ModelValidatorProviders.Providers.FirstOrDefault(p => p.GetType() == typeof(DataAnnotationsModelValidatorProvider));
             //if (provider != null)
@@ -63,17 +129,15 @@
             //}
 
             //ModelValidatorProviders.Providers.Add(new LocalizableModelValidatorProvider());
-        }
-        
-        protected void Application_Error()
-        {
-            this.HandleException();
+
+            // http://prideparrot.com/blog/archive/2012/9/creating_custom_modelvalidatorprovider
+            // https://weblogs.asp.net/srkirkland/adding-client-validation-to-dataannotations-datatype-attribute
         }
 
-        protected void Application_AcquireRequestState(object sender, EventArgs e)
+        private void SetMetadataProviderAPI()
         {
-            InitializeCultureInfo();
-            SetFormats();
+            // GlobalConfiguration.Configuration.Services.Add(
+            //    typeof(ModelValidatorProvider), new CustomModelValidatorProvider());
         }
 
         private void HandleException()
