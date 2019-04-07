@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvc5Examples.KatanaOw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvc5Examples.EntityFrameworkTests", "AspNetMvc5Examples.EntityFrameworkTests\AspNetMvc5Examples.EntityFrameworkTests.csproj", "{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetMvc5Examples.Api", "AspNetMvc5Examples.Api\AspNetMvc5Examples.Api.csproj", "{ED8928A0-6427-4B06-8187-5CDAA7754E7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F6BD7EF-1CA5-4703-9257-11A9BE291A0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8928A0-6427-4B06-8187-5CDAA7754E7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8928A0-6427-4B06-8187-5CDAA7754E7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8928A0-6427-4B06-8187-5CDAA7754E7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8928A0-6427-4B06-8187-5CDAA7754E7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
