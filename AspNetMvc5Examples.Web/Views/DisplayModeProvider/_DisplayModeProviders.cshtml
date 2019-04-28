@@ -1,0 +1,8 @@
+﻿<br /><br />
+<h6>Display mode providers</h6>
+<ul>
+    @foreach (var d in DisplayModeProvider.Instance.Modes)
+    {
+        <li>@(String.IsNullOrEmpty(d.DisplayModeId) ? "default" : d.DisplayModeId)</li>
+    }
+</ul>

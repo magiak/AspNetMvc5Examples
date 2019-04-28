@@ -3,6 +3,7 @@ using AspNetMvc5Examples.Entities.Enums;
 using AspNetMvc5Examples.Entities.Models;
 using AspNetMvc5Examples.Entities.ViewModels;
 using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,7 @@ namespace AspNetMvc5Examples.Web.Controllers
         public ActionResult AutoMapperTest()
         {
             var movies = this.context.Movies;
+             //.ProjectTo<MovieViewModel>();
             return this.Json(movies, JsonRequestBehavior.AllowGet);
         }
 
@@ -54,6 +56,7 @@ namespace AspNetMvc5Examples.Web.Controllers
 
         // GET: Movies
         //[Route("movies/released/{year:regex(\\d{4})}/{month:range(1,12)}")]
+
         public ActionResult Released(int year, int month)
         {
             var count = this.movies

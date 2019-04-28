@@ -4,7 +4,7 @@
 
     public class CustomValidationAttributeViewModel
     {
-        [GreaterThan(nameof(OtherProperty), "Property has to be greater than OtherProperty")]
+        [GreaterThan(nameof(OtherProperty), ErrorMessage = "Property has to be greater than OtherProperty")]
         public int Property { get; set; }
 
         public int OtherProperty { get; set; }

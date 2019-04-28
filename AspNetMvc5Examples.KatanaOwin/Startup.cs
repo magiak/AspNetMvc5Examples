@@ -61,6 +61,9 @@
             // Map * branches the request pipeline based on matches of the given request path.
             // If the request path starts with the given path, the branch is executed.
             //app.Map("/maptest", HandleMapTest); // http://localhost:8080/maptest
+
+            //app.MapWhen(context => !string.IsNullOrEmpty(context.Request.Query.Get("MapWhen")),
+            //          HandleMapWhenTest); // TODO not tested
         }
 
         private static void HandleMapTest(IAppBuilder app)
@@ -68,6 +71,14 @@
             app.Run(async context =>
             {
                 await context.Response.WriteAsync("Map Test Successful");
+            });
+        }
+
+        private static void HandleMapWhenTest(IAppBuilder app)
+        {
+            app.Run(async context =>
+            {
+                await context.Response.WriteAsync("MapWhen Test Successful");
             });
         }
     }

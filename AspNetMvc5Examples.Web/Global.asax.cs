@@ -3,19 +3,30 @@
     using System;
     using System.Globalization;
     using System.Linq;
+    using System.Reflection;
     using System.Web;
     using System.Web.Http;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
+    using System.Web.WebPages;
     using AspNetMvc5Examples.Business.AutoMapperProfiles;
+    using AspNetMvc5Examples.Business.ModelBinding;
+    using AspNetMvc5Examples.Web.NinjectModules;
     using AutoMapper;
     using Business.MyViewEngines;
     using Business.ValueProvider;
+    using Ninject;
+    using Ninject.Modules;
 
     public class MvcApplication : System.Web.HttpApplication // NinjectHttpApplication
     {
-        // Nastaveni ninjectu je zakomentovano na radku 99
+        // Uncomment
+        //protected override void OnApplicationStarted()
+        //{
+        //    base.OnApplicationStarted();
+        // + CreateKernel
+
         protected void Application_Start()
         {
             //ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
@@ -36,6 +47,7 @@
 
             SetFormatters();
             SetMetadataProviders();
+            SetCustomDisplayMode();
         }
         
         protected void Application_Error()
@@ -140,6 +152,37 @@
             //    typeof(ModelValidatorProvider), new CustomModelValidatorProvider());
         }
 
+        private void SetCustomDisplayMode()
+        {
+            // Query String: language
+            var supportedLanguages = new[] { "cs-CZ", "en-US" };
+            foreach(var lang in supportedLanguages)
+            {
+                DisplayModeProvider.Instance.Modes.Insert(0, new DefaultDisplayMode(lang)
+                {
+                    ContextCondition = context =>
+                        context.Request.QueryString.AllKeys.Contains("language") &&
+                        context.Request.QueryString["language"] == lang
+                });
+            }
+
+            // User Agent
+            //DisplayModeProvider.Instance.Modes.Insert(0, new DefaultDisplayMode("mobile")
+            //{
+            //    //ContextCondition = (context => context.Request.UserAgent
+            //    //    .IndexOf("mobile", StringComparison.OrdinalIgnoreCase) >= 0)
+            //    ContextCondition = context => true
+            //});
+
+            // Accept-Language
+            //DisplayModeProvider.Instance.Modes.Insert(0, new DefaultDisplayMode("cs-CZ")
+            //{
+            //    ContextCondition = context =>
+            //        context.Request.Headers.AllKeys.Contains("Accept-Language") &&
+            //        context.Request.Headers["Accept-Language"].Contains("cs-CZ") // "en-US,en;q=0.9,cs;q=0.8,cs-CZ;q=0.7"
+            //});
+        }
+
         private void HandleException()
         {
             var exception = this.Server.GetLastError();
@@ -217,18 +260,6 @@
             // This is primarily regarding the UI localization/translation part of your app.
             CultureInfo.CurrentUICulture = cultureInfo;
         }
-
-        //protected override void OnApplicationStarted()
-        //{
-        //    base.OnApplicationStarted();
-
-        //    AreaRegistration.RegisterAllAreas();
-        //    FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
-        //    RouteConfig.RegisterRoutes(RouteTable.Routes);
-        //    BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-        //    AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile(new MovieProfile()));
-        //}
 
         //protected override IKernel CreateKernel()
         //{

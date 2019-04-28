@@ -1,6 +1,7 @@
 ﻿namespace AspNetMvc5Examples.Web.Controllers
 {
     using System.Web.Mvc;
+    using AspNetMvc5Examples.Business.ActionResults;
     using AspNetMvc5Examples.Business.Extensions;
     using AspNetMvc5Examples.Entities.Models;
     using AspNetMvc5Examples.Entities.ViewModels;
@@ -57,6 +58,7 @@
             };
 
             return this.Xml(obj); // Extension
+            //return new XmlResult( );
         }
 
         public ActionResult ViewEngineAction()

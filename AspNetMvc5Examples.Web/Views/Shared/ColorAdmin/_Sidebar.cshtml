@@ -163,12 +163,6 @@
                     <span>Validation</span>
                 </a>
                 <ul class="sub-menu">
-                    <li>
-
-                        @Html.ActionLink("Users", "Index", "User", new { area = "administration" }, null)
-
-                    </li>
-
                     <li class="@isActive("DataAnnotations", "Validation")">@Html.ActionLink("Data Annotations", "DataAnnotations", "Validation")</li>
                     <li class="@isActive("CodeValidation", "Validation")">@Html.ActionLink("Code Validation", "CodeValidation", "Validation")</li>
                     <li class="@isActive("RemoteValidation", "Validation")">@Html.ActionLink("Remote Validation", "RemoteValidation", "Validation")</li>
@@ -218,6 +212,20 @@
                     <li class="@isActive("Public", "AuthorizationAttribute")">@Html.ActionLink("Public", "Public", "AuthorizationAttribute")</li>
                     <li class="@isActive("Secret", "AuthorizationAttribute")">@Html.ActionLink("Secret", "Secret", "AuthorizationAttribute")</li>
                     <li class="@isActive("AllowAnonymous", "AuthorizationAttribute")">@Html.ActionLink("Allow Anonymous", "AllowAnonymous", "AuthorizationAttribute")</li>
+                </ul>
+            </li>
+
+            @* ApplicationUserManager*@
+            <li class="has-sub @isActive(null, "ApplicationUsers")">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-key"></i>
+                    <span>User Manager</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("CreateAdministrator", "ApplicationUsers")">@Html.ActionLink("Create Administrator", "CreateAdministrator", "ApplicationUsers")</li>
+                    <li class="@isActive("SendConfirmationEmailAsync", "ApplicationUsers")">@Html.ActionLink("Send Confirmation Email", "SendConfirmationEmailAsync", "ApplicationUsers")</li>
+                    <li>@Html.ActionLink("Administration", "Index", "User", new { Area = "Administration" }, null)</li>
                 </ul>
             </li>
 
@@ -274,7 +282,26 @@
                 </ul>
             </li>
 
-            @* Exceptions *@
+            <li class="has-sub @isActive(null, "DisplayModeProvider")">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-globe"></i>
+                    <span>Display Mode Provider</span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        @Html.ActionLink("Default", "Index", "DisplayModeProvider")
+                    </li>
+                    <li>
+                        @Html.ActionLink("cs-CZ", "Index", "DisplayModeProvider", new { language = "cs-CZ" }, null)
+                    </li>
+                    <li>
+                        @Html.ActionLink("en-US", "Index", "DisplayModeProvider", new { language = "en-US" }, null)
+                    </li>
+                </ul>
+            </li>
+
+            @* Cookie and Session *@
             <li class="has-sub @isActive(null, "CookieAndSession")">
                 <a href="javascript:;">
                     <b class="caret"></b>

@@ -11,6 +11,11 @@ namespace AspNetMvc5Examples.Business.AutoMapperProfiles
             // Movies
             this.CreateMap<Movie, MovieViewModel>()
                 .ReverseMap();
+
+            // https://automapper.readthedocs.io/en/latest/Getting-started.html
+            // .ForMember(dest => dest.EventHour, opt => opt.MapFrom(src => src.Date.Hour)) 
+            // .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value * 100))
+            // .ValueTransformers.Add<string>(val => val + "!!!");
         }
     }
 }

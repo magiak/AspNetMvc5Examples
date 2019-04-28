@@ -10,16 +10,15 @@
     {
         private readonly string otherPropertyName;
 
-        public GreaterThanAttribute(string otherPropertyName, string errorMessage)
-            : base(errorMessage)
+        public GreaterThanAttribute(string otherPropertyName)
+            : base()
         {
             this.otherPropertyName = otherPropertyName;
         }
         
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
-            ValidationResult validationResult = ValidationResult.Success;
-
+            var validationResult = ValidationResult.Success;
             var otherPropertyInfo = validationContext.ObjectType.GetProperty(this.otherPropertyName);
                 
             int toValidate = (int)value;
@@ -38,7 +37,7 @@
         {
             string errorMessage = this.ErrorMessageString;
 
-            ModelClientValidationRule greaterThanRule = new ModelClientValidationRule
+            var greaterThanRule = new ModelClientValidationRule
             {
                 ErrorMessage = errorMessage,
                 ValidationType = "greaterthan" // This is the name the jQuery adapter will use

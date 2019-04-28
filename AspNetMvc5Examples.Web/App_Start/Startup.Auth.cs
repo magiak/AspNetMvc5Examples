@@ -20,6 +20,7 @@
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+            app.CreatePerOwinContext<ApplicationRoleManager>(ApplicationRoleManager.Create); // not in default implementation
 
             //app.Use<MyOwinMiddleware>();
             //app.Use<MyMiddleware>();

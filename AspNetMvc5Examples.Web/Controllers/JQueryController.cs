@@ -14,7 +14,7 @@ namespace AspNetMvc5Examples.Web.Controllers
             return this.View();
         }
 
-        [JsonNetFilter]
+        //[JsonNetFilter]
         public ActionResult Get()
         {
             var data = new MovieViewModel {
