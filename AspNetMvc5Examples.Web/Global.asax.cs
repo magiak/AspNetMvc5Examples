@@ -1,6 +1,8 @@
-﻿namespace AspNetMvc5Examples.Web
+﻿[assembly: System.Web.PreApplicationStartMethod(typeof(AspNetMvc5Examples.Web.MvcApplication), "PreApplicationStart")]
+namespace AspNetMvc5Examples.Web
 {
     using System;
+    using System.Diagnostics;
     using System.Globalization;
     using System.Linq;
     using System.Reflection;
@@ -12,6 +14,7 @@
     using System.Web.WebPages;
     using AspNetMvc5Examples.Business.AutoMapperProfiles;
     using AspNetMvc5Examples.Business.ModelBinding;
+    using AspNetMvc5Examples.Web.HttpModules;
     using AspNetMvc5Examples.Web.NinjectModules;
     using AutoMapper;
     using Business.MyViewEngines;
@@ -19,8 +22,14 @@
     using Ninject;
     using Ninject.Modules;
 
-    public class MvcApplication : System.Web.HttpApplication // NinjectHttpApplication
+    public class MvcApplication : HttpApplication // NinjectHttpApplication
     {
+        public static void PreApplicationStart()
+        {
+            Debug.WriteLine("PreApplicationStart");
+            HttpApplication.RegisterModule(typeof(PreApplicationStartHttpModule));
+        }
+
         // Uncomment
         //protected override void OnApplicationStarted()
         //{
@@ -29,6 +38,7 @@
 
         protected void Application_Start()
         {
+            Debug.WriteLine("Application_Start");
             //ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
 
             ValueProviderFactories.Factories.Insert(0, new MyValueProviderFactory());
@@ -57,10 +67,50 @@
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
+            Debug.WriteLine("Application_AcquireRequestState"); // 4
+
             InitializeCultureInfo();
             SetFormats();
         }
+        
+        protected void Application_BeginRequest()
+        {
+            Debug.WriteLine("Application_BeginRequest"); // 1
+        }
 
+        protected void Application_MapRequestHandler()
+        {
+            Debug.WriteLine("Application_MapRequestHandler"); // 2
+        }
+
+        protected void Application_PostMapRequestHandler()
+        {
+            Debug.WriteLine("Application_PostMapRequestHandler"); // 3
+        }
+
+        //protected void Application_AcquireRequestState()
+        //{
+        //    Debug.WriteLine(""); // 4
+        //}
+
+        protected void Application_PreRequestHandlerExecute()
+        {
+            Debug.WriteLine("Application_PreRequestHandlerExecute"); // 5
+        }
+
+        // 6 - ApplicationEventsController.Index
+
+        protected void Application_PostRequestHandlerExecute()
+        {
+            Debug.WriteLine("Application_PostRequestHandlerExecute"); // 7
+        }
+
+        protected void Application_EndRequest()
+        {
+            Debug.WriteLine("Application_EndRequest"); // 8
+        }
+
+        #region Set services
         private void SetViewEngines()
         {
             //ViewEngines.Engines.Clear();
@@ -182,6 +232,7 @@
             //        context.Request.Headers["Accept-Language"].Contains("cs-CZ") // "en-US,en;q=0.9,cs;q=0.8,cs-CZ;q=0.7"
             //});
         }
+        #endregion
 
         private void HandleException()
         {

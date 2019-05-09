@@ -323,6 +323,19 @@
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
+                    <i class="fa fa-smile"></i>
+                    <span>Life Cycle</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("Index", "ApplicationEvents")">@Html.ActionLink("Events", "Index", "ApplicationEvents")</li>
+                    <li class="@isActive("HttpHandler", "ApplicationEvents")"><a href="/routehttphandler.axd">Route Handler</a></li>
+                    <li class="@isActive("WebConfigHttpHandler", "ApplicationEvents")"><a href="/webconfighttphandler.axd">Web Config Handler</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
                     <i class="fa fa-globe"></i>
                     <span>Async / Task</span>
                 </a>

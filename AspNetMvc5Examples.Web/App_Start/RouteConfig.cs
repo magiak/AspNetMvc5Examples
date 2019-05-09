@@ -1,5 +1,7 @@
-﻿using System.Web.Mvc;
+﻿using System.Web;
+using System.Web.Mvc;
 using System.Web.Routing;
+using AspNetMvc5Examples.Web.HttpHandlers;
 
 namespace AspNetMvc5Examples.Web
 {
@@ -11,6 +13,8 @@ namespace AspNetMvc5Examples.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapMvcAttributeRoutes();
+
+            //routes.Add("HTTP handler", new Route("routehttphandler.axd", new RouteHandler())); // TODO it breaks all the links in the app
 
             // @Html.ActionLink("Movies released", "Released", "Movies", new { year=2017, month=5 }, null)
             // WITH: /Movies/Released/2017/5
@@ -60,6 +64,15 @@ namespace AspNetMvc5Examples.Web
             //        userId = UrlParameter.Optional,
             //        orderId = UrlParameter.Optional
             //    });
+        }
+
+    }
+
+    public class RouteHandler : IRouteHandler
+    {
+        public IHttpHandler GetHttpHandler(RequestContext requestContext)
+        {
+            return new RouteHttpHandler();
         }
     }
 }

@@ -304,6 +304,7 @@
     <Compile Include="ControllerFactory\LoggingControllerFactory.cs" />
     <Compile Include="Controllers\ActionResultController.cs" />
     <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\ApplicationEventsController.cs" />
     <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AuthorizationAttributeController.cs" />
@@ -328,8 +329,6 @@
     <Compile Include="Controllers\PartialViewAndActionController.cs" />
     <Compile Include="Controllers\RazorSyntaxController.cs" />
     <Compile Include="Controllers\RemoteValidationController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
-    <Compile Include="Controllers\ScaffoldingController.cs" />
     <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Controllers\XssController.cs" />
@@ -339,6 +338,10 @@
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="HtmlHelpers\HighlightsJsExtension.cs" />
     <Compile Include="HtmlHelpers\ModalHtmlHelperExtensions.cs" />
+    <Compile Include="HttpHandlers\WebConfigHttpHandler.cs" />
+    <Compile Include="HttpHandlers\RouteHttpHandler.cs" />
+    <Compile Include="HttpModules\WebConfigHttpModule.cs" />
+    <Compile Include="HttpModules\PreApplicationStartHttpModule.cs" />
     <Compile Include="MetadataProviders\Localizable\LocalizableDataAnnotationsModelMetadataProvider.cs" />
     <Compile Include="MetadataProviders\Localizable\LocalizableModelValidator.cs" />
     <Compile Include="MetadataProviders\Localizable\LocalizableModelValidatorProvider.cs" />
@@ -6158,7 +6161,6 @@
     <Content Include="Views\Localization\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\RazorSyntax\Lab.cshtml" />
-    <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\Movies\Create.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Movies\Delete.cshtml" />
@@ -6189,6 +6191,7 @@
     <Content Include="Views\DisplayModeProvider\Index.cs-CZ.cshtml" />
     <Content Include="Views\DisplayModeProvider\Index.en-US.cshtml" />
     <Content Include="Views\DisplayModeProvider\_DisplayModeProviders.cshtml" />
+    <Content Include="Views\ApplicationEvents\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6199,11 +6202,11 @@
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
     <Folder Include="Views\DefaultScaf\" />
-    <Folder Include="Views\Roles\" />
-    <Folder Include="Views\Scaffolding\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Scripts\jquery-3.2.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.2.1.min.map" />
   </ItemGroup>
