@@ -6,8 +6,8 @@
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            // filters.Add(new HandleErrorAttribute());
-
+            // var order = 1;
+            // filters.Add(new HandleErrorAttribute(), order);
             // filters.Add(new AuthorizationFilter());
             // filters.Add(new CustomActionFilter());
             // filters.Add(new ResultFilter());

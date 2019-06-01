@@ -1,7 +1,6 @@
 ﻿namespace AspNetMvc5Examples.Business.Filters
 {
     using System;
-    using System.Diagnostics;
     using System.Web.Mvc;
 
     public class AddHeaderResultFilter : FilterAttribute, IResultFilter

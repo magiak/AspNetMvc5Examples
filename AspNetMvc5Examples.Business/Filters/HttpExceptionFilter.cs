@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Http.Filters;
+//using System.Web.Http.Filters;
 
-namespace AspNetMvc5Examples.Web.Filters
+namespace AspNetMvc5Examples.Business.Filters
 {
     //public class MyExceptionFilter : FilterAttribute, IExceptionFilter
     //{

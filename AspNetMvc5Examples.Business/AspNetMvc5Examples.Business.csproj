@@ -117,10 +117,15 @@
   <ItemGroup>
     <Compile Include="ActionResults\JsonNetResult.cs" />
     <Compile Include="AutoMapperProfiles\MyProfile.cs" />
+    <Compile Include="Filters\Order\IPositionFilter.cs" />
+    <Compile Include="Filters\JsonNetFilterAttribute.cs" />
     <Compile Include="Filters\MyActionFilterAttribute.cs" />
     <Compile Include="Filters\BaseCustomActionFilterAttribute.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Filters\AddHeaderResultFilter.cs" />
+    <Compile Include="Filters\HttpExceptionFilter.cs" />
+    <Compile Include="Filters\Order\PositionOneActionFilterAttribute.cs" />
+    <Compile Include="Filters\Order\PositionTwoActionFilterAttribute.cs" />
     <Compile Include="Filters\ResultFilter.cs" />
     <Compile Include="Filters\CustomActionFilter.cs" />
     <Compile Include="Filters\AuthorizationFilter.cs" />

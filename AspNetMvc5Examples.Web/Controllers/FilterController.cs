@@ -19,6 +19,13 @@
             return this.Content("Hello from FilterController.");
         }
 
+        [PositionOneActionFilter]
+        [PositionTwoActionFilter]
+        public ActionResult Position()
+        {
+            return this.Content("Hello from FilterController.");
+        }
+
         // GET: OutputCache
         [OutputCache(Duration = 10)]
         public ActionResult OutputCache()
@@ -34,7 +41,7 @@
 
         public ActionResult Test2()
         {
-            return this.Content("Hello wordl 2");
+            return this.Content("Hello world 2");
         }
     }
 }

@@ -12,6 +12,7 @@ namespace AspNetMvc5Examples.Web.HttpModules
         public void Init(HttpApplication context)
         {
             // attach to an event
+            // Example: application.BeginRequest += new EventHandler(this.BeginRequest);
         }
 
         public PreApplicationStartHttpModule() { }

@@ -333,8 +333,6 @@
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
     <Compile Include="Controllers\XssController.cs" />
     <Compile Include="CustomTicketDataFormat\CustomSecureDataFormat.cs" />
-    <Compile Include="Filters\JsonNetFilterAttribute.cs" />
-    <Compile Include="Filters\MyExceptionFilter.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="HtmlHelpers\HighlightsJsExtension.cs" />
     <Compile Include="HtmlHelpers\ModalHtmlHelperExtensions.cs" />
@@ -6201,7 +6199,7 @@
     <Folder Include="Areas\RequestLifeCycle\Views\Shared\" />
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
-    <Folder Include="Views\DefaultScaf\" />
+    <Folder Include="FilterProviders\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

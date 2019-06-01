@@ -26,7 +26,7 @@ namespace AspNetMvc5Examples.Web
     {
         public static void PreApplicationStart()
         {
-            Debug.WriteLine("PreApplicationStart");
+            Debug.WriteLine("PreApplicationStart"); // 1
             HttpApplication.RegisterModule(typeof(PreApplicationStartHttpModule));
         }
 
@@ -38,7 +38,7 @@ namespace AspNetMvc5Examples.Web
 
         protected void Application_Start()
         {
-            Debug.WriteLine("Application_Start");
+            Debug.WriteLine("Application_Start"); // 2
             //ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
 
             ValueProviderFactories.Factories.Insert(0, new MyValueProviderFactory());
@@ -67,47 +67,56 @@ namespace AspNetMvc5Examples.Web
 
         protected void Application_AcquireRequestState(object sender, EventArgs e)
         {
-            Debug.WriteLine("Application_AcquireRequestState"); // 4
+            Debug.WriteLine("Application_AcquireRequestState"); // 7
 
             InitializeCultureInfo();
-            SetFormats();
+            // SetFormats(); // throws exception
         }
         
         protected void Application_BeginRequest()
         {
-            Debug.WriteLine("Application_BeginRequest"); // 1
+            // The BeginRequest event signals the creation of any given new request.
+            Debug.WriteLine("Application_BeginRequest"); // 4
         }
 
         protected void Application_MapRequestHandler()
         {
-            Debug.WriteLine("Application_MapRequestHandler"); // 2
+            // Occurs when the handler is selected to respond to the request
+            Debug.WriteLine("Application_MapRequestHandler"); // 5
         }
 
         protected void Application_PostMapRequestHandler()
         {
-            Debug.WriteLine("Application_PostMapRequestHandler"); // 3
+            // Occurs when ASP.NET has mapped the current request to the appropriate event handler.
+            Debug.WriteLine("Application_PostMapRequestHandler"); // 6
         }
 
         //protected void Application_AcquireRequestState()
         //{
-        //    Debug.WriteLine(""); // 4
+        //    // Occurs when ASP.NET acquires the current state (for example, session state) that is associated with the current request.
+        //    Debug.WriteLine(""); // 7
         //}
 
         protected void Application_PreRequestHandlerExecute()
         {
-            Debug.WriteLine("Application_PreRequestHandlerExecute"); // 5
+            // Occurs just before ASP.NET starts executing an event handler
+            Debug.WriteLine("Application_PreRequestHandlerExecute"); // 8
         }
 
-        // 6 - ApplicationEventsController.Index
+        // MvcHandler.BeginProcessRequest
+
+        // ApplicationEventsController.Index // 6
 
         protected void Application_PostRequestHandlerExecute()
         {
-            Debug.WriteLine("Application_PostRequestHandlerExecute"); // 7
+            // Occurs when the ASP.NET event handler (for example, a page or an XML Web service) finishes execution.
+            Debug.WriteLine("Application_PostRequestHandlerExecute"); // 9
         }
 
         protected void Application_EndRequest()
         {
-            Debug.WriteLine("Application_EndRequest"); // 8
+            // Occurs as the last event in the HTTP pipeline chain of execution when ASP.NET responds to a request.
+            Debug.WriteLine("Application_EndRequest"); // 10
         }
 
         #region Set services
@@ -290,6 +299,7 @@ namespace AspNetMvc5Examples.Web
             switch (cultureInfo.LCID)
             {
                 case english:
+                    // Exception thrown: Instance is read-only.
                     cultureInfo.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
                     cultureInfo.NumberFormat = new NumberFormatInfo { NumberDecimalSeparator = "." };
                     break;
