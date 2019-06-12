@@ -55,13 +55,14 @@ namespace AspNetMvc5Examples.Web.Controllers
         }
 
         // GET: Movies
-        //[Route("movies/released/{year:regex(\\d{4})}/{month:range(1,12)}")]
-
+        // [Route("movies/released/{year:regex(\\d{4})}/{month:range(1,12)}")]
         public ActionResult Released(int year, int month)
         {
             var count = this.movies
                 .Where(m => m.ReleasedDate.Year == year)
-                .Where(m => m.ReleasedDate.Month == month).Count();
+                .Where(m => m.ReleasedDate.Month == month)
+                .Count();
+
             return this.Content($"Year={year} Month={month} => count {count}");
         }
 
