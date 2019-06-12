@@ -337,12 +337,23 @@
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret"></b>
-                    <i class="fa fa-globe"></i>
+                    <i class="fa fa-suitcase"></i>
                     <span>Async / Task</span>
                 </a>
                 <ul class="sub-menu">
                     <li class="@isActive("WrongAsync", "Async")">@Html.ActionLink("WrongAsync", "WrongAsync", "Async")</li>
                     <li class="@isActive("Async", "Async")">@Html.ActionLink("Async", "Async", "Async")</li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret"></b>
+                    <i class="fa fa-puzzle-piece"></i>
+                    <span>Vue.js</span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="@isActive("Index", "Vue")">@Html.ActionLink("Basic examples", "Index", "Vue")</li>
                 </ul>
             </li>
 

@@ -330,6 +330,7 @@
     <Compile Include="Controllers\RemoteValidationController.cs" />
     <Compile Include="Controllers\ValidationController.cs" />
     <Compile Include="Controllers\ViewBagViewDataAndTempDataController.cs" />
+    <Compile Include="Controllers\VueController.cs" />
     <Compile Include="Controllers\XssController.cs" />
     <Compile Include="CustomTicketDataFormat\CustomSecureDataFormat.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -6073,6 +6074,8 @@
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="InternalServerError.html" />
+    <Content Include="Scripts\vue.js" />
+    <Content Include="Scripts\vue.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -6190,6 +6193,7 @@
     <Content Include="Views\DisplayModeProvider\Index.en-US.cshtml" />
     <Content Include="Views\DisplayModeProvider\_DisplayModeProviders.cshtml" />
     <Content Include="Views\ApplicationEvents\Index.cshtml" />
+    <Content Include="Views\Vue\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

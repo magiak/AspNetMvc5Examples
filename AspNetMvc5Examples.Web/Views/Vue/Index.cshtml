@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Vue.js</h2>
+
+<div id="app">
+    <p>
+        {{ message }}
+        <button class="btn btn-primary" v-on:click="changeMessage">Change message</button>
+    </p>
+    <p>
+        {{ count }} * 5 = {{ totalCount }}
+        <button class="btn btn-primary" v-on:click="increaseCount">Increase count</button>
+        <button class="btn btn-secondary" v-on:click="increaseTotalCount">Increase total count</button>
+    </p>
+    <p>
+        <button class="btn btn-primary" v-on:click="addDate">Add date to array</button>
+        <table class="table table-bordered">
+            <thead>
+                <tr><th>Date</th></tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in dateArray"><td>{{ item }}</td></tr>
+            </tbody>
+        </table>
+    </p>
+</div>
+
+@section scripts {
+    @Scripts.Render("~/bundles/vue")
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                count: 0,
+                dateArray: []
+            },
+            methods: {
+                changeMessage: function () {
+                    this.message = ":) Changed :)";
+                },
+                increaseCount: function () {
+                    this.count++;
+                },
+                increaseTotalCount: function () {
+                    this.totalCount += 5;
+                },
+                addDate: function () {
+                    this.dateArray.push(new Date());
+                }
+            },
+            computed: {
+                // only getter
+                //totalCount: function () {
+                //    return this.count * 5; // create reactive dependency to this.count
+                //}
+
+                // getter and setter
+                totalCount: {
+                    // getter
+                    get: function () {
+                        return this.count * 5; // create reactive dependency to this.count
+                    },
+                    // setter
+                    set: function (newValue) {
+                        this.count = newValue / 5;
+                    }
+                }
+            }
+        })
+    </script>
+}
