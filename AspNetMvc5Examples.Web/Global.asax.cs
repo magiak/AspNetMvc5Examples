@@ -21,8 +21,9 @@ namespace AspNetMvc5Examples.Web
     using Business.ValueProvider;
     using Ninject;
     using Ninject.Modules;
+    using Ninject.Web.Common;
 
-    public class MvcApplication : HttpApplication // NinjectHttpApplication
+    public class MvcApplication : NinjectHttpApplication // HttpApplication
     {
         public static void PreApplicationStart()
         {
@@ -30,20 +31,22 @@ namespace AspNetMvc5Examples.Web
             HttpApplication.RegisterModule(typeof(PreApplicationStartHttpModule));
         }
 
-        // Uncomment
-        //protected override void OnApplicationStarted()
-        //{
-        //    base.OnApplicationStarted();
-        // + CreateKernel
 
-        protected void Application_Start()
+        // HttpApplication
+        // protected void Application_Start()
+        // {
+
+        // NinjectHttpApplication
+        protected override void OnApplicationStarted()
         {
+            base.OnApplicationStarted();
+
             Debug.WriteLine("Application_Start"); // 2
             //ControllerBuilder.Current.SetControllerFactory(new LoggingControllerFactory());
 
             ValueProviderFactories.Factories.Insert(0, new MyValueProviderFactory());
 
-            //var binder = new DayMonthYearModelBinder();
+            var binder = new DayMonthYearModelBinder();
             //ModelBinders.Binders.Add(typeof(DateTime), binder);
 
             AreaRegistration.RegisterAllAreas();
@@ -53,11 +56,12 @@ namespace AspNetMvc5Examples.Web
 
             SetViewEngines();
 
-            Mapper.Initialize(cfg => cfg.AddProfile(new MyProfile()));
-
             SetFormatters();
             SetMetadataProviders();
             SetCustomDisplayMode();
+
+            // Initialize obsolete static AutoMapper (instance mapper is initialized inside DefaultNinjectModule)
+            Mapper.Initialize(x => { x.AddProfile<MyProfile>(); });
         }
         
         protected void Application_Error()
@@ -322,13 +326,16 @@ namespace AspNetMvc5Examples.Web
             CultureInfo.CurrentUICulture = cultureInfo;
         }
 
-        //protected override IKernel CreateKernel()
-        //{
-        //    var kernel = new StandardKernel();
-        //    kernel.Load(Assembly.GetExecutingAssembly());
-        //    kernel.Load(new DefaultNinjectModule());
-        //    kernel.Load(new INinjectModule[] { new DefaultNinjectModule() });
-        //    return kernel;
-        //}
+        protected override IKernel CreateKernel()
+        {
+            var kernel = new StandardKernel();
+            kernel.Load(Assembly.GetExecutingAssembly());
+
+            // Another options
+            // kernel.Load(new DefaultNinjectModule());
+            // kernel.Load(new INinjectModule[] { new DefaultNinjectModule() });
+
+            return kernel;
+        }
     }
 }

@@ -268,7 +268,9 @@
                     <span>AutoMapper</span>
                 </a>
                 <ul class="sub-menu">
-                    <li class="@isActive("AutoMapperTest", "Movies")">@Html.ActionLink("AutoMapper", "AutoMapperTest", "Movies")</li>
+                    <li class="@isActive("Index", "AutoMapper")">@Html.ActionLink("AutoMapper", "Index", "AutoMapper")</li>
+                    <li class="@isActive("IndexStatic", "AutoMapper")">@Html.ActionLink("AutoMapper - Static", "IndexStatic", "AutoMapper")</li>
+                    <li class="@isActive("ProjectToTest", "AutoMapper")">@Html.ActionLink("AutoMapper - ProjectTo", "ProjectToTest", "AutoMapper")</li>
                 </ul>
             </li>
 
@@ -354,6 +356,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="@isActive("Index", "Vue")">@Html.ActionLink("Basic examples", "Index", "Vue")</li>
+                    <li class="@isActive("Grid", "Vue")">@Html.ActionLink("Grid example", "Grid", "Vue")</li>
                 </ul>
             </li>
 

@@ -15,7 +15,14 @@
         {
             this.otherPropertyName = otherPropertyName;
         }
-        
+
+        // 1. option
+        //public override bool IsValid(object value)
+        //{
+        //    return false;
+        //}
+
+        // 2. option
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             var validationResult = ValidationResult.Success;

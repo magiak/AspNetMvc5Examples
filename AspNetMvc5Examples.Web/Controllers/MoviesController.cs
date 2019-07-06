@@ -42,13 +42,6 @@ namespace AspNetMvc5Examples.Web.Controllers
 
         private readonly ApplicationDbContext context;
         
-        public ActionResult AutoMapperTest()
-        {
-            var movies = this.context.Movies;
-             //.ProjectTo<MovieViewModel>();
-            return this.Json(movies, JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult Index()
         {
             return this.View(this.movies);

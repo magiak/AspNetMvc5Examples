@@ -13,5 +13,10 @@ namespace AspNetMvc5Examples.Web.Controllers
         {
             return View();
         }
+
+        public ActionResult Grid()
+        {
+            return View();
+        }
     }
 }

@@ -31,7 +31,7 @@
 
         public ActionResult IndexWithoutDI()
         {
-            using(var dbContext = new ApplicationDbContext())
+            using (var dbContext = new ApplicationDbContext())
             {
                 var service = new DatabaseLoggingService(dbContext);
                 service.Log("My log");

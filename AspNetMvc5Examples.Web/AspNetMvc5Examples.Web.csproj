@@ -50,8 +50,8 @@
       <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="AutoMapper, Version=8.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.1.1\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="BeginCollectionItem, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\BeginCollectionItem.1.2.1.0\lib\net35\BeginCollectionItem.dll</HintPath>
@@ -156,9 +156,8 @@
     <Reference Include="Mvc.Grid.Core, Version=6.0.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\NonFactors.Grid.Core.Mvc5.6.0.3\lib\net45\Mvc.Grid.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
@@ -307,6 +306,7 @@
     <Compile Include="Controllers\ApplicationUsersController.cs" />
     <Compile Include="Controllers\AsyncController.cs" />
     <Compile Include="Controllers\AuthorizationAttributeController.cs" />
+    <Compile Include="Controllers\AutoMapperController.cs" />
     <Compile Include="Controllers\Base\AspNetMvc5ExamplesControllerBase.cs" />
     <Compile Include="Controllers\ButtonAndGridExamplesController.cs" />
     <Compile Include="Controllers\CookieAndSessionController.cs" />
@@ -6034,7 +6034,6 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\User\Index.cshtml" />
-    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="Scripts\aspnetmvcexamples.jquery.validate.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -6194,6 +6193,7 @@
     <Content Include="Views\DisplayModeProvider\_DisplayModeProviders.cshtml" />
     <Content Include="Views\ApplicationEvents\Index.cshtml" />
     <Content Include="Views\Vue\Index.cshtml" />
+    <Content Include="Views\Vue\Grid.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -6204,6 +6204,8 @@
     <Folder Include="assets\plugins\DataTables\extensions\FixedColumns\examples\integration\" />
     <Folder Include="CustomViews\AuthorizationAttribute\" />
     <Folder Include="FilterProviders\" />
+    <Folder Include="Views\AutoMapper\" />
+    <Folder Include="Views\Scaffolding\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
