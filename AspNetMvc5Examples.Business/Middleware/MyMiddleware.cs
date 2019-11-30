@@ -25,7 +25,6 @@ namespace AspNetMvc5Examples.Business.Middleware
 
         public Task Invoke(IDictionary<string, object> environment)
         {
-            
 
             return this.next(environment);
         }

@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201804172008223_AddTableMyAspNetUsers.Designer.cs">
       <DependentUpon>201804172008223_AddTableMyAspNetUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910090643586_AddManyToManyOrderAndMovie.cs" />
+    <Compile Include="Migrations\201910090643586_AddManyToManyOrderAndMovie.Designer.cs">
+      <DependentUpon>201910090643586_AddManyToManyOrderAndMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Movie.cs" />
@@ -173,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804172008223_AddTableMyAspNetUsers.resx">
       <DependentUpon>201804172008223_AddTableMyAspNetUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910090643586_AddManyToManyOrderAndMovie.resx">
+      <DependentUpon>201910090643586_AddManyToManyOrderAndMovie.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

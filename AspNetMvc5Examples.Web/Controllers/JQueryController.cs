@@ -35,5 +35,10 @@ namespace AspNetMvc5Examples.Web.Controllers
         {
             return this.Content(title);
         }
+
+        public ActionResult Datepicker()
+        {
+            return View();
+        }
     }
 }

@@ -17,6 +17,7 @@
             this.HasKey(e => e.Id);
 
             this.Property(p => p.Name).HasMaxLength(64);
+            this.HasMany(o => o.Movies).WithMany(m => m.Orders);
         }
     }
 }

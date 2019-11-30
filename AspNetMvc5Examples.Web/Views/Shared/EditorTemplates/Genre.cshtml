@@ -1,3 +1,10 @@
 ﻿@model AspNetMvc5Examples.Entities.Enums.Genre
 
+@{
+    var htmlAttrib = ViewData["htmlAttributes"];
+    IDictionary<string, object> dic = new RouteValueDictionary(htmlAttrib);
+}
+
 @Html.EnumDropDownListFor(m => Model, new { @class = "form-control" })
+
+@*@Html.EnumDropDownListFor(m => Model, dic)*@

@@ -25,7 +25,7 @@ namespace AspNetMvc5Examples.Web.NinjectModules
 
             // DI configuration
             this.Bind<ApplicationDbContext>().ToSelf().InRequestScope();
-            //this.Bind<ILoggingService>().To<LoggingService>();
+            this.Bind<ILoggingService>().To<LoggingService>();
         }
 
         private MapperConfiguration CreateConfiguration()

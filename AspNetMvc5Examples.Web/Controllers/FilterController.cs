@@ -28,6 +28,7 @@
 
         // GET: OutputCache
         [OutputCache(Duration = 10)]
+        // [OutputCache(CacheProfile = "Long")] // defined in web.config (https://prashantbrall.wordpress.com/2013/09/29/using-output-cache-profile-in-asp-net-mvc/)
         public ActionResult OutputCache()
         {
             return this.Content(DateTime.Now.ToString());

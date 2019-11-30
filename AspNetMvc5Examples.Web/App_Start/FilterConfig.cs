@@ -7,7 +7,7 @@
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             // var order = 1;
-            // filters.Add(new HandleErrorAttribute(), order);
+            filters.Add(new HandleErrorAttribute());
             // filters.Add(new AuthorizationFilter());
             // filters.Add(new CustomActionFilter());
             // filters.Add(new ResultFilter());
